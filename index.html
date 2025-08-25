@@ -271,6 +271,10 @@
         .product-img {
             height: 200px;
             overflow: hidden;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .product-img img {
@@ -317,12 +321,17 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background: #f5f5f5;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .about-img img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            object-fit: cover;
         }
 
         .about-text h2 {
@@ -378,6 +387,10 @@
             border-radius: 50%;
             overflow: hidden;
             margin-right: 15px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .author-img img {
@@ -566,6 +579,31 @@
             font-size: 15px;
         }
 
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .about-content,
@@ -579,6 +617,14 @@
             
             .hero h2 {
                 font-size: 36px;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
             }
         }
 
@@ -616,6 +662,11 @@
     </style>
 </head>
 <body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/918083651113" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Header -->
     <header>
         <div class="container nav-container">
@@ -698,7 +749,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1591195853828-9fb058943fc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="सूजी">
+                        <i class="fas fa-wheat-alt" style="font-size: 60px; color: #e67e22;"></i>
                     </div>
                     <div class="product-content">
                         <h3>सूजी (Semolina)</h3>
@@ -707,7 +758,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1591195853828-9fb058943fc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="बेसन">
+                        <i class="fas fa-mortar-pestle" style="font-size: 60px; color: #e67e22;"></i>
                     </div>
                     <div class="product-content">
                         <h3>बेसन (Gram Flour)</h3>
@@ -716,7 +767,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1591195853828-9fb058943fc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="मसाला">
+                        <i class="fas fa-pepper-hot" style="font-size: 60px; color: #e67e22;"></i>
                     </div>
                     <div class="product-content">
                         <h3>मसाला (Spices)</h3>
@@ -725,7 +776,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1591195853828-9fb058943fc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="सोयाबीन">
+                        <i class="fas fa-seedling" style="font-size: 60px; color: #e67e22;"></i>
                     </div>
                     <div class="product-content">
                         <h3>सोयाबीन (Soybean)</h3>
@@ -748,7 +799,7 @@
                     <a href="#contact" class="btn">Get In Touch</a>
                 </div>
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="About SHREE SHYAM FOOD">
+                    <i class="fas fa-store" style="font-size: 100px; color: #ccc;"></i>
                 </div>
             </div>
         </div>
@@ -768,7 +819,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                            <i class="fas fa-user" style="font-size: 30px; color: #999;"></i>
                         </div>
                         <div class="author-info">
                             <h4>Rajesh Kumar</h4>
@@ -782,7 +833,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                            <i class="fas fa-user" style="font-size: 30px; color: #999;"></i>
                         </div>
                         <div class="author-info">
                             <h4>Priya Sharma</h4>
@@ -796,7 +847,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client">
+                            <i class="fas fa-user" style="font-size: 30px; color: #999;"></i>
                         </div>
                         <div class="author-info">
                             <h4>Vikram Singh</h4>
