@@ -10,13 +10,15 @@
     <meta property="og:description" content="Premium supplier of food products including सूजी, बेसन, मसाला and more. Quality assured and timely delivery.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.shreeshyamfood.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
     <meta name="twitter:card" content="summary_large_image">
-    <title>SHREE SHYAM FOOD - Premium Food Products Supplier</title>
+    <title>SHREE SHYAM FOOD - Premium Food Products Supplier in Dhanbad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <style>
         :root {
             --primary: #388e3c; /* Fresh green */
@@ -134,24 +136,56 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+            position: relative;
+            height: 80vh;
+            overflow: hidden;
         }
 
-        .hero h2 {
-            font-size: 2.5rem;
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            padding: 0 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
             margin-bottom: 20px;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .hero p {
+        .hero-content p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .btn {
@@ -171,6 +205,41 @@
             background-color: var(--primary);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 60px 0;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
         }
 
         /* About Section */
@@ -237,6 +306,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
+            position: relative;
         }
 
         .product-card:hover {
@@ -270,6 +340,130 @@
         }
 
         .product-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--light);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            line-height: 1;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        /* Blog/Recipe Section */
+        .blog {
+            padding: 80px 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .blog-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-info {
+            padding: 20px;
+        }
+
+        .blog-date {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .blog-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-info p {
             color: var(--gray);
             margin-bottom: 15px;
         }
@@ -351,56 +545,6 @@
             width: 100%;
             height: 100%;
             border: none;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .testimonial-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .testimonial-card:before {
-            content: '"';
-            font-size: 5rem;
-            color: var(--light);
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            line-height: 1;
-            font-family: serif;
-        }
-
-        .testimonial-text {
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
         }
 
         /* Footer */
@@ -558,12 +702,17 @@
                 margin: 15px 0;
             }
 
-            .hero h2 {
+            .hero-content h2 {
                 font-size: 2rem;
             }
 
-            .hero p {
+            .hero-content p {
                 font-size: 1rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
             }
 
             .about-content, .contact-container {
@@ -575,8 +724,12 @@
                 margin-bottom: 30px;
             }
 
-            .product-grid, .testimonial-grid {
+            .product-grid, .testimonial-grid, .blog-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .whatsapp-float {
@@ -585,6 +738,16 @@
                 bottom: 20px;
                 right: 20px;
                 font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -604,6 +767,7 @@
                 <li><a href="#home">होम</a></li>
                 <li><a href="#about">हमारे बारे में</a></li>
                 <li><a href="#products">उत्पाद</a></li>
+                <li><a href="#recipes">रेसिपी</a></li>
                 <li><a href="#testimonials">ग्राहक समीक्षा</a></li>
                 <li><a href="#contact">संपर्क</a></li>
             </ul>
@@ -612,10 +776,40 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
+        <div class="hero-overlay"></div>
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://cdn.pixabay.com/video/2022/10/20/122140-746510300_large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container hero-content">
             <h2>प्रीमियम क्वालिटी फूड प्रोडक्ट्स</h2>
             <p>SHREE SHYAM FOOD - सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi और अन्य खाद्य उत्पादों का विश्वसनीय आपूर्तिकर्ता</p>
-            <a href="#products" class="btn">हमारे उत्पाद देखें</a>
+            <div>
+                <a href="#products" class="btn">हमारे उत्पाद देखें</a>
+                <a href="#contact" class="btn btn-outline">संपर्क करें</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <h3 data-target="500">0</h3>
+                <p>संतुष्ट ग्राहक</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-target="12">0</h3>
+                <p>वर्षों का अनुभव</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-target="50">0</h3>
+                <p>उत्पादों की रेंज</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-target="1000">0</h3>
+                <p>दैनिक डिलीवरी</p>
+            </div>
         </div>
     </section>
 
@@ -628,6 +822,7 @@
                     <p>SHREE SHYAM FOOD 2010 से खाद्य उत्पादों की आपूर्ति में एक विश्वसनीय नाम रहा है। हम गुणवत्ता, शुद्धता और समय पर वितरण पर ध्यान देने के साथ अपने ग्राहकों को सर्वोत्तम उत्पाद प्रदान करने के लिए प्रतिबद्ध हैं।</p>
                     <p>हमारे उत्पादों की श्रेणी में सूजी, बेसन, विभिन्न प्रकार के मसाले, सोयाबीन, सेबई, पास्ता, धनिया, हल्दी और अन्य आवश्यक खाद्य पदार्थ शामिल हैं। हमारी प्राथमिकता हमेशा से हमारे ग्राहकों की संतुष्टि रही है।</p>
                     <p>हमारी टीम गुणवत्ता नियंत्रण के उच्चतम मानकों को बनाए रखती है, यह सुनिश्चित करती है कि प्रत्येक उत्पाद अपनी शुद्धता और ताजगी के मामले में उत्कृष्ट हो।</p>
+                    <a href="#contact" class="btn">अधिक जानें</a>
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SHREE SHYAM FOOD Products">
@@ -643,42 +838,100 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1598030304671-5aa1d6f13fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="सूजी">
+                        <img src="https://images.unsplash.com/photo-1598030304671-5aa1d6f13fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="सूजी - Premium Quality Suji from SHREE SHYAM FOOD">
                     </div>
                     <div class="product-info">
                         <h3>सूजी</h3>
                         <p>उच्च गुणवत्ता वाली शुद्ध सूजी, जो हलवा, इडली और उपमा बनाने के लिए perfect है</p>
-                        <a href="#contact" class="btn">पूछताछ करें</a>
+                        <div class="product-price">₹45/kg</div>
+                        <div class="product-actions">
+                            <a href="#contact" class="btn">पूछताछ करें</a>
+                            <a href="https://wa.me/+918210846551?text=मुझे सूजी की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;">WhatsApp</a>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1596363505726-6138a7c06f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="बेसन">
+                        <img src="https://images.unsplash.com/photo-1596363505726-6138a7c06f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="बेसन - Premium Quality Besan from SHREE SHYAM FOOD">
                     </div>
                     <div class="product-info">
                         <h3>बेसन</h3>
                         <p>शुद्ध चने का बेसन, पकौड़े, पकौड़ी और लड्डू बनाने के लिए आदर्श</p>
-                        <a href="#contact" class="btn">पूछताछ करें</a>
+                        <div class="product-price">₹60/kg</div>
+                        <div class="product-actions">
+                            <a href="#contact" class="btn">पूछताछ करें</a>
+                            <a href="https://wa.me/+918210846551?text=मुझे बेसन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;">WhatsApp</a>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="मसाला">
+                        <img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="मसाला - Premium Quality Masala from SHREE SHYAM FOOD">
                     </div>
                     <div class="product-info">
                         <h3>मसाला</h3>
                         <p>विभिन्न प्रकार के ताज़े और सुगंधित मसाले, जो आपके व्यंजनों में स्वाद जोड़ते हैं</p>
-                        <a href="#contact" class="btn">पूछताछ करें</a>
+                        <div class="product-price">₹80-200/kg</div>
+                        <div class="product-actions">
+                            <a href="#contact" class="btn">पूछताछ करें</a>
+                            <a href="https://wa.me/+918210846551?text=मुझे मसालों की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;">WhatsApp</a>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="सोयाबीन">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="सोयाबीन - Premium Quality Soybean from SHREE SHYAM FOOD">
                     </div>
                     <div class="product-info">
                         <h3>सोयाबीन</h3>
                         <p>उच्च प्रोटीन युक्त सोयाबीन, स्वस्थ आहार के लिए उत्तम</p>
-                        <a href="#contact" class="btn">पूछताछ करें</a>
+                        <div class="product-price">₹70/kg</div>
+                        <div class="product-actions">
+                            <a href="#contact" class="btn">पूछताछ करें</a>
+                            <a href="https://wa.me/+918210846551?text=मुझे सोयाबीन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Recipe Section -->
+    <section class="blog" id="recipes">
+        <div class="container">
+            <h2 class="section-title">रेसिपी और ब्लॉग</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="बेसन के लड्डू की रेसिपी">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-date">15 अगस्त, 2023</div>
+                        <h3>बेसन के लड्डू बनाने की आसान विधि</h3>
+                        <p>जानिए कैसे बनाएं स्वादिष्ट और मुलायम बेसन के लड्डू हमारे प्रीमियम बेसन से</p>
+                        <a href="#" class="btn">पूरी रेसिपी पढ़ें</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1630918037678-a8f7e0fbd5e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="सूजी का हलवा रेसिपी">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-date">10 अगस्त, 2023</div>
+                        <h3>सूजी का हलवा: 15 मिनट में तैयार</h3>
+                        <p>हमारी फ़ाइन सूजी से बनाएं स्वादिष्ट हलवा, जो होगा बच्चों का फेवरेट</p>
+                        <a href="#" class="btn">पूरी रेसिपी पढ़ें</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="सोयाबीन रेसिपी">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-date">5 अगस्त, 2023</div>
+                        <h3>सोयाबीन की स्वास्थ्यवर्धक रेसिपी</h3>
+                        <p>जानिए सोयाबीन को अपने दैनिक आहार में शामिल करने के आसान और स्वादिष्ट तरीके</p>
+                        <a href="#" class="btn">पूरी रेसिपी पढ़ें</a>
                     </div>
                 </div>
             </div>
@@ -695,7 +948,7 @@
                         <p>मैं पिछले 5 साल से SHREE SHYAM FOOD से उत्पाद खरीद रहा हूं। उनकी सूजी और बेसन की गुणवत्ता अद्वितीय है और कीमतें प्रतिस्पर्धी हैं। समय पर डिलीवरी के लिए विशेष रूप से प्रशंसा करता हूं।</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="राजेश कुमार - SHREE SHYAM FOOD Customer">
                         <div>
                             <h4>राजेश कुमार</h4>
                             <p>रेस्तरां मालिक</p>
@@ -707,7 +960,7 @@
                         <p>SHREE SHYAM FOOD के मसालों की गुणवत्ता अद्भुत है। वे ताज़े और सुगंधित हैं। उनकी ग्राहक सेवा उत्कृष्ट है और वे हमेशा हमारी आवश्यकताओं को पूरा करते हैं।</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="प्रिया शर्मा - SHREE SHYAM FOOD Customer">
                         <div>
                             <h4>प्रिया शर्मा</h4>
                             <p>कैटरिंग व्यवसाय</p>
@@ -719,7 +972,7 @@
                         <p>हमने विभिन्न आपूर्तिकर्ताओं के साथ काम किया है, लेकिन SHREE SHYAM FOOD उत्पादों की स्थिर गुणवत्ता और विश्वसनीय सेवा के कारण हमारा पसंदीदा बन गया है। अत्यधिक अनुशंसित!</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Customer">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="विकास सिंह - SHREE SHYAM FOOD Customer">
                         <div>
                             <h4>विकास सिंह</h4>
                             <p>होटल प्रबंधक</p>
@@ -763,6 +1016,16 @@
                             <h3>ईमेल</h3>
                             <p>info@shreeshyamfood.com</p>
                             <p>sales@shreeshyamfood.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>कार्य समय</h3>
+                            <p>सोम-शनि: 9:00 AM - 8:00 PM</p>
+                            <p>रविवार: 10:00 AM - 4:00 PM</p>
                         </div>
                     </div>
                 </div>
@@ -824,7 +1087,7 @@
                         <li><a href="#home">होम</a></li>
                         <li><a href="#about">हमारे बारे में</a></li>
                         <li><a href="#products">उत्पाद</a></li>
-                        <li><a href="#testimonials">ग्राहक समीक्षा</a></li>
+                        <li><a href="#recipes">रेसिपी</a></li>
                         <li><a href="#contact">संपर्क</a></li>
                     </ul>
                 </div>
@@ -846,7 +1109,7 @@
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/+918210846551" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/+918210846551" class="whatsapp-float" target="_blank" aria-label="WhatsApp पर संपर्क करें">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -934,6 +1197,36 @@
                 }
             });
         });
+
+        // Animate stats counter
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Start counter animation when stats section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statItems = document.querySelectorAll('.stat-item h3');
+                    statItems.forEach(item => {
+                        const target = parseInt(item.getAttribute('data-target'));
+                        animateValue(item, 0, target, 2000);
+                    });
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.stats'));
     </script>
 </body>
 </html>
