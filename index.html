@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SHREE SHYAM FOOD - Premium supplier of सूजी, बेसन, मसाला, सोयाबीन, सेबई and other food products. Quality assured and timely delivery.">
+    <meta name="keywords" content="सूजी, बेसन, मसाला, सोयाबीन, सेबई, food products, supplier, wholesale">
     <title>SHREE SHYAM FOOD - Premium Food Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -127,6 +129,35 @@
 
         nav ul li a:hover::after {
             width: 100%;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+        }
+
+        .search-bar input {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .search-bar button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-bar button:hover {
+            background: #d35400;
         }
 
         /* Mobile Menu */
@@ -418,6 +449,50 @@
             margin-bottom: 15px;
         }
 
+        /* Why Choose Us Section */
+        .why-choose-us {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 24px;
+        }
+
+        .feature-text h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .feature-text p {
+            color: #666;
+            line-height: 1.6;
+        }
+
         /* About Section */
         .about {
             padding: 100px 0;
@@ -482,28 +557,6 @@
             margin-bottom: 20px;
             color: #666;
             line-height: 1.8;
-        }
-
-        .features {
-            margin-top: 30px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .feature-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--secondary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
         }
 
         /* Testimonials */
@@ -598,6 +651,46 @@
         .author-info p {
             color: var(--secondary);
             font-size: 14px;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-text {
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 500;
         }
 
         /* Contact Section */
@@ -800,6 +893,32 @@
             font-size: 14px;
         }
 
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .newsletter-form button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: #d35400;
+        }
+
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -893,17 +1012,23 @@
                 right: 20px;
                 bottom: 80px;
             }
+            
+            .search-bar {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
+                align-items: flex-start;
             }
 
             nav ul {
                 margin-top: 25px;
                 flex-wrap: wrap;
                 justify-content: center;
+                width: 100%;
             }
 
             nav ul li {
@@ -935,6 +1060,7 @@
             
             nav {
                 display: none;
+                width: 100%;
             }
             
             nav.active {
@@ -950,6 +1076,40 @@
             
             nav.active ul li {
                 margin: 10px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .logo-text h1 {
+                font-size: 22px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
             }
         }
     </style>
@@ -977,6 +1137,12 @@
                     <span>Premium Quality Food Products</span>
                 </div>
             </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -997,7 +1163,10 @@
         <div class="container hero-content">
             <h2>Premium Quality Food Products</h2>
             <p>We provide the finest सूजी, बेसन, मसाला, सोयाबीन, सेबई and other food products with unmatched quality and service.</p>
-            <a href="#contact" class="btn">Contact Us</a>
+            <div>
+                <a href="#products" class="btn">Explore Products</a>
+                <a href="#contact" class="btn" style="background: transparent; border: 2px solid white; margin-left: 15px;">Contact Us</a>
+            </div>
         </div>
     </section>
 
@@ -1060,6 +1229,7 @@
                         <div class="product-overlay-content">
                             <h3>सूजी (Semolina)</h3>
                             <p>Perfect for halwa, upma, and various Indian sweets</p>
+                            <a href="#contact" class="btn" style="margin-top: 15px;">Inquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -1075,6 +1245,7 @@
                         <div class="product-overlay-content">
                             <h3>बेसन (Gram Flour)</h3>
                             <p>Ideal for pakoras, kadhi, and various snacks</p>
+                            <a href="#contact" class="btn" style="margin-top: 15px;">Inquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -1090,6 +1261,7 @@
                         <div class="product-overlay-content">
                             <h3>मसाला (Spices)</h3>
                             <p>Freshly ground spices for authentic Indian flavors</p>
+                            <a href="#contact" class="btn" style="margin-top: 15px;">Inquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -1105,8 +1277,82 @@
                         <div class="product-overlay-content">
                             <h3>सोयाबीन (Soybean)</h3>
                             <p>Nutritious and protein-rich for healthy diet</p>
+                            <a href="#contact" class="btn" style="margin-top: 15px;">Inquire Now</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>We are committed to excellence in every aspect of our business</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Premium Quality</h3>
+                        <p>We source the finest raw materials and maintain strict quality control at every stage of production.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Timely Delivery</h3>
+                        <p>Our efficient logistics ensure that your orders reach you on time, every time.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-indian-rupee-sign"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Competitive Pricing</h3>
+                        <p>We offer the best quality products at competitive prices without compromising on quality.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Customer Support</h3>
+                        <p>Our dedicated support team is always available to address your queries and concerns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-text">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="20">0</div>
+                    <div class="stat-text">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-text">Products</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1000">0</div>
+                    <div class="stat-text">Orders Delivered</div>
                 </div>
             </div>
         </div>
@@ -1268,6 +1514,12 @@
                 <div class="footer-column">
                     <h3>SHREE SHYAM FOOD</h3>
                     <p>Providing premium quality food products for over 20 years. We are committed to quality, authenticity, and customer satisfaction.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
@@ -1294,6 +1546,13 @@
                     <p><i class="fas fa-map-marker-alt"></i> 123 Food Street, Industrial Area, Patna, Bihar</p>
                     <p><i class="fas fa-phone"></i> +91 9876543210</p>
                     <p><i class="fas fa-envelope"></i> info@shreeshyamfood.com</p>
+                    
+                    <h3 style="margin-top: 20px;">Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button><i class="fas fa-paper-plane"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
@@ -1319,6 +1578,8 @@
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
                 const targetElement = document.querySelector(targetId);
                 
                 window.scrollTo({
@@ -1365,7 +1626,7 @@
 
         // Animation on scroll
         function animateOnScroll() {
-            const elements = document.querySelectorAll('.service-card, .product-card, .testimonial-card');
+            const elements = document.querySelectorAll('.service-card, .product-card, .testimonial-card, .feature-item, .stat-item');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -1379,14 +1640,49 @@
         }
 
         // Initialize elements for animation
-        document.querySelectorAll('.service-card, .product-card, .testimonial-card').forEach(element => {
+        document.querySelectorAll('.service-card, .product-card, .testimonial-card, .feature-item, .stat-item').forEach(element => {
             element.style.opacity = 0;
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         });
 
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
+        // Counter animation for stats
+        function animateCounter() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);
+                
+                if (count < target) {
+                    counter.innerText = count + increment;
+                    setTimeout(() => animateCounter(), 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        let counterAnimated = false;
+        
+        function checkCounter() {
+            const statsSection = document.querySelector('.stats');
+            if (statsSection.getBoundingClientRect().top < window.innerHeight && !counterAnimated) {
+                animateCounter();
+                counterAnimated = true;
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            animateOnScroll();
+            checkCounter();
+        });
+        window.addEventListener('load', function() {
+            animateOnScroll();
+            checkCounter();
+        });
     </script>
 </body>
 </html>
