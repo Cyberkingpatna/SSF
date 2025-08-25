@@ -11,19 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #4CAF50;
+            --primary: #E65100;
             --secondary: #FF9800;
-            --accent: #8BC34A;
-            --light: #F1F8E9;
-            --dark: #2E7D32;
-            --darker: #1B5E20;
+            --accent: #F57C00;
+            --light: #FFF3E0;
+            --dark: #BF360C;
+            --darker: #7B1FA2;
             --text: #333333;
             --text-light: #666666;
             --white: #FFFFFF;
-            --gray: #E0E0E0;
+            --gray: #F5F5F5;
             --transition: all 0.3s ease;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
+            --card-radius: 12px;
         }
 
         * {
@@ -38,13 +39,13 @@
             color: var(--text);
             overflow-x: hidden;
             padding-top: 80px;
-            background-color: #f9f9f9;
+            background-color: var(--gray);
         }
 
         h1, h2, h3, h4, h5 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            color: var(--darker);
+            color: var(--dark);
             margin-bottom: 1rem;
         }
 
@@ -161,6 +162,7 @@
 
         .nav-menu li {
             margin-left: 25px;
+            position: relative;
         }
 
         .nav-menu a {
@@ -169,6 +171,13 @@
             font-weight: 500;
             transition: var(--transition);
             position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu a i {
+            margin-right: 5px;
+            font-size: 18px;
         }
 
         .nav-menu a:hover {
@@ -179,11 +188,12 @@
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
+            height: 3px;
             bottom: -5px;
             left: 0;
             background-color: var(--primary);
             transition: var(--transition);
+            border-radius: 3px;
         }
 
         .nav-menu a:hover:after {
@@ -195,6 +205,13 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--primary);
+            background: var(--light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Hero Section */
@@ -205,11 +222,14 @@
             color: white;
             padding: 120px 0;
             text-align: center;
+            position: relative;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -247,6 +267,7 @@
 
         .stat-item {
             padding: 20px;
+            position: relative;
         }
 
         .stat-item h3 {
@@ -279,7 +300,7 @@
         .about-image {
             flex: 1;
             min-width: 300px;
-            border-radius: 10px;
+            border-radius: var(--card-radius);
             overflow: hidden;
             box-shadow: var(--shadow-hover);
             background-color: var(--light);
@@ -292,9 +313,9 @@
 
         .proprietor-info {
             margin-top: 20px;
-            padding: 15px;
+            padding: 20px;
             background-color: var(--light);
-            border-radius: 10px;
+            border-radius: var(--card-radius);
             border-left: 4px solid var(--secondary);
         }
 
@@ -319,7 +340,7 @@
         .delivery-feature {
             background-color: var(--white);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: var(--card-radius);
             box-shadow: var(--shadow);
             transition: var(--transition);
         }
@@ -337,7 +358,7 @@
 
         /* Products Section */
         .products {
-            background-color: var(--light);
+            background-color: var(--white);
         }
 
         .product-grid {
@@ -348,11 +369,12 @@
 
         .product-card {
             background-color: var(--white);
-            border-radius: 10px;
+            border-radius: var(--card-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
+            border: 1px solid #eee;
         }
 
         .product-card:hover {
@@ -396,6 +418,7 @@
         .product-info p {
             color: var(--text-light);
             margin-bottom: 15px;
+            font-size: 0.9rem;
         }
 
         .product-price {
@@ -408,11 +431,19 @@
         .product-actions {
             display: flex;
             justify-content: space-between;
+            gap: 10px;
+        }
+
+        .product-actions .btn {
+            flex: 1;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.9rem;
         }
 
         /* Special Offers Section */
         .offers {
-            background: linear-gradient(to right, #FF5722, #FF9800);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             padding: 60px 0;
             text-align: center;
@@ -430,6 +461,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
+            flex-wrap: wrap;
         }
 
         .timer-unit {
@@ -452,7 +484,7 @@
 
         /* Testimonials */
         .testimonials {
-            background-color: var(--white);
+            background-color: var(--light);
         }
 
         .testimonial-grid {
@@ -462,9 +494,9 @@
         }
 
         .testimonial-card {
-            background-color: var(--light);
+            background-color: var(--white);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: var(--card-radius);
             box-shadow: var(--shadow);
             position: relative;
         }
@@ -567,7 +599,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+            box-shadow: 0 0 0 2px rgba(230, 81, 0, 0.2);
         }
 
         textarea.form-control {
@@ -579,7 +611,7 @@
             margin-top: 40px;
             width: 100%;
             height: 400px;
-            border-radius: 10px;
+            border-radius: var(--card-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
         }
@@ -592,7 +624,7 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(to right, var(--darker), var(--dark));
+            background: linear-gradient(to right, var(--dark), var(--primary));
             color: white;
             padding: 60px 0 20px;
         }
@@ -660,6 +692,13 @@
             color: #ccc;
             text-decoration: none;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 14px;
         }
 
         .footer-links a:hover {
@@ -670,7 +709,7 @@
         .quick-contact {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: var(--card-radius);
         }
 
         .copyright {
@@ -719,6 +758,31 @@
             }
         }
 
+        /* New Features */
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .feature-badge {
+            display: inline-block;
+            background: var(--light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .active-nav {
+            color: var(--primary) !important;
+        }
+        
+        .active-nav:after {
+            width: 100% !important;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             body {
@@ -726,7 +790,7 @@
             }
 
             .mobile-menu-btn {
-                display: block;
+                display: flex;
             }
 
             .nav-menu {
@@ -741,6 +805,7 @@
                 justify-content: center;
                 transition: var(--transition);
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
             }
 
             .nav-menu.active {
@@ -814,6 +879,10 @@
             .timer-value {
                 font-size: 2rem;
             }
+            
+            .product-actions {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -831,13 +900,13 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">होम</a></li>
-                <li><a href="#about">हमारे बारे में</a></li>
-                <li><a href="#products">उत्पाद</a></li>
-                <li><a href="#delivery">फास्ट डिलीवरी</a></li>
-                <li><a href="#offers">स्पेशल ऑफ़र्स</a></li>
-                <li><a href="#testimonials">ग्राहक समीक्षा</a></li>
-                <li><a href="#contact">संपर्क</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i> होम</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> हमारे बारे में</a></li>
+                <li><a href="#products"><i class="fas fa-shopping-basket"></i> उत्पाद</a></li>
+                <li><a href="#delivery"><i class="fas fa-truck"></i> फास्ट डिलीवरी</a></li>
+                <li><a href="#offers"><i class="fas fa-gift"></i> स्पेशल ऑफ़र्स</a></li>
+                <li><a href="#testimonials"><i class="fas fa-star"></i> ग्राहक समीक्षा</a></li>
+                <li><a href="#contact"><i class="fas fa-phone-alt"></i> संपर्क</a></li>
             </ul>
         </div>
     </header>
@@ -884,7 +953,10 @@
                 <div class="about-text">
                     <p>SHREE SHYAM FOOD 2010 से खाद्य उत्पादों की आपूर्ति में एक विश्वसनीय नाम रहा है। हम गुणवत्ता, शुद्धता और समय पर वितरण पर ध्यान देने के साथ अपने ग्राहकों को सर्वोत्तम उत्पाद प्रदान करने के लिए प्रतिबद्ध हैं।</p>
                     <p>हमारे उत्पादों की श्रेणी में सूजी, बेसन, विभिन्न प्रकार के मसाले, सोयाबीन, सेबई, पास्ता, धनिया, हल्दी और अन्य आवश्यक खाद्य पदार्थ शामिल हैं। हमारी प्राथमिकता हमेशा से हमारे ग्राहकों की संतुष्टि रही है।</p>
-                    <p>हमारी टीम गुणवत्ता नियंत्रण के उच्चतम मानकों को बनाए रखती है, यह सुनिश्चित करती है कि प्रत्येक उत्पाद अपनी शुद्धता और ताजगी के मामले में उत्कृष्ट हो।</p>
+                    
+                    <div class="feature-badge">गुणवत्ता</div>
+                    <div class="feature-badge">शुद्धता</div>
+                    <div class="feature-badge">समय पर डिलीवरी</div>
                     
                     <div class="proprietor-info">
                         <h4>Proprietor</h4>
@@ -913,7 +985,7 @@
                         <div class="product-price">₹45/kg</div>
                         <div class="product-actions">
                             <a href="#contact" class="btn">पूछताछ करें</a>
-                            <a href="https://wa.me/+918210846551?text=मुझे सूजी की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;">WhatsApp</a>
+                            <a href="https://wa.me/+918210846551?text=मुझे सूजी की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -926,7 +998,7 @@
                         <div class="product-price">₹60/kg</div>
                         <div class="product-actions">
                             <a href="#contact" class="btn">पूछताछ करें</a>
-                            <a href="https://wa.me/+918210846551?text=मुझे बेसन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;">WhatsApp</a>
+                            <a href="https://wa.me/+918210846551?text=मुझे बेसन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -938,7 +1010,7 @@
                         <div class="product-price">₹80-200/kg</div>
                         <div class="product-actions">
                             <a href="#contact" class="btn">पूछताछ करें</a>
-                            <a href="https://wa.me/+918210846551?text=मुझे मसालों की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;">WhatsApp</a>
+                            <a href="https://wa.me/+918210846551?text=मुझे मसालों की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -951,7 +1023,7 @@
                         <div class="product-price">₹70/kg</div>
                         <div class="product-actions">
                             <a href="#contact" class="btn">पूछताछ करें</a>
-                            <a href="https://wa.me/+918210846551?text=मुझे सोयाबीन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;">WhatsApp</a>
+                            <a href="https://wa.me/+918210846551?text=मुझे सोयाबीन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1193,21 +1265,21 @@
                 <div class="footer-col">
                     <h3>उत्पाद</h3>
                     <ul class="footer-links">
-                        <li><a href="#products">सूजी</a></li>
-                        <li><a href="#products">बेसन</a></li>
-                        <li><a href="#products">मसाला</a></li>
-                        <li><a href="#products">सोयाबीन</a></li>
-                        <li><a href="#products">सेबई</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> सूजी</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> बेसन</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> मसाला</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> सोयाबीन</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> सेबई</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>उपयोगी लिंक</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">होम</a></li>
-                        <li><a href="#about">हमारे बारे में</a></li>
-                        <li><a href="#products">उत्पाद</a></li>
-                        <li><a href="#delivery">फास्ट डिलीवरी</a></li>
-                        <li><a href="#contact">संपर्क</a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> होम</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> हमारे बारे में</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> उत्पाद</a></li>
+                        <li><a href="#delivery"><i class="fas fa-chevron-right"></i> फास्ट डिलीवरी</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> संपर्क</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1360,7 +1432,7 @@
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = Math.floor(progress * (end - start) + start) + "+";
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 }
@@ -1383,6 +1455,30 @@
         }, { threshold: 0.5 });
 
         observer.observe(document.querySelector('.stats'));
+        
+        // Add active class to current navigation item based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
     </script>
 </body>
 </html>
