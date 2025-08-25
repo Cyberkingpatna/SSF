@@ -1,51 +1,54 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHREE SHYAM FOOD - Premium Food Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #e67e22;
-            --secondary: #2c3e50;
+            --primary: #2c3e50;
+            --secondary: #e67e22;
             --accent: #16a085;
-            --light: #ecf0f1;
+            --light: #f8f9fa;
             --dark: #2c3e50;
-            --success: #27ae60;
-            --warning: #f39c12;
-            --danger: #e74c3c;
+            --gray: #95a5a6;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: #f9f9f9;
+            font-family: 'Montserrat', sans-serif;
             color: #333;
             line-height: 1.6;
+            background-color: #f9f9f9;
         }
 
-        /* Header Styles */
-        header {
-            background: linear-gradient(to right, var(--secondary), var(--dark));
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {
@@ -57,11 +60,12 @@
         .logo {
             display: flex;
             align-items: center;
+            gap: 15px;
         }
 
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
+        .logo-icon {
+            font-size: 32px;
+            color: var(--secondary);
         }
 
         .logo-text {
@@ -70,13 +74,14 @@
         }
 
         .logo-text h1 {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 28px;
+            line-height: 1.2;
         }
 
         .logo-text span {
-            font-size: 12px;
-            color: var(--primary);
+            font-size: 13px;
+            color: var(--secondary);
+            letter-spacing: 1.5px;
         }
 
         nav ul {
@@ -85,7 +90,7 @@
         }
 
         nav ul li {
-            margin-left: 25px;
+            margin-left: 30px;
         }
 
         nav ul li a {
@@ -97,7 +102,7 @@
         }
 
         nav ul li a:hover {
-            color: var(--primary);
+            color: var(--secondary);
         }
 
         nav ul li a::after {
@@ -107,7 +112,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--primary);
+            background-color: var(--secondary);
             transition: width 0.3s;
         }
 
@@ -131,20 +136,21 @@
         }
 
         .hero h2 {
-            font-size: 42px;
+            font-size: 48px;
             margin-bottom: 20px;
             color: white;
         }
 
         .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary);
+            padding: 14px 35px;
+            background: var(--secondary);
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -152,29 +158,32 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn:hover {
             background: #d35400;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Services Section */
         .services {
-            padding: 80px 0;
+            padding: 100px 0;
             background: white;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .section-title h2 {
-            font-size: 36px;
-            color: var(--secondary);
-            margin-bottom: 15px;
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
@@ -182,32 +191,35 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 70px;
+            width: 80px;
             height: 3px;
-            background: var(--primary);
-            bottom: -10px;
+            background: var(--secondary);
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
         }
 
         .section-title p {
-            color: #777;
+            color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
+            font-size: 18px;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
         .service-card {
-            background: #f8f9fa;
+            background: var(--light);
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 40px 30px;
         }
 
         .service-card:hover {
@@ -215,30 +227,16 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .service-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 25px;
+        .service-icon {
+            font-size: 50px;
+            color: var(--secondary);
+            margin-bottom: 25px;
         }
 
         .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--secondary);
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary);
         }
 
         .service-content p {
@@ -248,14 +246,14 @@
 
         /* Products Section */
         .products {
-            padding: 80px 0;
-            background: #f8f9fa;
+            padding: 100px 0;
+            background: var(--light);
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .product-card {
@@ -271,7 +269,7 @@
         }
 
         .product-img {
-            height: 180px;
+            height: 200px;
             overflow: hidden;
         }
 
@@ -279,17 +277,22 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
         }
 
         .product-content {
-            padding: 20px;
+            padding: 25px;
             text-align: center;
         }
 
         .product-content h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--secondary);
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
 
         .product-content p {
@@ -297,29 +300,23 @@
             margin-bottom: 15px;
         }
 
-        .price {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
         /* About Section */
         .about {
-            padding: 80px 0;
+            padding: 100px 0;
             background: white;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 60px;
             align-items: center;
         }
 
         .about-img {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .about-img img {
@@ -329,104 +326,193 @@
         }
 
         .about-text h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: var(--secondary);
+            font-size: 40px;
+            margin-bottom: 25px;
+            color: var(--primary);
         }
 
         .about-text p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #666;
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            color: white;
+        }
+
+        .testimonials .section-title h2 {
+            color: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--secondary);
+            font-size: 14px;
         }
 
         /* Contact Section */
         .contact {
-            padding: 80px 0;
-            background: #f8f9fa;
+            padding: 100px 0;
+            background: var(--light);
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 60px;
         }
 
         .contact-info {
-            background: var(--secondary);
+            background: var(--primary);
             color: white;
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: 10px;
         }
 
         .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 28px;
+            margin-bottom: 25px;
         }
 
         .contact-info p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
         }
 
         .contact-info i {
-            margin-right: 10px;
-            color: var(--primary);
+            margin-right: 15px;
+            color: var(--secondary);
+            font-size: 20px;
+            width: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
         }
 
         .contact-form {
             background: white;
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
         .contact-form h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--secondary);
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--primary);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 500;
+            color: var(--dark);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .form-group textarea {
-            min-height: 120px;
+            min-height: 150px;
+            resize: vertical;
         }
 
         /* Footer */
         footer {
-            background: var(--secondary);
+            background: var(--dark);
             color: white;
-            padding: 60px 0 30px;
+            padding: 70px 0 30px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
+            font-size: 22px;
+            margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
         }
@@ -436,14 +522,15 @@
             position: absolute;
             width: 40px;
             height: 2px;
-            background: var(--primary);
+            background: var(--secondary);
             bottom: 0;
             left: 0;
         }
 
         .footer-column p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #bbb;
+            line-height: 1.8;
         }
 
         .footer-links {
@@ -451,39 +538,24 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .footer-links a {
             color: #bbb;
             text-decoration: none;
             transition: color 0.3s;
+            display: block;
         }
 
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--secondary);
+            transform: translateX(5px);
         }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
+        .footer-links i {
+            margin-right: 10px;
+            font-size: 14px;
         }
 
         .copyright {
@@ -491,6 +563,7 @@
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #bbb;
+            font-size: 15px;
         }
 
         /* Responsive Design */
@@ -503,6 +576,10 @@
             .about-img {
                 order: -1;
             }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -511,16 +588,28 @@
             }
 
             nav ul {
-                margin-top: 20px;
+                margin-top: 25px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
             nav ul li {
-                margin: 5px 10px;
+                margin: 10px 15px;
             }
 
+            .hero {
+                padding: 80px 0;
+            }
+            
             .hero h2 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
                 font-size: 32px;
             }
         }
@@ -531,6 +620,9 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-warehouse"></i>
+                </div>
                 <div class="logo-text">
                     <h1>SHREE SHYAM FOOD</h1>
                     <span>Premium Quality Food Products</span>
@@ -539,9 +631,9 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -562,37 +654,34 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p>We offer a wide range of services to meet all your food product needs</p>
+                <p>We offer comprehensive solutions for all your food product needs</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Wholesale Distribution">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Wholesale Distribution</h3>
-                        <p>We supply high-quality food products in bulk to retailers, restaurants, and institutions across the region.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>Bulk Supply</h3>
+                        <p>We supply high-quality food products in bulk to retailers, restaurants, and institutions.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Custom Packaging">
+                    <div class="service-icon">
+                        <i class="fas fa-box"></i>
                     </div>
                     <div class="service-content">
                         <h3>Custom Packaging</h3>
-                        <p>We offer custom packaging solutions tailored to your specific requirements and branding needs.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <p>We offer custom packaging solutions tailored to your specific requirements.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Export Services">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Export Services</h3>
-                        <p>We export our premium quality products to international markets, maintaining the highest standards.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>Export Quality</h3>
+                        <p>Our products meet international standards for export to global markets.</p>
                     </div>
                 </div>
             </div>
@@ -614,7 +703,6 @@
                     <div class="product-content">
                         <h3>सूजी (Semolina)</h3>
                         <p>Premium quality semolina for various culinary uses</p>
-                        <div class="price">₹45/kg</div>
                     </div>
                 </div>
                 <div class="product-card">
@@ -624,7 +712,6 @@
                     <div class="product-content">
                         <h3>बेसन (Gram Flour)</h3>
                         <p>Fine gram flour for traditional Indian recipes</p>
-                        <div class="price">₹80/kg</div>
                     </div>
                 </div>
                 <div class="product-card">
@@ -634,7 +721,6 @@
                     <div class="product-content">
                         <h3>मसाला (Spices)</h3>
                         <p>Authentic Indian spices for flavorful cooking</p>
-                        <div class="price">₹320/kg</div>
                     </div>
                 </div>
                 <div class="product-card">
@@ -644,7 +730,6 @@
                     <div class="product-content">
                         <h3>सोयाबीन (Soybean)</h3>
                         <p>High-protein soybean for healthy meals</p>
-                        <div class="price">₹60/kg</div>
                     </div>
                 </div>
             </div>
@@ -654,20 +739,70 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
-                <p>Learn about our journey and commitment to quality</p>
-            </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h2>We Provide Premium Quality Food Products</h2>
+                    <h2>About SHREE SHYAM FOOD</h2>
                     <p>SHREE SHYAM FOOD has been a trusted name in the food industry for over two decades. We specialize in providing high-quality सूजी, बेसन, मसाला, सोयाबीन, सेबई and other food products to our valued customers.</p>
                     <p>Our commitment to quality, authenticity, and customer satisfaction has made us a preferred choice for retailers, restaurants, and households across the region.</p>
                     <p>We source our products directly from trusted farmers and producers, ensuring that we maintain the highest standards of quality and freshness.</p>
-                    <a href="#contact" class="btn">Contact Us</a>
+                    <a href="#contact" class="btn">Get In Touch</a>
                 </div>
                 <div class="about-img">
                     <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="About SHREE SHYAM FOOD">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>We take pride in delivering quality products and services</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"SHREE SHYAM FOOD has been our trusted supplier for over 5 years. Their products are always fresh and of the highest quality."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Restaurant Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The consistency in quality and timely delivery makes SHREE SHYAM FOOD our preferred choice for all our food product needs."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Retail Chain Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"We've been using SHREE SHYAM FOOD's products in our manufacturing process for years and have never been disappointed."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Vikram Singh</h4>
+                            <p>Food Processing Unit</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -731,21 +866,21 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Products</h3>
                     <ul class="footer-links">
-                        <li><a href="#">सूजी (Semolina)</a></li>
-                        <li><a href="#">बेसन (Gram Flour)</a></li>
-                        <li><a href="#">मसाला (Spices)</a></li>
-                        <li><a href="#">सोयाबीन (Soybean)</a></li>
-                        <li><a href="#">सेबई (Vermicelli)</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> सूजी (Semolina)</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> बेसन (Gram Flour)</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> मसाला (Spices)</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> सोयाबीन (Soybean)</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> सेबई (Vermicelli)</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -763,7 +898,7 @@
 
     <script>
         // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
+        document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
