@@ -14,6 +14,7 @@
             --light: #f8f9fa;
             --dark: #2c3e50;
             --gray: #95a5a6;
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -27,6 +28,7 @@
             color: #333;
             line-height: 1.6;
             background-color: #f9f9f9;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -47,7 +49,7 @@
             padding: 15px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -66,6 +68,13 @@
         .logo-icon {
             font-size: 32px;
             color: var(--secondary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .logo-text {
@@ -97,7 +106,7 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: var(--transition);
             position: relative;
         }
 
@@ -113,11 +122,21 @@
             bottom: -5px;
             left: 0;
             background-color: var(--secondary);
-            transition: width 0.3s;
+            transition: var(--transition);
         }
 
         nav ul li a:hover::after {
             width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
         }
 
         /* Hero Section */
@@ -125,14 +144,22 @@
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
-            padding: 100px 0;
+            padding: 150px 0;
             text-align: center;
+            position: relative;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero h2 {
@@ -155,18 +182,35 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: var(--transition);
             border: none;
             cursor: pointer;
             font-size: 16px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn:hover {
             background: #d35400;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition);
+        }
+
+        .btn:hover::after {
+            left: 100%;
         }
 
         /* Services Section */
@@ -216,32 +260,66 @@
             background: var(--light);
             border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: var(--transition);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
             padding: 40px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--secondary);
+            z-index: -1;
+            transition: var(--transition);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-card:hover .service-icon {
+            color: white;
         }
 
         .service-icon {
             font-size: 50px;
             color: var(--secondary);
             margin-bottom: 25px;
+            transition: var(--transition);
         }
 
         .service-content h3 {
             font-size: 24px;
             margin-bottom: 20px;
             color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-content h3 {
+            color: white;
         }
 
         .service-content p {
             color: #666;
             margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-content p {
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /* Products Section */
@@ -261,36 +339,43 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
+            transition: var(--transition);
+            position: relative;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
         .product-img {
             height: 200px;
             overflow: hidden;
-            background: #f5f5f5;
+            background: linear-gradient(45deg, #f3f3f3, #e0e0e0);
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
-        .product-img img {
+        .product-img::after {
+            content: '';
+            position: absolute;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
         }
 
-        .product-card:hover .product-img img {
-            transform: scale(1.05);
+        .product-img i {
+            font-size: 60px;
+            color: var(--secondary);
+            z-index: 1;
         }
 
         .product-content {
             padding: 25px;
             text-align: center;
+            position: relative;
         }
 
         .product-content h3 {
@@ -304,10 +389,52 @@
             margin-bottom: 15px;
         }
 
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(230, 126, 34, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-overlay-content {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .product-overlay-content h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
         /* About Section */
         .about {
             padding: 100px 0;
             background: white;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+            opacity: 0.05;
+            z-index: 0;
         }
 
         .about-content {
@@ -315,6 +442,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .about-img {
@@ -326,12 +455,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
-        .about-img img {
+        .about-img::after {
+            content: '';
+            position: absolute;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background: linear-gradient(45deg, var(--primary) 0%, transparent 100%);
+            opacity: 0.2;
+        }
+
+        .about-img i {
+            font-size: 100px;
+            color: #ccc;
         }
 
         .about-text h2 {
@@ -346,11 +484,45 @@
             line-height: 1.8;
         }
 
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
         /* Testimonials */
         .testimonials {
             padding: 100px 0;
             background: linear-gradient(to right, var(--primary), var(--dark));
             color: white;
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+            opacity: 0.1;
         }
 
         .testimonials .section-title h2 {
@@ -361,6 +533,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            position: relative;
+            z-index: 1;
         }
 
         .testimonial-card {
@@ -368,12 +542,30 @@
             padding: 30px;
             border-radius: 10px;
             backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .testimonial-text {
             font-style: italic;
             margin-bottom: 20px;
             line-height: 1.8;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: """;
+            font-size: 60px;
+            color: var(--secondary);
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            opacity: 0.3;
+            font-family: Arial, sans-serif;
         }
 
         .testimonial-author {
@@ -393,10 +585,9 @@
             justify-content: center;
         }
 
-        .author-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .author-img i {
+            font-size: 30px;
+            color: #999;
         }
 
         .author-info h4 {
@@ -426,17 +617,44 @@
             color: white;
             padding: 50px 40px;
             border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(-45deg);
+            transition: var(--transition);
+        }
+
+        .contact-info:hover::before {
+            animation: shine 1.5s linear;
+        }
+
+        @keyframes shine {
+            0% { right: -50%; }
+            100% { right: 150%; }
         }
 
         .contact-info h3 {
             font-size: 28px;
             margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-info p {
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-info i {
@@ -450,6 +668,8 @@
             display: flex;
             gap: 15px;
             margin-top: 30px;
+            position: relative;
+            z-index: 1;
         }
 
         .social-links a {
@@ -461,7 +681,7 @@
             background: rgba(255, 255, 255, 0.1);
             color: white;
             border-radius: 50%;
-            transition: all 0.3s;
+            transition: var(--transition);
             font-size: 18px;
         }
 
@@ -502,6 +722,14 @@
             border-radius: 5px;
             font-size: 16px;
             font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
         }
 
         .form-group textarea {
@@ -514,6 +742,7 @@
             background: var(--dark);
             color: white;
             padding: 70px 0 30px;
+            position: relative;
         }
 
         .footer-content {
@@ -557,7 +786,7 @@
         .footer-links a {
             color: #bbb;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: var(--transition);
             display: block;
         }
 
@@ -596,12 +825,45 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
         }
 
         .whatsapp-float:hover {
             background-color: #128C7E;
             transform: scale(1.1);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            bottom: 100px;
+            right: 40px;
+            background-color: var(--secondary);
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: #d35400;
+            transform: translateY(-5px);
         }
 
         /* Responsive Design */
@@ -626,6 +888,11 @@
                 height: 50px;
                 font-size: 24px;
             }
+            
+            .back-to-top {
+                right: 20px;
+                bottom: 80px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -644,7 +911,7 @@
             }
 
             .hero {
-                padding: 80px 0;
+                padding: 100px 0;
             }
             
             .hero h2 {
@@ -658,6 +925,32 @@
             .section-title h2 {
                 font-size: 32px;
             }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            nav.active ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav.active ul li {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -665,6 +958,11 @@
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/918083651113" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
     </a>
 
     <!-- Header -->
@@ -679,7 +977,10 @@
                     <span>Premium Quality Food Products</span>
                 </div>
             </div>
-            <nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
@@ -749,38 +1050,62 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-wheat-alt" style="font-size: 60px; color: #e67e22;"></i>
+                        <i class="fas fa-wheat-alt"></i>
                     </div>
                     <div class="product-content">
                         <h3>सूजी (Semolina)</h3>
                         <p>Premium quality semolina for various culinary uses</p>
                     </div>
+                    <div class="product-overlay">
+                        <div class="product-overlay-content">
+                            <h3>सूजी (Semolina)</h3>
+                            <p>Perfect for halwa, upma, and various Indian sweets</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-mortar-pestle" style="font-size: 60px; color: #e67e22;"></i>
+                        <i class="fas fa-mortar-pestle"></i>
                     </div>
                     <div class="product-content">
                         <h3>बेसन (Gram Flour)</h3>
                         <p>Fine gram flour for traditional Indian recipes</p>
                     </div>
+                    <div class="product-overlay">
+                        <div class="product-overlay-content">
+                            <h3>बेसन (Gram Flour)</h3>
+                            <p>Ideal for pakoras, kadhi, and various snacks</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-pepper-hot" style="font-size: 60px; color: #e67e22;"></i>
+                        <i class="fas fa-pepper-hot"></i>
                     </div>
                     <div class="product-content">
                         <h3>मसाला (Spices)</h3>
                         <p>Authentic Indian spices for flavorful cooking</p>
                     </div>
+                    <div class="product-overlay">
+                        <div class="product-overlay-content">
+                            <h3>मसाला (Spices)</h3>
+                            <p>Freshly ground spices for authentic Indian flavors</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-seedling" style="font-size: 60px; color: #e67e22;"></i>
+                        <i class="fas fa-seedling"></i>
                     </div>
                     <div class="product-content">
                         <h3>सोयाबीन (Soybean)</h3>
                         <p>High-protein soybean for healthy meals</p>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-overlay-content">
+                            <h3>सोयाबीन (Soybean)</h3>
+                            <p>Nutritious and protein-rich for healthy diet</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -795,11 +1120,41 @@
                     <h2>About SHREE SHYAM FOOD</h2>
                     <p>SHREE SHYAM FOOD has been a trusted name in the food industry for over two decades. We specialize in providing high-quality सूजी, बेसन, मसाला, सोयाबीन, सेबई and other food products to our valued customers.</p>
                     <p>Our commitment to quality, authenticity, and customer satisfaction has made us a preferred choice for retailers, restaurants, and households across the region.</p>
-                    <p>We source our products directly from trusted farmers and producers, ensuring that we maintain the highest standards of quality and freshness.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Quality Assurance</h4>
+                                <p>Rigorous quality checks at every stage</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck-fast"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Fast Delivery</h4>
+                                <p>On-time delivery across the region</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Premium Quality</h4>
+                                <p>Only the finest products for our customers</p>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <a href="#contact" class="btn">Get In Touch</a>
                 </div>
                 <div class="about-img">
-                    <i class="fas fa-store" style="font-size: 100px; color: #ccc;"></i>
+                    <i class="fas fa-store"></i>
                 </div>
             </div>
         </div>
@@ -815,11 +1170,11 @@
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        <p>"SHREE SHYAM FOOD has been our trusted supplier for over 5 years. Their products are always fresh and of the highest quality."</p>
+                        <p>SHREE SHYAM FOOD has been our trusted supplier for over 5 years. Their products are always fresh and of the highest quality.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <i class="fas fa-user" style="font-size: 30px; color: #999;"></i>
+                            <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
                             <h4>Rajesh Kumar</h4>
@@ -829,11 +1184,11 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        <p>"The consistency in quality and timely delivery makes SHREE SHYAM FOOD our preferred choice for all our food product needs."</p>
+                        <p>The consistency in quality and timely delivery makes SHREE SHYAM FOOD our preferred choice for all our food product needs.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <i class="fas fa-user" style="font-size: 30px; color: #999;"></i>
+                            <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
                             <h4>Priya Sharma</h4>
@@ -843,11 +1198,11 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        <p>"We've been using SHREE SHYAM FOOD's products in our manufacturing process for years and have never been disappointed."</p>
+                        <p>We've been using SHREE SHYAM FOOD's products in our manufacturing process for years and have never been disappointed.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <i class="fas fa-user" style="font-size: 30px; color: #999;"></i>
+                            <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
                             <h4>Vikram Singh</h4>
@@ -882,7 +1237,7 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send Message</h3>
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" required>
@@ -948,6 +1303,16 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -960,11 +1325,17 @@
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu after clicking
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
             });
         });
 
         // Form submission
-        const contactForm = document.querySelector('.contact-form form');
+        const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -972,6 +1343,50 @@
                 this.reset();
             });
         }
+
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .product-card, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize elements for animation
+        document.querySelectorAll('.service-card, .product-card, .testimonial-card').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
