@@ -184,6 +184,7 @@
             left: 0;
             background-color: var(--primary);
             transition: var(--transition);
+            transition: var(--transition);
         }
 
         .nav-menu a:hover:after {
@@ -199,7 +200,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?indian,food');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3');
             background-size: cover;
             background-position: center;
             color: white;
@@ -287,7 +288,44 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: url('https://source.unsplash.com/600x400/?indian,spices') center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3') center/cover no-repeat;
+        }
+
+        /* Delivery Section */
+        .delivery {
+            background-color: var(--light);
+            text-align: center;
+        }
+
+        .delivery-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .delivery-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .delivery-feature {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .delivery-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .delivery-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
 
         /* Products Section */
@@ -365,7 +403,7 @@
             justify-content: space-between;
         }
 
-        /* Special Offers */
+        /* Special Offers Section */
         .offers {
             background: linear-gradient(to right, #FF5722, #FF9800);
             color: white;
@@ -392,6 +430,17 @@
             padding: 10px 15px;
             border-radius: 5px;
             min-width: 80px;
+        }
+
+        .timer-value {
+            font-size: 2.5rem;
+            display: block;
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 5px;
         }
 
         /* Testimonials */
@@ -451,36 +500,6 @@
         .testimonial-rating {
             color: var(--secondary);
             margin-top: 5px;
-        }
-
-        /* Gallery */
-        .gallery {
-            background-color: var(--light);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery-item {
-            height: 200px;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
         }
 
         /* Contact Section */
@@ -747,7 +766,7 @@
                 margin-bottom: 30px;
             }
 
-            .product-grid, .testimonial-grid, .gallery-grid {
+            .product-grid, .testimonial-grid, .delivery-features {
                 grid-template-columns: 1fr;
             }
 
@@ -780,6 +799,14 @@
             .section {
                 padding: 60px 0;
             }
+            
+            .timer-unit {
+                min-width: 60px;
+            }
+            
+            .timer-value {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -800,9 +827,9 @@
                 <li><a href="#home">होम</a></li>
                 <li><a href="#about">हमारे बारे में</a></li>
                 <li><a href="#products">उत्पाद</a></li>
+                <li><a href="#delivery">फास्ट डिलीवरी</a></li>
                 <li><a href="#offers">स्पेशल ऑफ़र्स</a></li>
                 <li><a href="#testimonials">ग्राहक समीक्षा</a></li>
-                <li><a href="#gallery">गैलरी</a></li>
                 <li><a href="#contact">संपर्क</a></li>
             </ul>
         </div>
@@ -865,7 +892,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-badge">बेस्टसेलर</div>
-                    <div class="product-image" style="background: url('https://source.unsplash.com/300x200/?suji,flour') center/cover no-repeat;"></div>
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1598030304671-5aa1d6f13fde?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>सूजी</h3>
                         <p>उच्च गुणवत्ता वाली शुद्ध सूजी, जो हलवा, इडली और उपमा बनाने के लिए perfect है</p>
@@ -878,7 +905,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-badge">लोकप्रिय</div>
-                    <div class="product-image" style="background: url('https://source.unsplash.com/300x200/?besan,flour') center/cover no-repeat;"></div>
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1596363505726-6138a7c06f1e?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>बेसन</h3>
                         <p>शुद्ध चने का बेसन, पकौड़े, पकौड़ी और लड्डू बनाने के लिए आदर्श</p>
@@ -890,7 +917,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image" style="background: url('https://source.unsplash.com/300x200/?spices,masala') center/cover no-repeat;"></div>
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1506368249639-73a05d6f6488?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>मसाला</h3>
                         <p>विभिन्न प्रकार के ताज़े और सुगंधित मसाले, जो आपके व्यंजनों में स्वाद जोड़ते हैं</p>
@@ -903,7 +930,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-badge">नया</div>
-                    <div class="product-image" style="background: url('https://source.unsplash.com/300x200/?soybean,seeds') center/cover no-repeat;"></div>
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>सोयाबीन</h3>
                         <p>उच्च प्रोटीन युक्त सोयाबीन, स्वस्थ आहार के लिए उत्तम</p>
@@ -918,29 +945,69 @@
         </div>
     </section>
 
+    <!-- Delivery Section -->
+    <section class="section delivery" id="delivery">
+        <div class="container">
+            <h2 class="section-title">फास्ट डिलीवरी सर्विस</h2>
+            <div class="delivery-content">
+                <p>हम धनबाद और आसपास के क्षेत्रों में समय पर डिलीवरी की गारंटी देते हैं। अपने ऑर्डर तुरंत प्राप्त करें!</p>
+                
+                <div class="delivery-features">
+                    <div class="delivery-feature">
+                        <div class="delivery-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>समय पर डिलीवरी</h3>
+                        <p>हम 24 घंटे के अंदर धनबाद में डिलीवरी की गारंटी देते हैं</p>
+                    </div>
+                    
+                    <div class="delivery-feature">
+                        <div class="delivery-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>फ्री डिलीवरी</h3>
+                        <p>1000 रुपये से अधिक के ऑर्डर पर मुफ़्त डिलीवरी</p>
+                    </div>
+                    
+                    <div class="delivery-feature">
+                        <div class="delivery-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>व्यापक कवरेज</h3>
+                        <p>धनबाद और आसपास के सभी इलाकों में डिलीवरी</p>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="btn" style="margin-top: 40px;">अभी ऑर्डर करें</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Special Offers Section -->
-    <section class="section offers" id="offers">
+    <section class="offers" id="offers">
         <div class="container offer-content">
             <h2 class="section-title" style="color: white;">विशेष ऑफ़र्स</h2>
             <p>इस सप्ताह के विशेष ऑफ़र्स का लाभ उठाएं! सीमित समय के लिए</p>
+            
             <div class="offer-timer">
                 <div class="timer-unit">
-                    <span id="days">00</span>
-                    <div>दिन</div>
+                    <span class="timer-value" id="days">00</span>
+                    <span class="timer-label">दिन</span>
                 </div>
                 <div class="timer-unit">
-                    <span id="hours">00</span>
-                    <div>घंटे</div>
+                    <span class="timer-value" id="hours">00</span>
+                    <span class="timer-label">घंटे</span>
                 </div>
                 <div class="timer-unit">
-                    <span id="minutes">00</span>
-                    <div>मिनट</div>
+                    <span class="timer-value" id="minutes">00</span>
+                    <span class="timer-label">मिनट</span>
                 </div>
                 <div class="timer-unit">
-                    <span id="seconds">00</span>
-                    <div>सेकंड</div>
+                    <span class="timer-value" id="seconds">00</span>
+                    <span class="timer-label">सेकंड</span>
                 </div>
             </div>
+            
             <a href="#contact" class="btn">अभी ऑर्डर करें</a>
         </div>
     </section>
@@ -1006,33 +1073,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section gallery" id="gallery">
-        <div class="container">
-            <h2 class="section-title">हमारी गैलरी</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://source.unsplash.com/300x200/?indian,spices" alt="Spices">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://source.unsplash.com/300x200/?flour,grains" alt="Flour">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://source.unsplash.com/300x200/?indian,food" alt="Indian Food">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://source.unsplash.com/300x200/?packaging,food" alt="Food Packaging">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://source.unsplash.com/300x200/?factory,food" alt="Food Factory">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://source.unsplash.com/300x200/?delivery,food" alt="Food Delivery">
                 </div>
             </div>
         </div>
@@ -1142,7 +1182,7 @@
                         <li><a href="#home">होम</a></li>
                         <li><a href="#about">हमारे बारे में</a></li>
                         <li><a href="#products">उत्पाद</a></li>
-                        <li><a href="#offers">स्पेशल ऑफ़र्स</a></li>
+                        <li><a href="#delivery">फास्ट डिलीवरी</a></li>
                         <li><a href="#contact">संपर्क</a></li>
                     </ul>
                 </div>
@@ -1254,25 +1294,41 @@
 
         // Offer Countdown Timer
         function updateTimer() {
-            const futureDate = new Date();
-            futureDate.setDate(futureDate.getDate() + 7);
+            // Set the date we're counting down to (7 days from now)
+            const countDownDate = new Date();
+            countDownDate.setDate(countDownDate.getDate() + 7);
             
-            const now = new Date();
-            const diff = futureDate - now;
+            // Get today's date and time
+            const now = new Date().getTime();
             
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
             
-            document.getElementById('days').innerText = days.toString().padStart(2, '0');
-            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
         }
         
-        setInterval(updateTimer, 1000);
-        updateTimer();
+        // Update the count down every 1 second
+        const timerInterval = setInterval(updateTimer, 1000);
+        updateTimer(); // Initial call
 
         // Animate stats counter when in viewport
         function animateValue(obj, start, end, duration) {
