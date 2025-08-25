@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SHREE SHYAM FOOD - Premium supplier of सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi and other food products. Quality assured and timely delivery.">
-    <meta name="keywords" content="सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi, food products, supplier, wholesale, Dhanbad">
-    <title>SHREE SHYAM FOOD - Premium Food Products</title>
+    <meta name="description" content="SHREE SHYAM FOOD - Premium supplier of सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi and other food products. Quality assured and timely delivery in Dhanbad and across India.">
+    <meta name="keywords" content="सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi, food products, supplier, wholesale, Dhanbad, best quality food products">
+    <meta name="author" content="SHREE SHYAM FOOD">
+    <meta property="og:title" content="SHREE SHYAM FOOD - Premium Food Products">
+    <meta property="og:description" content="Premium supplier of food products including सूजी, बेसन, मसाला and more. Quality assured and timely delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shreeshyamfood.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>SHREE SHYAM FOOD - Premium Food Products Supplier</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #388e3c; /* Fresh green */
@@ -26,36 +35,40 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: #333;
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
             line-height: 1.6;
-            background-color: #f9f9f9;
+            color: #333;
             overflow-x: hidden;
+            padding-top: 80px;
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Hind Siliguri', 'Montserrat', sans-serif;
             font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
         }
 
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         /* Header Styles */
         header {
-            background: var(--primary);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
         }
 
-        .nav-container {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -64,574 +77,317 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
 
-        .logo-icon {
-            font-size: 32px;
-            color: var(--secondary);
-            animation: pulse 2s infinite;
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--primary);
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text h1 {
-            font-size: 28px;
-            line-height: 1.2;
-        }
-
-        .logo-text span {
-            font-size: 13px;
-            color: var(--secondary);
-            letter-spacing: 1.5px;
-        }
-
-        nav ul {
+        .nav-menu {
             display: flex;
             list-style: none;
         }
 
-        nav ul li {
-            margin-left: 30px;
+        .nav-menu li {
+            margin-left: 25px;
         }
 
-        nav ul li a {
-            color: white;
+        .nav-menu a {
             text-decoration: none;
+            color: #333;
             font-weight: 500;
             transition: var(--transition);
             position: relative;
         }
 
-        nav ul li a:hover {
-            color: var(--secondary);
+        .nav-menu a:hover {
+            color: var(--primary);
         }
 
-        nav ul li a::after {
+        .nav-menu a:after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--secondary);
+            background-color: var(--primary);
             transition: var(--transition);
         }
 
-        nav ul li a:hover::after {
+        .nav-menu a:hover:after {
             width: 100%;
         }
 
-        /* Search Bar */
-        .search-bar {
-            display: flex;
-            align-items: center;
-            margin-left: 30px;
-        }
-
-        .search-bar input {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 4px 0 0 4px;
-            font-size: 14px;
-            width: 200px;
-        }
-
-        .search-bar button {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .search-bar button:hover {
-            background: #e65100;
-        }
-
-        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             color: white;
-            padding: 150px 0;
+            padding: 100px 0;
             text-align: center;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero h2 {
-            font-size: 48px;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: white;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 35px;
-            background: var(--secondary);
+            background-color: var(--secondary);
             color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: 600;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn:hover {
-            background: #e65100;
+            background-color: var(--primary);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: -100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: var(--transition);
-        }
-
-        .btn:hover::after {
-            left: 100%;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 3px;
-            background: var(--secondary);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .service-card {
-            background: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            padding: 40px 30px;
-            position: relative;
-            z-index: 1;
-            border-top: 4px solid var(--accent);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background: var(--secondary);
-            z-index: -1;
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            color: white;
-        }
-
-        .service-card:hover::before {
-            height: 100%;
-        }
-
-        .service-card:hover .service-icon {
-            color: white;
-        }
-
-        .service-icon {
-            font-size: 50px;
-            color: var(--secondary);
-            margin-bottom: 25px;
-            transition: var(--transition);
-        }
-
-        .service-content h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-content h3 {
-            color: white;
-        }
-
-        .service-content p {
-            color: #666;
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-content p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Products Section */
-        .products {
-            padding: 100px 0;
-            background: var(--light);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            position: relative;
-            border: 1px solid #e8f5e9;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-img {
-            height: 200px;
-            overflow: hidden;
-            background: linear-gradient(45deg, #f1f8e9, #d7e8c8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .product-img::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
-        }
-
-        .product-img i {
-            font-size: 60px;
-            color: var(--secondary);
-            z-index: 1;
-        }
-
-        .product-content {
-            padding: 25px;
-            text-align: center;
-            position: relative;
-        }
-
-        .product-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .product-content p {
-            color: #777;
-            margin-bottom: 15px;
-        }
-
-        .product-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(121, 85, 72, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-overlay {
-            opacity: 1;
-        }
-
-        .product-overlay-content {
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-
-        .product-overlay-content h3 {
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        /* Why Choose Us Section */
-        .why-choose-us {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 30px;
-            background: var(--light);
-            padding: 25px;
-            border-radius: 10px;
-            transition: var(--transition);
-        }
-
-        .feature-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--secondary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            font-size: 24px;
-        }
-
-        .feature-text h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .feature-text p {
-            color: #666;
-            line-height: 1.6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* About Section */
         .about {
-            padding: 100px 0;
-            background: white;
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
             position: relative;
         }
 
-        .about::before {
+        .section-title:after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
-            opacity: 0.05;
-            z-index: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .about-img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            background: #f5f5f5;
-            height: 400px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            background: linear-gradient(45deg, #e8f5e9, #c8e6c9);
+            flex-wrap: wrap;
         }
 
-        .about-img::after {
-            content: '';
-            position: absolute;
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, var(--primary) 0%, transparent 100%);
-            opacity: 0.2;
+            object-fit: cover;
+            transition: var(--transition);
         }
 
-        .about-img i {
-            font-size: 100px;
-            color: var(--accent);
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
         }
 
-        .about-text h2 {
-            font-size: 40px;
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
             margin-bottom: 25px;
-            color: var(--primary);
         }
 
-        .about-text p {
+        .contact-info-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
             margin-bottom: 20px;
-            color: #666;
-            line-height: 1.8;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(56, 142, 60, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Testimonials */
         .testimonials {
-            padding: 100px 0;
-            background: linear-gradient(to right, var(--primary), var(--dark));
-            color: white;
-            position: relative;
-        }
-
-        .testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
-            opacity: 0.1;
-        }
-
-        .testimonials .section-title h2 {
-            color: white;
+            padding: 80px 0;
         }
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
-            position: relative;
-            z-index: 1;
+            margin-top: 50px;
         }
 
         .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
+            background-color: white;
             padding: 30px;
             border-radius: 10px;
-            backdrop-filter: blur(5px);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.8;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             position: relative;
         }
 
-        .testimonial-text::before {
-            content: """;
-            font-size: 60px;
-            color: var(--secondary);
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--light);
             position: absolute;
-            top: -20px;
-            left: -15px;
-            opacity: 0.3;
-            font-family: Arial, sans-serif;
+            top: 10px;
+            right: 20px;
+            line-height: 1;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .testimonial-author {
@@ -639,247 +395,70 @@
             align-items: center;
         }
 
-        .author-img {
-            width: 60px;
-            height: 60px;
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            overflow: hidden;
+            object-fit: cover;
             margin-right: 15px;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .author-img i {
-            font-size: 30px;
-            color: #999;
-        }
-
-        .author-info h4 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .author-info p {
-            color: var(--secondary);
-            font-size: 14px;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 80px 0;
-            background: var(--light);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .stat-item {
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            border-bottom: 4px solid var(--accent);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 10px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .stat-text {
-            font-size: 18px;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background: var(--light);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact-info {
-            background: var(--primary);
+        /* Footer */
+        footer {
+            background-color: var(--dark);
             color: white;
-            padding: 50px 40px;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
+            padding: 60px 0 20px;
         }
 
-        .contact-info::before {
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(-45deg);
-            transition: var(--transition);
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
         }
 
-        .contact-info:hover::before {
-            animation: shine 1.5s linear;
-        }
-
-        @keyframes shine {
-            0% { right: -50%; }
-            100% { right: 150%; }
-        }
-
-        .contact-info h3 {
-            font-size: 28px;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-info p {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-info i {
-            margin-right: 15px;
-            color: var(--secondary);
-            font-size: 20px;
-            width: 25px;
+        .footer-col p {
+            margin-bottom: 15px;
         }
 
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 30px;
-            position: relative;
-            z-index: 1;
+            margin-top: 20px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
+            color: white;
             transition: var(--transition);
-            font-size: 18px;
         }
 
         .social-links a:hover {
-            background: var(--secondary);
+            background-color: var(--secondary);
             transform: translateY(-3px);
-        }
-
-        .contact-form {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-form h3 {
-            font-size: 28px;
-            margin-bottom: 25px;
-            color: var(--primary);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--dark);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            font-family: 'Montserrat', sans-serif;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 70px 0 30px;
-            position: relative;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-column h3 {
-            font-size: 22px;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            background: var(--secondary);
-            bottom: 0;
-            left: 0;
-        }
-
-        .footer-column p {
-            margin-bottom: 20px;
-            color: #bbb;
-            line-height: 1.8;
         }
 
         .footer-links {
@@ -887,61 +466,29 @@
         }
 
         .footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: #bbb;
+            color: #ccc;
             text-decoration: none;
             transition: var(--transition);
-            display: block;
         }
 
         .footer-links a:hover {
-            color: var(--secondary);
-            transform: translateX(5px);
-        }
-
-        .footer-links i {
-            margin-right: 10px;
-            font-size: 14px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            margin-top: 20px;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 4px 0 0 4px;
-        }
-
-        .newsletter-form button {
-            background: var(--secondary);
             color: white;
-            border: none;
-            padding: 12px 15px;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .newsletter-form button:hover {
-            background: #e65100;
+            padding-left: 5px;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bbb;
-            font-size: 15px;
+            font-size: 0.9rem;
+            color: #ccc;
         }
 
-        /* WhatsApp Button */
+        /* WhatsApp Float Button */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -949,7 +496,7 @@
             bottom: 40px;
             right: 40px;
             background-color: #25d366;
-            color: #FFF;
+            color: white;
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
@@ -963,261 +510,127 @@
         }
 
         .whatsapp-float:hover {
-            background-color: #128C7E;
             transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
         }
 
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            width: 50px;
-            height: 50px;
-            bottom: 100px;
-            right: 40px;
-            background-color: var(--secondary);
-            color: #FFF;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 20px;
-            box-shadow: 0 4px 10px rgba(245, 124, 0, 0.3);
-            z-index: 99;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: #e65100;
-            transform: translateY(-5px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
-
-            .about-img {
-                order: -1;
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
             }
-            
-            .hero h2 {
-                font-size: 36px;
-            }
-            
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-            }
-            
-            .back-to-top {
-                right: 20px;
-                bottom: 80px;
-            }
-            
-            .search-bar {
-                display: none;
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
 
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                align-items: flex-start;
+            body {
+                padding-top: 70px;
             }
 
-            nav ul {
-                margin-top: 25px;
-                flex-wrap: wrap;
-                justify-content: center;
-                width: 100%;
-            }
-
-            nav ul li {
-                margin: 10px 15px;
-            }
-
-            .hero {
-                padding: 100px 0;
-            }
-            
-            .hero h2 {
-                font-size: 32px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section-title h2 {
-                font-size: 32px;
-            }
-            
             .mobile-menu-btn {
                 display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
             }
-            
-            nav {
-                display: none;
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
                 width: 100%;
-            }
-            
-            nav.active {
-                display: block;
-                width: 100%;
-                margin-top: 20px;
-            }
-            
-            nav.active ul {
+                height: calc(100vh - 70px);
+                background-color: white;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
-            
-            nav.active ul li {
-                margin: 10px 0;
-                width: 100%;
-                text-align: center;
+
+            .nav-menu.active {
+                left: 0;
             }
-            
-            .feature-item {
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content, .contact-container {
                 flex-direction: column;
-                text-align: center;
             }
-            
-            .feature-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
+
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
             }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .stats-grid {
+
+            .product-grid, .testimonial-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .hero h2 {
-                font-size: 28px;
-            }
-            
-            .logo-text h1 {
-                font-size: 22px;
-            }
-            
-            .section-title h2 {
-                font-size: 28px;
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/+918210846551" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
     <!-- Header -->
     <header>
-        <div class="container nav-container">
+        <div class="container header-container">
             <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <div class="logo-text">
-                    <h1>SHREE SHYAM FOOD</h1>
-                    <span>Premium Quality Food Products</span>
-                </div>
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cmVjdCB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiMzODhFM0MiIHJ4PSI1Ii8+PHBhdGggZD0iTTI1IDEwQzE2LjcxIDEwIDEwIDE2LjcxIDEwIDI1czYuNzEgMTUgMTUgMTUgMTUtNi43MSAxNS0xNVMzMy4yOSAxMCAyNSAxMHptMCAyNUMxOC45MzQgMzUgMTQgMzAuMDY2IDE0IDI0YzAtNi4wNjYgNC45MzQtMTEgMTEtMTFzMTEgNC45MzQgMTEgMTFjMCA2LjA2Ni00LjkzNCAxMS0xMSAxMXoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMzIgMjNsLTggNS04LTUtOC01IDUtOCA1IDggOC01eiIgZmlsbD0iI2Y1N2MwMCIvPjwvc3ZnPg==" alt="SHREE SHYAM FOOD Logo">
+                <h1>SHREE SHYAM FOOD</h1>
             </div>
-            
-            <div class="search-bar">
-                <input type="text" placeholder="Search products...">
-                <button><i class="fas fa-search"></i></button>
-            </div>
-            
-            <button class="mobile-menu-btn">
+            <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
-            </button>
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">होम</a></li>
+                <li><a href="#about">हमारे बारे में</a></li>
+                <li><a href="#products">उत्पाद</a></li>
+                <li><a href="#testimonials">ग्राहक समीक्षा</a></li>
+                <li><a href="#contact">संपर्क</a></li>
+            </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container hero-content">
-            <h2>Premium Quality Food Products</h2>
-            <p>We provide the finest सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi and other food products with unmatched quality and service.</p>
-            <div>
-                <a href="#products" class="btn">Explore Products</a>
-                <a href="#contact" class="btn" style="background: transparent; border: 2px solid white; margin-left: 15px;">Contact Us</a>
-            </div>
+        <div class="container">
+            <h2>प्रीमियम क्वालिटी फूड प्रोडक्ट्स</h2>
+            <p>SHREE SHYAM FOOD - सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi और अन्य खाद्य उत्पादों का विश्वसनीय आपूर्तिकर्ता</p>
+            <a href="#products" class="btn">हमारे उत्पाद देखें</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer comprehensive solutions for all your food product needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Bulk Supply</h3>
-                        <p>We supply high-quality food products in bulk to retailers, restaurants, and institutions.</p>
-                    </div>
+            <h2 class="section-title">हमारे बारे में</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>SHREE SHYAM FOOD 2010 से खाद्य उत्पादों की आपूर्ति में एक विश्वसनीय नाम रहा है। हम गुणवत्ता, शुद्धता और समय पर वितरण पर ध्यान देने के साथ अपने ग्राहकों को सर्वोत्तम उत्पाद प्रदान करने के लिए प्रतिबद्ध हैं।</p>
+                    <p>हमारे उत्पादों की श्रेणी में सूजी, बेसन, विभिन्न प्रकार के मसाले, सोयाबीन, सेबई, पास्ता, धनिया, हल्दी और अन्य आवश्यक खाद्य पदार्थ शामिल हैं। हमारी प्राथमिकता हमेशा से हमारे ग्राहकों की संतुष्टि रही है।</p>
+                    <p>हमारी टीम गुणवत्ता नियंत्रण के उच्चतम मानकों को बनाए रखती है, यह सुनिश्चित करती है कि प्रत्येक उत्पाद अपनी शुद्धता और ताजगी के मामले में उत्कृष्ट हो।</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-box"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Custom Packaging</h3>
-                        <p>We offer custom packaging solutions tailored to your specific requirements.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Export Quality</h3>
-                        <p>Our products meet international standards for export to global markets.</p>
-                    </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SHREE SHYAM FOOD Products">
                 </div>
             </div>
         </div>
@@ -1226,311 +639,90 @@
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Products</h2>
-                <p>Discover our range of high-quality food products</p>
-            </div>
-            <div class="products-grid">
+            <h2 class="section-title">हमारे उत्पाद</h2>
+            <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-wheat-alt"></i>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1598030304671-5aa1d6f13fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="सूजी">
                     </div>
-                    <div class="product-content">
-                        <h3>सूजी (Semolina)</h3>
-                        <p>Premium quality semolina for various culinary uses</p>
-                    </div>
-                    <div class="product-overlay">
-                        <div class="product-overlay-content">
-                            <h3>सूजी (Semolina)</h3>
-                            <p>Perfect for halwa, upma, and various Indian sweets</p>
-                            <a href="https://wa.me/918210846551" class="btn" style="margin-top: 15px;">Inquire Now</a>
-                        </div>
+                    <div class="product-info">
+                        <h3>सूजी</h3>
+                        <p>उच्च गुणवत्ता वाली शुद्ध सूजी, जो हलवा, इडली और उपमा बनाने के लिए perfect है</p>
+                        <a href="#contact" class="btn">पूछताछ करें</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-mortar-pestle"></i>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1596363505726-6138a7c06f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="बेसन">
                     </div>
-                    <div class="product-content">
-                        <h3>बेसन (Gram Flour)</h3>
-                        <p>Fine gram flour for traditional Indian recipes</p>
-                    </div>
-                    <div class="product-overlay">
-                        <div class="product-overlay-content">
-                            <h3>बेसन (Gram Flour)</h3>
-                            <p>Ideal for pakoras, kadhi, and various snacks</p>
-                            <a href="https://wa.me/918210846551" class="btn" style="margin-top: 15px;">Inquire Now</a>
-                        </div>
+                    <div class="product-info">
+                        <h3>बेसन</h3>
+                        <p>शुद्ध चने का बेसन, पकौड़े, पकौड़ी और लड्डू बनाने के लिए आदर्श</p>
+                        <a href="#contact" class="btn">पूछताछ करें</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-pepper-hot"></i>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="मसाला">
                     </div>
-                    <div class="product-content">
-                        <h3>मसाला (Spices)</h3>
-                        <p>Authentic Indian spices for flavorful cooking</p>
-                    </div>
-                    <div class="product-overlay">
-                        <div class="product-overlay-content">
-                            <h3>मसाला (Spices)</h3>
-                            <p>Freshly ground spices for authentic Indian flavors</p>
-                            <a href="https://wa.me/918210846551" class="btn" style="margin-top: 15px;">Inquire Now</a>
-                        </div>
+                    <div class="product-info">
+                        <h3>मसाला</h3>
+                        <p>विभिन्न प्रकार के ताज़े और सुगंधित मसाले, जो आपके व्यंजनों में स्वाद जोड़ते हैं</p>
+                        <a href="#contact" class="btn">पूछताछ करें</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-seedling"></i>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="सोयाबीन">
                     </div>
-                    <div class="product-content">
-                        <h3>सोयाबीन (Soybean)</h3>
-                        <p>High-protein soybean for healthy meals</p>
+                    <div class="product-info">
+                        <h3>सोयाबीन</h3>
+                        <p>उच्च प्रोटीन युक्त सोयाबीन, स्वस्थ आहार के लिए उत्तम</p>
+                        <a href="#contact" class="btn">पूछताछ करें</a>
                     </div>
-                    <div class="product-overlay">
-                        <div class="product-overlay-content">
-                            <h3>सोयाबीन (Soybean)</h3>
-                            <p>Nutritious and protein-rich for healthy diet</p>
-                            <a href="https://wa.me/918210846551" class="btn" style="margin-top: 15px;">Inquire Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-pasta"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3>Pasta</h3>
-                        <p>High-quality pasta for all your culinary needs</p>
-                    </div>
-                    <div class="product-overlay">
-                        <div class="product-overlay-content">
-                            <h3>Pasta</h3>
-                            <p>Available in various shapes and sizes for different dishes</p>
-                            <a href="https://wa.me/918210846551" class="btn" style="margin-top: 15px;">Inquire Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3>Dhaniya (Coriander)</h3>
-                        <p>Fresh and aromatic coriander for flavoring dishes</p>
-                    </div>
-                    <div class="product-overlay">
-                        <div class="product-overlay-content">
-                            <h3> धनिया (Dhaniya) (Coriander)</h3>
-                            <p>Enhance the flavor of your dishes with our premium coriander</p>
-                            <a href="https://wa.me/918210846551" class="btn" style="margin-top: 15px;">Inquire Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-root"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3>Haldi (Turmeric)</h3>
-                        <p>Pure and natural turmeric with medicinal properties</p>
-                    </div>
-                    <div class="product-overlay">
-                        <div class="product-overlay-content">
-                            <h3>Haldi (Turmeric)</h3>
-                            <p>Add color and health benefits to your food with our turmeric</p>
-                            <a href="https://wa.me/918210846551" class="btn" style="margin-top: 15px;">Inquire Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-wheat"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3>सेबई (Vermicelli)</h3>
-                        <p>Thin vermicelli for sweets and snacks</p>
-                    </div>
-                    <div class="product-overlay">
-                        <div class="product-overlay-content">
-                            <h3>सेबई (Vermicelli)</h3>
-                            <p>Perfect for making kheer, upma, and other delicious dishes</p>
-                            <a href="https://wa.me/918210846551" class="btn" style="margin-top: 15px;">Inquire Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Us</h2>
-                <p>We are committed to excellence in every aspect of our business</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h3>Premium Quality</h3>
-                        <p>We source the finest raw materials and maintain strict quality control at every stage of production.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck-fast"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h3>Timely Delivery</h3>
-                        <p>Our efficient logistics ensure that your orders reach you on time, every time.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-indian-rupee-sign"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h3>Competitive Pricing</h3>
-                        <p>We offer the best quality products at competitive prices without compromising on quality.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h3>Customer Support</h3>
-                        <p>Our dedicated support team is always available to address your queries and concerns.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="500">0</div>
-                    <div class="stat-text">Happy Clients</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="20">0</div>
-                    <div class="stat-text">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="50">0</div>
-                    <div class="stat-text">Products</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="1000">0</div>
-                    <div class="stat-text">Orders Delivered</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About SHREE SHYAM FOOD</h2>
-                    <p>SHREE SHYAM FOOD has been a trusted name in the food industry for over two decades. We specialize in providing high-quality सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi and other food products to our valued customers.</p>
-                    <p>Our commitment to quality, authenticity, and customer satisfaction has made us a preferred choice for retailers, restaurants, and households across the region.</p>
-                    
-                    <div class="features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Quality Assurance</h4>
-                                <p>Rigorous quality checks at every stage</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-truck-fast"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Fast Delivery</h4>
-                                <p>On-time delivery across the region</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Premium Quality</h4>
-                                <p>Only the finest products for our customers</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="https://wa.me/918210846551" class="btn">Get In Touch</a>
-                </div>
-                <div class="about-img">
-                    <i class="fas fa-store"></i>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="container">
-            <div class="section-title">
-                <h2>What Our Clients Say</h2>
-                <p>We take pride in delivering quality products and services</p>
-            </div>
+            <h2 class="section-title">ग्राहक समीक्षा</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        <p>SHREE SHYAM FOOD has been our trusted supplier for over 5 years. Their products are always fresh and of the highest quality.</p>
+                        <p>मैं पिछले 5 साल से SHREE SHYAM FOOD से उत्पाद खरीद रहा हूं। उनकी सूजी और बेसन की गुणवत्ता अद्वितीय है और कीमतें प्रतिस्पर्धी हैं। समय पर डिलीवरी के लिए विशेष रूप से प्रशंसा करता हूं।</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Rajesh Kumar</h4>
-                            <p>Restaurant Owner</p>
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
+                        <div>
+                            <h4>राजेश कुमार</h4>
+                            <p>रेस्तरां मालिक</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        <p>The consistency in quality and timely delivery makes SHREE SHYAM FOOD our preferred choice for all our food product needs.</p>
+                        <p>SHREE SHYAM FOOD के मसालों की गुणवत्ता अद्भुत है। वे ताज़े और सुगंधित हैं। उनकी ग्राहक सेवा उत्कृष्ट है और वे हमेशा हमारी आवश्यकताओं को पूरा करते हैं।</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Priya Sharma</h4>
-                            <p>Retail Chain Manager</p>
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
+                        <div>
+                            <h4>प्रिया शर्मा</h4>
+                            <p>कैटरिंग व्यवसाय</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        <p>We've been using SHREE SHYAM FOOD's products in our manufacturing process for years and have never been disappointed.</p>
+                        <p>हमने विभिन्न आपूर्तिकर्ताओं के साथ काम किया है, लेकिन SHREE SHYAM FOOD उत्पादों की स्थिर गुणवत्ता और विश्वसनीय सेवा के कारण हमारा पसंदीदा बन गया है। अत्यधिक अनुशंसित!</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Vikram Singh</h4>
-                            <p>Food Processing Unit</p>
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Customer">
+                        <div>
+                            <h4>विकास सिंह</h4>
+                            <p>होटल प्रबंधक</p>
                         </div>
                     </div>
                 </div>
@@ -1541,46 +733,63 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch with us for any inquiries</p>
-            </div>
-            <div class="contact-content">
+            <h2 class="section-title">हमसे संपर्क करें</h2>
+            <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Manohar Nagar, SugiyaDih Basti, Near Shiv Mandir, Dhanbad, Pin 828127</p>
-                    <p><i class="fas fa-phone"></i> +91 8210846551</p>
-                    <p><i class="fas fa-envelope"></i> info@shreeshyamfood.com</p>
-                    <p><i class="fas fa-clock"></i> Monday-Saturday: 9AM - 6PM</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>हमारा पता</h3>
+                            <p>123 फूड स्ट्रीट, धनबाद, झारखंड 826001</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>फोन नंबर</h3>
+                            <p>+91 8210846551</p>
+                            <p>+91 7004567890</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>ईमेल</h3>
+                            <p>info@shreeshyamfood.com</p>
+                            <p>sales@shreeshyamfood.com</p>
+                        </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Send Message</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" required>
+                            <label for="name">नाम</label>
+                            <input type="text" id="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" required>
+                            <label for="email">ईमेल</label>
+                            <input type="email" id="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" required>
+                            <label for="phone">फोन नंबर</label>
+                            <input type="tel" id="phone" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" required></textarea>
+                            <label for="message">संदेश</label>
+                            <textarea id="message" class="form-control" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">संदेश भेजें</button>
                     </form>
                 </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58370.47106620228!2d86.4145562940039!3d23.794587399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f6bc9e12112f97%3A0x714561aa7b586f6c!2sDhanbad%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1718897663554!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -1588,181 +797,142 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
+            <div class="footer-container">
+                <div class="footer-col">
                     <h3>SHREE SHYAM FOOD</h3>
-                    <p>Providing premium quality food products for over 20 years. We are committed to quality, authenticity, and customer satisfaction.</p>
+                    <p>प्रीमियम क्वालिटी फूड प्रोडक्ट्स का विश्वसनीय आपूर्तिकर्ता। गुणवत्ता, शुद्धता और समय पर वितरण की गारंटी।</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
+                <div class="footer-col">
+                    <h3>उत्पाद</h3>
                     <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#">सूजी</a></li>
+                        <li><a href="#">बेसन</a></li>
+                        <li><a href="#">मसाला</a></li>
+                        <li><a href="#">सोयाबीन</a></li>
+                        <li><a href="#">सेबई</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Products</h3>
+                <div class="footer-col">
+                    <h3>उपयोगी लिंक</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> सूजी (Semolina)</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> बेसन (Gram Flour)</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> मसाला (Spices)</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> सोयाबीन (Soybean)</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> सेबई (Vermicelli)</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Pasta</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Dhaniya (Coriander)</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Haldi (Turmeric)</a></li>
+                        <li><a href="#home">होम</a></li>
+                        <li><a href="#about">हमारे बारे में</a></li>
+                        <li><a href="#products">उत्पाद</a></li>
+                        <li><a href="#testimonials">ग्राहक समीक्षा</a></li>
+                        <li><a href="#contact">संपर्क</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Manohar Nagar, SugiyaDih Basti, Near Shiv Mandir, Dhanbad, Pin 828127</p>
-                    <p><i class="fas fa-phone"></i> +91 8210846551</p>
-                    <p><i class="fas fa-envelope"></i> info@shreeshyamfood.com</p>
-                    
-                    <h3 style="margin-top: 20px;">Newsletter</h3>
-                    <p>Subscribe to our newsletter for updates</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Your Email">
-                        <button><i class="fas fa-paper-plane"></i></button>
-                    </div>
+                <div class="footer-col">
+                    <h3>न्यूज़लेटर</h3>
+                    <p>हमारे नवीनतम उत्पादों और ऑफ़र के बारे में जानने के लिए सदस्यता लें</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="आपका ईमेल" required>
+                        </div>
+                        <button type="submit" class="btn">सदस्यता लें</button>
+                    </form>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 SHREE SHYAM FOOD. All Rights Reserved.</p>
+                <p>&copy; 2023 SHREE SHYAM FOOD. सर्वाधिकार सुरक्षित</p>
             </div>
         </div>
     </footer>
 
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/+918210846551" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mainNav = document.getElementById('main-nav');
+        const navMenu = document.querySelector('.nav-menu');
         
-        mobileMenuBtn.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Form Validation
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (name.trim() === '') {
+                alert('कृपया अपना नाम दर्ज करें');
+                return;
+            }
+            
+            if (email.trim() === '' || !isValidEmail(email)) {
+                alert('कृपया एक वैध ईमेल पता दर्ज करें');
+                return;
+            }
+            
+            if (phone.trim() === '' || !isValidPhone(phone)) {
+                alert('कृपया एक वैध फोन नंबर दर्ज करें');
+                return;
+            }
+            
+            if (message.trim() === '') {
+                alert('कृपया एक संदेश दर्ज करें');
+                return;
+            }
+            
+            // If all validation passes, you would typically send the form data to a server
+            alert('आपका संदेश सफलतापूर्वक भेज दिया गया है! हम जल्द ही आपसे संपर्क करेंगे।');
+            contactForm.reset();
+        });
+        
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        function isValidPhone(phone) {
+            const re = /^[0-9]{10}$/;
+            return re.test(phone);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu after clicking
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
-        });
-
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! We will get back to you soon.');
-                this.reset();
-            });
-        }
-
-        // Back to Top Button
-        const backToTopBtn = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('active');
-            } else {
-                backToTopBtn.classList.remove('active');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.service-card, .product-card, .testimonial-card, .feature-item, .stat-item');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = 1;
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        }
-
-        // Initialize elements for animation
-        document.querySelectorAll('.service-card, .product-card, .testimonial-card, .feature-item, .stat-item').forEach(element => {
-            element.style.opacity = 0;
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        });
-
-        // Counter animation for stats
-        function animateCounter() {
-            const counters = document.querySelectorAll('.stat-number');
-            const speed = 200;
-            
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
-                const increment = Math.ceil(target / speed);
-                
-                if (count < target) {
-                    counter.innerText = count + increment;
-                    setTimeout(() => animateCounter(), 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-        
-        let counterAnimated = false;
-        
-        function checkCounter() {
-            const statsSection = document.querySelector('.stats');
-            if (statsSection.getBoundingClientRect().top < window.innerHeight && !counterAnimated) {
-                animateCounter();
-                counterAnimated = true;
-            }
-        }
-
-        window.addEventListener('scroll', function() {
-            animateOnScroll();
-            checkCounter();
-        });
-        window.addEventListener('load', function() {
-            animateOnScroll();
-            checkCounter();
         });
     </script>
 </body>
