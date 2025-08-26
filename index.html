@@ -60,6 +60,14 @@
 
         .section {
             padding: 80px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title {
@@ -97,6 +105,7 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-hover);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
         }
 
         .btn-outline {
@@ -152,6 +161,13 @@
             margin-right: 10px;
             color: white;
             font-size: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .logo-text {
@@ -171,6 +187,7 @@
 
         .nav-menu li {
             margin-left: 25px;
+            position: relative;
         }
 
         .nav-menu a {
@@ -179,6 +196,13 @@
             font-weight: 500;
             transition: var(--transition);
             position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu a i {
+            margin-right: 5px;
+            font-size: 18px;
         }
 
         .nav-menu a:hover {
@@ -206,6 +230,19 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--primary);
+            background: var(--light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: var(--primary);
+            color: white;
         }
 
         /* Hero Section */
@@ -222,17 +259,41 @@
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border-right: .15em solid var(--secondary);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--secondary); }
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            animation-delay: 3.5s;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
 
         .hero-buttons {
@@ -240,6 +301,30 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
+        }
+
+        .hero-buttons .btn {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons .btn:nth-child(1) {
+            animation-delay: 4s;
+        }
+
+        .hero-buttons .btn:nth-child(2) {
+            animation-delay: 4.5s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Stats Section */
@@ -258,6 +343,15 @@
 
         .stat-item {
             padding: 20px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .stat-item h3 {
@@ -299,6 +393,14 @@
             align-items: center;
             justify-content: center;
             background: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3') center/cover no-repeat;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .proprietor-info {
@@ -307,6 +409,14 @@
             background-color: var(--light);
             border-radius: var(--card-radius);
             border-left: 4px solid var(--secondary);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .proprietor-info.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Products Section */
@@ -328,6 +438,14 @@
             transition: var(--transition);
             position: relative;
             border: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .product-card:hover {
@@ -346,6 +464,7 @@
             font-size: 0.8rem;
             font-weight: 600;
             z-index: 2;
+            animation: pulse 2s infinite;
         }
 
         .product-image {
@@ -357,6 +476,11 @@
             justify-content: center;
             background-size: cover;
             background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
         }
 
         .product-info {
@@ -394,6 +518,35 @@
             font-size: 0.9rem;
         }
 
+        /* Customization Options */
+        .customization-panel {
+            background: var(--light);
+            padding: 20px;
+            border-radius: var(--card-radius);
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .customization-option {
+            margin-bottom: 15px;
+        }
+
+        .customization-option label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .customization-option select, 
+        .customization-option input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
         /* Delivery Section */
         .delivery {
             background-color: var(--light);
@@ -418,6 +571,14 @@
             border-radius: var(--card-radius);
             box-shadow: var(--shadow);
             transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .delivery-feature.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .delivery-feature:hover {
@@ -429,6 +590,12 @@
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .delivery-feature:hover .delivery-icon {
+            transform: scale(1.2);
+            color: var(--secondary);
         }
 
         /* Special Offers Section */
@@ -459,6 +626,7 @@
             padding: 10px 15px;
             border-radius: 5px;
             min-width: 80px;
+            animation: pulse 2s infinite;
         }
 
         .timer-value {
@@ -489,6 +657,14 @@
             border-radius: var(--card-radius);
             box-shadow: var(--shadow);
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .testimonial-card:before {
@@ -549,6 +725,14 @@
             background: var(--light);
             border-radius: var(--card-radius);
             transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .certificate-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .certificate-item:hover {
@@ -605,6 +789,14 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 25px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .contact-info-item.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .contact-info-icon {
@@ -622,6 +814,14 @@
 
         .form-group {
             margin-bottom: 20px;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .form-group.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .form-group label {
@@ -658,6 +858,14 @@
             border-radius: var(--card-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .map-container.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .map-container iframe {
@@ -678,6 +886,17 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
+        }
+
+        .footer-col {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .footer-col.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .footer-col h3 {
@@ -736,6 +955,13 @@
             color: #ccc;
             text-decoration: none;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 14px;
         }
 
         .footer-links a:hover {
@@ -775,11 +1001,71 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
+            animation: pulse 2s infinite;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+        }
+
+        /* View Customization Options */
+        .view-options {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .view-option-btn {
+            background: var(--light);
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .view-option-btn:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+
+        .view-option-btn:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+
+        .view-option-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .product-list-view {
+            display: none;
+        }
+
+        .product-list-view .product-list-item {
+            display: flex;
+            background: white;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-list-view .product-list-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-list-view .product-image {
+            width: 200px;
+            height: 150px;
+            flex-shrink: 0;
+        }
+
+        .product-list-view .product-info {
+            flex: 1;
+            padding: 20px;
         }
 
         /* Responsive Styles */
@@ -789,7 +1075,7 @@
             }
 
             .mobile-menu-btn {
-                display: block;
+                display: flex;
             }
 
             .nav-menu {
@@ -860,6 +1146,15 @@
                 right: 20px;
                 font-size: 24px;
             }
+
+            .product-list-view .product-list-item {
+                flex-direction: column;
+            }
+
+            .product-list-view .product-image {
+                width: 100%;
+                height: 200px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -903,12 +1198,12 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">होम</a></li>
-                <li><a href="#about">हमारे बारे में</a></li>
-                <li><a href="#products">उत्पाद</a></li>
-                <li><a href="#certificates">प्रमाणपत्र</a></li>
-                <li><a href="#testimonials">ग्राहक समीक्षा</a></li>
-                <li><a href="#contact">संपर्क</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i> होम</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> हमारे बारे में</a></li>
+                <li><a href="#products"><i class="fas fa-shopping-basket"></i> उत्पाद</a></li>
+                <li><a href="#certificates"><i class="fas fa-certificate"></i> प्रमाणपत्र</a></li>
+                <li><a href="#testimonials"><i class="fas fa-star"></i> ग्राहक समीक्षा</a></li>
+                <li><a href="#contact"><i class="fas fa-phone-alt"></i> संपर्क</a></li>
             </ul>
         </div>
     </header>
@@ -973,7 +1268,13 @@
     <section class="section products" id="products">
         <div class="container">
             <h2 class="section-title">हमारे उत्पाद</h2>
-            <div class="product-grid">
+            
+            <div class="view-options">
+                <button class="view-option-btn active" id="gridViewBtn"><i class="fas fa-th"></i> Grid</button>
+                <button class="view-option-btn" id="listViewBtn"><i class="fas fa-list"></i> List</button>
+            </div>
+            
+            <div class="product-grid" id="productGridView">
                 <div class="product-card">
                     <div class="product-badge">बेस्टसेलर</div>
                     <div class="product-image" style="background: #f1f8e9 url('https://source.unsplash.com/300x200/?semolina') center/cover no-repeat;"></div>
@@ -985,6 +1286,20 @@
                             <a href="#contact" class="btn">पूछताछ करें</a>
                             <a href="https://wa.me/+918210846551?text=मुझे सूजी की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
                         </div>
+                    </div>
+                    <div class="customization-panel">
+                        <div class="customization-option">
+                            <label for="suji_quantity">मात्रा (किलो)</label>
+                            <input type="number" id="suji_quantity" min="1" max="100" value="1">
+                        </div>
+                        <div class="customization-option">
+                            <label for="suji_packaging">पैकेजिंग</label>
+                            <select id="suji_packaging">
+                                <option value="bag">प्लास्टिक बैग</option>
+                                <option value="box">कार्टन बॉक्स</option>
+                            </select>
+                        </div>
+                        <button class="btn" style="width: 100%;">कस्टमाइज़ेशन सहेजें</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -999,6 +1314,20 @@
                             <a href="https://wa.me/+918210846551?text=मुझे बेसन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
+                    <div class="customization-panel">
+                        <div class="customization-option">
+                            <label for="besan_quantity">मात्रा (किलो)</label>
+                            <input type="number" id="besan_quantity" min="1" max="100" value="1">
+                        </div>
+                        <div class="customization-option">
+                            <label for="besan_packaging">पैकेजिंग</label>
+                            <select id="besan_packaging">
+                                <option value="bag">प्लास्टिक बैग</option>
+                                <option value="box">कार्टन बॉक्स</option>
+                            </select>
+                        </div>
+                        <button class="btn" style="width: 100%;">कस्टमाइज़ेशन सहेजें</button>
+                    </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image" style="background: #f1f8e9 url('https://source.unsplash.com/300x200/?spices,indian') center/cover no-repeat;"></div>
@@ -1010,6 +1339,22 @@
                             <a href="#contact" class="btn">पूछताछ करें</a>
                             <a href="https://wa.me/+918210846551?text=मुझे मसालों की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
                         </div>
+                    </div>
+                    <div class="customization-panel">
+                        <div class="customization-option">
+                            <label for="masala_type">मसाला प्रकार</label>
+                            <select id="masala_type">
+                                <option value="garam_masala">गरम मसाला</option>
+                                <option value="chicken_masala">चिकन मसाला</option>
+                                <option value="fish_masala">फिश मसाला</option>
+                                <option value="sabji_masala">सब्जी मसाला</option>
+                            </select>
+                        </div>
+                        <div class="customization-option">
+                            <label for="masala_quantity">मात्रा (किलो)</label>
+                            <input type="number" id="masala_quantity" min="1" max="100" value="1">
+                        </div>
+                        <button class="btn" style="width: 100%;">कस्टमाइज़ेशन सहेजें</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1024,7 +1369,25 @@
                             <a href="https://wa.me/+918210846551?text=मुझे सोयाबीन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
+                    <div class="customization-panel">
+                        <div class="customization-option">
+                            <label for="soybean_quantity">मात्रा (किलो)</label>
+                            <input type="number" id="soybean_quantity" min="1" max="100" value="1">
+                        </div>
+                        <div class="customization-option">
+                            <label for="soybean_type">प्रकार</label>
+                            <select id="soybean_type">
+                                <option value="regular">नियमित</option>
+                                <option value="organic">ऑर्गेनिक</option>
+                            </select>
+                        </div>
+                        <button class="btn" style="width: 100%;">कस्टमाइज़ेशन सहेजें</button>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="product-list-view" id="productListView">
+                <!-- Product list view will be generated by JavaScript -->
             </div>
         </div>
     </section>
@@ -1298,7 +1661,7 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <h3>SHREE SHYAM FOOD</h3>
-                    <p>प्रीमियम क्वालिटी फूड प्रोडक्ट्स का विश्वसनीय आपूर्तिकर्ता। गुणवत्ता, शुद्धता और समय पर वितरण की गारंटी।</p>
+                    <p>प्रीमियम क्वालिटी फूड प्रोडक्ट्स का विश्वसनीय आपूर्तिकर्ता। गुणवत्ता, शुद्धता और समय पर वितरण की गारंटी。</p>
                     <p><strong>Proprietor: DIVAKAR KUMAR</strong></p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1310,21 +1673,21 @@
                 <div class="footer-col">
                     <h3>उत्पाद</h3>
                     <ul class="footer-links">
-                        <li><a href="#products">सूजी</a></li>
-                        <li><a href="#products">बेसन</a></li>
-                        <li><a href="#products">मसाला</a></li>
-                        <li><a href="#products">सोयाबीन</a></li>
-                        <li><a href="#products">सेबई</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> सूजी</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> बेसन</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> मसाला</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> सोयाबीन</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> सेबई</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>उपयोगी लिंक</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">होम</a></li>
-                        <li><a href="#about">हमारे बारे में</a></li>
-                        <li><a href="#products">उत्पाद</a></li>
-                        <li><a href="#certificates">प्रमाणपत्र</a></li>
-                        <li><a href="#contact">संपर्क</a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> होम</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> हमारे बारे में</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> उत्पाद</a></li>
+                        <li><a href="#certificates"><i class="fas fa-chevron-right"></i> प्रमाणपत्र</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> संपर्क</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1344,7 +1707,7 @@
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/+918210846551" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/+918210846551" class="whatsapp-float" target="_blank" aria-label="WhatsApp पर संपर्क करें">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1471,6 +1834,176 @@
         const timerInterval = setInterval(updateTimer, 1000);
         updateTimer(); // Initial call
 
+        // Animate stats counter when in viewport
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start) + "+";
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Start counter animation when stats section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statItems = document.querySelectorAll('.stat-item h3');
+                    statItems.forEach(item => {
+                        const value = parseInt(item.textContent.replace('+', ''));
+                        animateValue(item, 0, value, 2000);
+                    });
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.stats'));
+        
+        // Add active class to current navigation item based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+
+        // Scroll animation for elements
+        function checkScroll() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+
+            const statItems = document.querySelectorAll('.stat-item');
+            statItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                if (itemTop < window.innerHeight - 100) {
+                    item.classList.add('visible');
+                }
+            });
+
+            const aboutImage = document.querySelector('.about-image');
+            if (aboutImage) {
+                const aboutImageTop = aboutImage.getBoundingClientRect().top;
+                if (aboutImageTop < window.innerHeight - 100) {
+                    aboutImage.classList.add('visible');
+                }
+            }
+
+            const proprietorInfo = document.querySelector('.proprietor-info');
+            if (proprietorInfo) {
+                const proprietorInfoTop = proprietorInfo.getBoundingClientRect().top;
+                if (proprietorInfoTop < window.innerHeight - 100) {
+                    proprietorInfo.classList.add('visible');
+                }
+            }
+
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach((card, index) => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+
+            const deliveryFeatures = document.querySelectorAll('.delivery-feature');
+            deliveryFeatures.forEach((feature, index) => {
+                const featureTop = feature.getBoundingClientRect().top;
+                if (featureTop < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        feature.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            testimonialCards.forEach((card, index) => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+
+            const contactInfoItems = document.querySelectorAll('.contact-info-item');
+            contactInfoItems.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                if (itemTop < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups.forEach((group, index) => {
+                const groupTop = group.getBoundingClientRect().top;
+                if (groupTop < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        group.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+
+            const mapContainer = document.querySelector('.map-container');
+            if (mapContainer) {
+                const mapContainerTop = mapContainer.getBoundingClientRect().top;
+                if (mapContainerTop < window.innerHeight - 100) {
+                    mapContainer.classList.add('visible');
+                }
+            }
+
+            const footerCols = document.querySelectorAll('.footer-col');
+            footerCols.forEach((col, index) => {
+                const colTop = col.getBoundingClientRect().top;
+                if (colTop < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        col.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+
+            const certificateItems = document.querySelectorAll('.certificate-item');
+            certificateItems.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                if (itemTop < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -1478,6 +2011,65 @@
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+        });
+        
+        // Product customization toggle
+        document.querySelectorAll('.product-card').forEach(card => {
+            const customizeBtn = card.querySelector('.btn');
+            const panel = card.querySelector('.customization-panel');
+            
+            customizeBtn.addEventListener('click', (e) => {
+                if (e.target.getAttribute('href') !== '#contact') {
+                    e.preventDefault();
+                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+        
+        // View toggle functionality
+        const gridViewBtn = document.getElementById('gridViewBtn');
+        const listViewBtn = document.getElementById('listViewBtn');
+        const productGridView = document.getElementById('productGridView');
+        const productListView = document.getElementById('productListView');
+        
+        gridViewBtn.addEventListener('click', () => {
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+            productGridView.style.display = 'grid';
+            productListView.style.display = 'none';
+        });
+        
+        listViewBtn.addEventListener('click', () => {
+            listViewBtn.classList.add('active');
+            gridViewBtn.classList.remove('active');
+            productGridView.style.display = 'none';
+            productListView.style.display = 'block';
+            
+            // Generate list view from grid view
+            if (productListView.innerHTML === '') {
+                document.querySelectorAll('.product-card').forEach(card => {
+                    const title = card.querySelector('h3').textContent;
+                    const description = card.querySelector('p').textContent;
+                    const price = card.querySelector('.product-price').textContent;
+                    const image = card.querySelector('.product-image').style.backgroundImage;
+                    
+                    const listItem = document.createElement('div');
+                    listItem.className = 'product-list-item';
+                    listItem.innerHTML = `
+                        <div class="product-image" style="${image}"></div>
+                        <div class="product-info">
+                            <h3>${title}</h3>
+                            <p>${description}</p>
+                            <div class="product-price">${price}</div>
+                            <div class="product-actions">
+                                <a href="#contact" class="btn">पूछताछ करें</a>
+                                <a href="https://wa.me/+918210846551?text=मुझे ${title} की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    `;
+                    productListView.appendChild(listItem);
+                });
             }
         });
     </script>
