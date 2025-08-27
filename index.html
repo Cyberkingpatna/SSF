@@ -1068,6 +1068,152 @@
             padding: 20px;
         }
 
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 110px;
+            right: 40px;
+            width: 350px;
+            height: 450px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateY(20px) scale(0.9);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .chatbot-container.open {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .chatbot-header h3 i {
+            margin-right: 10px;
+        }
+
+        .chatbot-close {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            margin-bottom: 10px;
+            animation: fadeIn 0.3s ease;
+            position: relative;
+        }
+
+        .bot-message {
+            background: #f0f0f0;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .user-message {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .chatbot-input button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .chatbot-input button:hover {
+            background: var(--secondary);
+        }
+
+        .chatbot-toggle {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 160px;
+            right: 40px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            box-shadow: 0 4px 20px rgba(230, 81, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(230, 81, 0, 0.5);
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             body {
@@ -1154,6 +1300,26 @@
             .product-list-view .product-image {
                 width: 100%;
                 height: 200px;
+            }
+
+            .chatbot-container {
+                width: 90%;
+                height: 400px;
+                right: 5%;
+                bottom: 100px;
+            }
+
+            .chatbot-toggle {
+                bottom: 170px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
             }
         }
 
@@ -1421,7 +1587,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <h3>व्यापक कवरेज</h3>
-                        <p>धनबाद और आसपास के सभी इलाकों में डिलीवरी</p>
+                        <p>धनबाद और आसपास के सभी इलाकों में डिलי��री</p>
                     </div>
                 </div>
                 
@@ -1702,6 +1868,7 @@
             </div>
             <div class="copyright">
                 <p>&copy; 2023 SHREE SHYAM FOOD. सर्वाधिकार सुरक्षित | Proprietor: DIVAKAR KUMAR</p>
+                <p style="margin-top: 10px;">Design By <a href="https://www.fiverr.com/aman70503" target="_blank" style="color: #FF9800; text-decoration: none;">Mr. Aman Kumar</a></p>
             </div>
         </div>
     </footer>
@@ -1710,6 +1877,28 @@
     <a href="https://wa.me/+918210846551" class="whatsapp-float" target="_blank" aria-label="WhatsApp पर संपर्क करें">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Chatbot Toggle Button -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h3><i class="fas fa-robot"></i> SHREE SHYAM FOOD Assistant</h3>
+            <button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                नमस्ते! मैं SHREE SHYAM FOOD की सहायक हूं। आपको किस प्रकार की सहायता चाहिए?
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="अपना संदेश यहाँ टाइप करें...">
+            <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 
     <script>
         // Mobile Menu Toggle
@@ -2070,6 +2259,90 @@
                     `;
                     productListView.appendChild(listItem);
                 });
+            }
+        });
+
+        // Chatbot functionality
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotContainer = document.getElementById('chatbotContainer');
+        const chatbotClose = document.getElementById('chatbotClose');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotSend = document.getElementById('chatbotSend');
+
+        // Toggle chatbot
+        chatbotToggle.addEventListener('click', () => {
+            chatbotContainer.classList.toggle('open');
+        });
+
+        // Close chatbot
+        chatbotClose.addEventListener('click', () => {
+            chatbotContainer.classList.remove('open');
+        });
+
+        // Send message function
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message === '') return;
+
+            // Add user message
+            addMessage(message, 'user');
+            chatbotInput.value = '';
+
+            // Process message and generate response
+            setTimeout(() => {
+                generateResponse(message);
+            }, 500);
+        }
+
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        // Generate AI response
+        function generateResponse(message) {
+            let response = '';
+            const lowerMessage = message.toLowerCase();
+
+            // Simple AI responses based on keywords
+            if (lowerMessage.includes('नमस्ते') || lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
+                response = 'नमस्ते! SHREE SHYAM FOOD में आपका स्वागत है। मैं आपकी कैसे सहायता कर सकती हूं?';
+            } else if (lowerMessage.includes('उत्पाद') || lowerMessage.includes('product')) {
+                response = 'हमारे उत्पादों में सूजी, बेसन, मसाला, सोयाबीन, सेबई, पास्ता, धनिया, हल्दी और अन्य खाद्य उत्पाद शामिल हैं। आप किस उत्पाद के बारे में जानना चाहते हैं?';
+            } else if (lowerMessage.includes('सूजी') || lowerMessage.includes('sooji')) {
+                response = 'हमारी सूजी उच्च गुणवत्ता वाली और शुद्ध है, जो हलवा, इडली और उपमा बनाने के लिए perfect है। कीमत ₹45/kg है।';
+            } else if (lowerMessage.includes('बेसन') || lowerMessage.includes('besan')) {
+                response = 'हमारा बेसन शुद्ध चने से बना है, पकौड़े, पकौड़ी और लड्डू बनाने के लिए आदर्श। कीमत ₹60/kg है।';
+            } else if (lowerMessage.includes('मसाला') || lowerMessage.includes('masala')) {
+                response = 'हम विभिन्न प्रकार के ताज़े और सुगंधित मसाले प्रदान करते हैं। कीमत ₹80-200/kg के बीच है।';
+            } else if (lowerMessage.includes('कीमत') || lowerMessage.includes('price')) {
+                response = 'कृपया बताएं कि आप किस उत्पाद की कीमत जानना चाहते हैं?';
+            } else if (lowerMessage.includes('ऑर्डर') || lowerMessage.includes('order')) {
+                response = 'ऑर्डर करने के लिए कृपया हमें +91 8210846551 पर कॉल करें या WhatsApp करें। आप हमारे संपर्क पृष्ठ से भी संपर्क कर सकते हैं।';
+            } else if (lowerMessage.includes('डिलीवरी') || lowerMessage.includes('delivery')) {
+                response = 'हम धनबाद और आसपास के क्षेत्रों में 24 घंटे के अंदर डिलीवरी की गारंटी देते हैं। 1000 रुपये से अधिक के ऑर्डर पर मुफ़्त डिलीवरी है।';
+            } else if (lowerMessage.includes('संपर्क') || lowerMessage.includes('contact')) {
+                response = 'आप हमें +91 8210846551 पर कॉल कर सकते हैं, WhatsApp कर सकते हैं, या info@shreeshyamfood.com पर ईमेल भेज सकते हैं। हमारा पता: 123 फूड स्ट्रीट, धनबाद, झारखंड 826001 है।';
+            } else {
+                response = 'क्षमा करें, मैं आपके प्रश्न को समझ नहीं पाई। कृपया हमें +91 8210846551 पर सीधे संपर्क करें या अपना प्रश्न दोबारा पूछें।';
+            }
+
+            addMessage(response, 'bot');
+        }
+
+        // Send message on button click
+        chatbotSend.addEventListener('click', sendMessage);
+
+        // Send message on enter key
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
             }
         });
     </script>
