@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SHREE SHYAM FOOD - Premium supplier of सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi and other food products in Dhanbad, Jharkhand">
-    <meta name="keywords" content="सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi, food products, supplier, wholesale, Dhanbad, food supplier in Dhanbad">
+    <meta name="description" content="SHREE SHYAM FOOD - धनबाद में सूजी, बेसन, मसाला, सोयाबीन, सेबई, पास्ता, धनिया, हल्दी के प्रीमियम आपूर्तिकर्ता। शुद्ध और उच्च गुणवत्ता वाले खाद्य उत्पादों के लिए हमें संपर्क करें।">
+    <meta name="keywords" content="सूजी धनबाद, बेसन आपूर्तिकर्ता, मसाला वितरक, सोयाबीन धनबाद, सेबई आपूर्तिकर्ता, पास्ता थोक, धनिया हल्दी धनबाद, खाद्य उत्पाद आपूर्तिकर्ता">
     <meta name="author" content="SHREE SHYAM FOOD">
+    <meta property="og:title" content="SHREE SHYAM FOOD - धनबाद के प्रमुख खाद्य आपूर्तिकर्ता">
+    <meta property="og:description" content="प्रीमियम क्वालिटी के सूजी, बेसन, मसाला, सोयाबीन और अन्य खाद्य उत्पादों के लिए विश्वसनीय आपूर्तिकर्ता">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3">
+    <meta property="og:url" content="https://shreeshyamfood.com">
+    <meta property="og:type" content="website">
     <title>SHREE SHYAM FOOD - Premium Food Products Supplier in Dhanbad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <style>
         :root {
             --primary: #E65100;
             --secondary: #FF9800;
-            --accent: #F57C00;
+            --accent: #4CAF50;
             --light: #FFF3E0;
             --dark: #BF360C;
             --darker: #7B1FA2;
@@ -117,6 +124,22 @@
         .btn-outline:hover {
             background: var(--primary);
             color: var(--white);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: #3d8b40;
         }
 
         /* Header Styles */
@@ -327,6 +350,39 @@
             }
         }
 
+        /* Hero Slider */
+        .hero-slider {
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .owl-carousel .item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: var(--card-radius);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-slider img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 3px solid var(--secondary);
+        }
+
+        .hero-slider h4 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .hero-slider p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
         /* Stats Section */
         .stats {
             background: linear-gradient(to right, var(--primary), var(--secondary));
@@ -422,6 +478,29 @@
         /* Products Section */
         .products {
             background-color: var(--white);
+        }
+
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: var(--light);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            color: white;
         }
 
         .product-grid {
@@ -769,6 +848,12 @@
             font-family: inherit;
         }
 
+        .subscriber-count {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
         /* Contact Section */
         .contact {
             background-color: var(--white);
@@ -849,6 +934,23 @@
         textarea.form-control {
             min-height: 120px;
             resize: vertical;
+        }
+
+        .form-error {
+            color: red;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-success {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
         }
 
         .map-container {
@@ -1214,6 +1316,43 @@
             box-shadow: 0 6px 25px rgba(230, 81, 0, 0.5);
         }
 
+        /* Sticky CTA Bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        .sticky-cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .sticky-cta-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .sticky-cta-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .sticky-cta .btn {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             body {
@@ -1321,6 +1460,15 @@
                 bottom: 20px;
                 right: 20px;
             }
+
+            .sticky-cta-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .sticky-cta-buttons {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1381,7 +1529,25 @@
             <p>SHREE SHYAM FOOD - सूजी, बेसन, मसाला, सोयाबीन, सेबई, Pasta, Dhaniya, Haldi और अन्य खाद्य उत्पादों का विश्वसनीय आपूर्तिकर्ता</p>
             <div class="hero-buttons">
                 <a href="#products" class="btn">हमारे उत्पाद देखें</a>
-                <a href="#contact" class="btn btn-outline">संपर्क करें</a>
+                <a href="#contact" class="btn btn-outline">मुफ्त सैंपल पाएं</a>
+            </div>
+            
+            <div class="hero-slider owl-carousel owl-theme">
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3" alt="सूजी - SHREE SHYAM FOOD">
+                    <h4>शुद्ध सूजी</h4>
+                    <p>हलवा, इडली और उपमा के लिए बेस्ट</p>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1598630438563-00dc824f5a62?ixlib=rb-4.0.3" alt="बेसन - SHREE SHYAM FOOD">
+                    <h4>चने का बेसन</h4>
+                    <p>पकौड़े और लड्डू के लिए परफेक्ट</p>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1604322824011-8375a55d7d12?ixlib=rb-4.0.3" alt="मसाला - SHREE SHYAM FOOD">
+                    <h4>ताजे मसाले</h4>
+                    <p>सुगंधित और स्वादिष्ट</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1435,22 +1601,30 @@
         <div class="container">
             <h2 class="section-title">हमारे उत्पाद</h2>
             
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">सभी उत्पाद</button>
+                <button class="filter-btn" data-filter="suji-besan">सूजी/बेसन</button>
+                <button class="filter-btn" data-filter="masala">मसाला</button>
+                <button class="filter-btn" data-filter="pasta">पास्ता/सेबई</button>
+                <button class="filter-btn" data-filter="other">अन्य उत्पाद</button>
+            </div>
+            
             <div class="view-options">
                 <button class="view-option-btn active" id="gridViewBtn"><i class="fas fa-th"></i> Grid</button>
                 <button class="view-option-btn" id="listViewBtn"><i class="fas fa-list"></i> List</button>
             </div>
             
             <div class="product-grid" id="productGridView">
-                <div class="product-card">
+                <div class="product-card" data-category="suji-besan">
                     <div class="product-badge">बेस्टसेलर</div>
-                    <div class="product-image" style="background: #f1f8e9 url('https://source.unsplash.com/300x200/?semolina') center/cover no-repeat;"></div>
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>सूजी</h3>
                         <p>उच्च गुणवत्ता वाली शुद्ध सूजी, जो हलवा, इडली और उपमा बनाने के लिए perfect है</p>
                         <div class="product-price">₹45/kg</div>
                         <div class="product-actions">
-                            <a href="#contact" class="btn">पूछताछ करें</a>
-                            <a href="https://wa.me/+918210846551?text=मुझे सूजी की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                            <button class="btn customize-btn">कस्टमाइज करें</button>
+                            <a href="https://wa.me/+918210846551?text=मुझे सूजी की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                     <div class="customization-panel">
@@ -1465,19 +1639,19 @@
                                 <option value="box">कार्टन बॉक्स</option>
                             </select>
                         </div>
-                        <button class="btn" style="width: 100%;">कस्टमाइज़ेशन सहेजें</button>
+                        <button class="btn order-btn" data-product="सूजी">व्हाट्सएप पर ऑर्डर करें</button>
                     </div>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-category="suji-besan">
                     <div class="product-badge">लोकप्रिय</div>
-                    <div class="product-image" style="background: #f1f8e9 url('https://source.unsplash.com/300x200/?gram,flour') center/cover no-repeat;"></div>
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1598630438563-00dc824f5a62?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>बेसन</h3>
                         <p>शुद्ध चने का बेसन, पकौड़े, पकौड़ी और लड्डू बनाने के लिए आदर्श</p>
                         <div class="product-price">₹60/kg</div>
                         <div class="product-actions">
-                            <a href="#contact" class="btn">पूछताछ करें</a>
-                            <a href="https://wa.me/+918210846551?text=मुझे बेसन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                            <button class="btn customize-btn">कस्टमाइज करें</button>
+                            <a href="https://wa.me/+918210846551?text=मुझे बेसन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                     <div class="customization-panel">
@@ -1492,18 +1666,18 @@
                                 <option value="box">कार्टन बॉक्स</option>
                             </select>
                         </div>
-                        <button class="btn" style="width: 100%;">कस्टमाइज़ेशन सहेजें</button>
+                        <button class="btn order-btn" data-product="बेसन">व्हाट्सएप पर ऑर्डर करें</button>
                     </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-image" style="background: #f1f8e9 url('https://source.unsplash.com/300x200/?spices,indian') center/cover no-repeat;"></div>
+                <div class="product-card" data-category="masala">
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1604322824011-8375a55d7d12?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>मसाला</h3>
                         <p>विभिन्न प्रकार के ताज़े और सुगंधित मसाले, जो आपके व्यंजनों में स्वाद जोड़ते हैं</p>
                         <div class="product-price">₹80-200/kg</div>
                         <div class="product-actions">
-                            <a href="#contact" class="btn">पूछताछ करें</a>
-                            <a href="https://wa.me/+918210846551?text=मुझे मसालों की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                            <button class="btn customize-btn">कस्टमाइज करें</button>
+                            <a href="https://wa.me/+918210846551?text=मुझे मसालों की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                     <div class="customization-panel">
@@ -1520,19 +1694,19 @@
                             <label for="masala_quantity">मात्रा (किलो)</label>
                             <input type="number" id="masala_quantity" min="1" max="100" value="1">
                         </div>
-                        <button class="btn" style="width: 100%;">कस्टमाइज़ेशन सहेजें</button>
+                        <button class="btn order-btn" data-product="मसाला">व्हाट्सएप पर ऑर्डर करें</button>
                     </div>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-category="other">
                     <div class="product-badge">नया</div>
-                    <div class="product-image" style="background: #f1f8e9 url('https://source.unsplash.com/300x200/?soybean,seeds') center/cover no-repeat;"></div>
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>सोयाबीन</h3>
                         <p>उच्च प्रोटीन युक्त सोयाबीन, स्वस्थ आहार के लिए उत्तम</p>
                         <div class="product-price">₹70/kg</div>
                         <div class="product-actions">
-                            <a href="#contact" class="btn">पूछताछ करें</a>
-                            <a href="https://wa.me/+918210846551?text=मुझे सोयाबीन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                            <button class="btn customize-btn">कस्टमाइज करें</button>
+                            <a href="https://wa.me/+918210846551?text=मुझे सोयाबीन की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                     <div class="customization-panel">
@@ -1547,7 +1721,63 @@
                                 <option value="organic">ऑर्गेनिक</option>
                             </select>
                         </div>
-                        <button class="btn" style="width: 100%;">कस्टमाइज़ेशन सहेजें</button>
+                        <button class="btn order-btn" data-product="सोयाबीन">व्हाट्सएप पर ऑर्डर करें</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="pasta">
+                    <div class="product-badge">नया</div>
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1598866592120-ec2ba000e121?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
+                    <div class="product-info">
+                        <h3>पास्ता</h3>
+                        <p>उच्च गुणवत्ता वाला पास्ता, विभिन्न आकारों में उपलब्ध</p>
+                        <div class="product-price">₹50-80/kg</div>
+                        <div class="product-actions">
+                            <button class="btn customize-btn">कस्टमाइज करें</button>
+                            <a href="https://wa.me/+918210846551?text=मुझे पास्ता की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="customization-panel">
+                        <div class="customization-option">
+                            <label for="pasta_type">पास्ता प्रकार</label>
+                            <select id="pasta_type">
+                                <option value="penne">पेन्ने</option>
+                                <option value="fusilli">फ्यूसिली</option>
+                                <option value="macaroni">मैकरोनी</option>
+                                <option value="spaghetti">स्पेगेटी</option>
+                            </select>
+                        </div>
+                        <div class="customization-option">
+                            <label for="pasta_quantity">मात्रा (किलो)</label>
+                            <input type="number" id="pasta_quantity" min="1" max="100" value="1">
+                        </div>
+                        <button class="btn order-btn" data-product="पास्ता">व्हाट्सएप पर ऑर्डर करें</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="pasta">
+                    <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1633896949678-5b4af5ef6c9a?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
+                    <div class="product-info">
+                        <h3>सेबई</h3>
+                        <p>पारंपरिक भारतीय सेबई, मिठाई और नमकीन दोनों तरह के व्यंजनों के लिए</p>
+                        <div class="product-price">₹90/kg</div>
+                        <div class="product-actions">
+                            <button class="btn customize-btn">कस्टमाइज करें</button>
+                            <a href="https://wa.me/+918210846551?text=मुझे सेबई की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="customization-panel">
+                        <div class="customization-option">
+                            <label for="sevai_type">सेबई प्रकार</label>
+                            <select id="sevai_type">
+                                <option value="plain">सादी सेबई</option>
+                                <option value="rice">चावल की सेबई</option>
+                                <option value="wheat">गेहूं की सेबई</option>
+                            </select>
+                        </div>
+                        <div class="customization-option">
+                            <label for="sevai_quantity">मात्रा (किलो)</label>
+                            <input type="number" id="sevai_quantity" min="1" max="100" value="1">
+                        </div>
+                        <button class="btn order-btn" data-product="सेबई">व्हाट्सएप पर ऑर्डर करें</button>
                     </div>
                 </div>
             </div>
@@ -1587,7 +1817,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <h3>व्यापक कवरेज</h3>
-                        <p>धनबाद और आसपास के सभी इलाकों में डिलי��री</p>
+                        <p>धनबाद और आसपास के सभी इलाकों में डिलीवरी</p>
                     </div>
                 </div>
                 
@@ -1731,10 +1961,11 @@
             <h2 class="section-title" style="color: white;">न्यूज़लेटर सदस्यता</h2>
             <p>नवीनतम उत्पादों, ऑफ़र्स और अपडेट के लिए सदस्यता लें</p>
             
-            <form class="newsletter-form">
+            <form class="newsletter-form" id="newsletterForm">
                 <input type="email" placeholder="अपना ईमेल पता दर्ज करें" required>
                 <button type="submit" class="btn">सदस्यता लें</button>
             </form>
+            <div class="subscriber-count">500+ ग्राहकों में शामिल हों</div>
         </div>
     </section>
 
@@ -1796,23 +2027,30 @@
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">नाम</label>
+                            <label for="name">नाम *</label>
                             <input type="text" id="name" class="form-control" required>
+                            <div class="form-error" id="nameError">कृपया अपना नाम दर्ज करें</div>
                         </div>
                         <div class="form-group">
-                            <label for="email">ईमेल</label>
+                            <label for="email">ईमेल *</label>
                             <input type="email" id="email" class="form-control" required>
+                            <div class="form-error" id="emailError">कृपया एक वैध ईमेल पता दर्ज करें</div>
                         </div>
                         <div class="form-group">
-                            <label for="phone">फोन नंबर</label>
+                            <label for="phone">फोन नंबर *</label>
                             <input type="tel" id="phone" class="form-control" required>
+                            <div class="form-error" id="phoneError">कृपया एक वैध फोन नंबर दर्ज करें</div>
                         </div>
                         <div class="form-group">
-                            <label for="message">संदेश</label>
+                            <label for="message">संदेश *</label>
                             <textarea id="message" class="form-control" required></textarea>
+                            <div class="form-error" id="messageError">कृपया एक संदेश दर्ज करें</div>
                         </div>
                         <button type="submit" class="btn">संदेश भेजें</button>
                     </form>
+                    <div class="form-success" id="formSuccess">
+                        आपका संदेश सफलतापूर्वक भेज दिया गया है! हम जल्द ही आपसे संपर्क करेंगे।
+                    </div>
                 </div>
             </div>
             <div class="map-container">
@@ -1878,6 +2116,19 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta">
+        <div class="container sticky-cta-content">
+            <div class="sticky-cta-text">
+                <strong>आज ही ऑर्डर करें और 10% छूट पाएं!</strong>
+            </div>
+            <div class="sticky-cta-buttons">
+                <a href="https://wa.me/+918210846551" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> व्हाट्सएप</a>
+                <a href="tel:+918210846551" class="btn btn-accent"><i class="fas fa-phone"></i> कॉल करें</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Chatbot Toggle Button -->
     <div class="chatbot-toggle" id="chatbotToggle">
         <i class="fas fa-comments"></i>
@@ -1900,6 +2151,8 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -1920,6 +2173,29 @@
             });
         });
 
+        // Hero Slider
+        $(document).ready(function(){
+            $(".hero-slider").owlCarousel({
+                items: 3,
+                loop: true,
+                margin: 20,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:2
+                    },
+                    1000:{
+                        items:3
+                    }
+                }
+            });
+        });
+
         // Form Validation
         const contactForm = document.getElementById('contactForm');
         
@@ -1931,30 +2207,48 @@
             const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
             
-            // Simple validation
+            let isValid = true;
+            
+            // Reset errors
+            document.getElementById('nameError').style.display = 'none';
+            document.getElementById('emailError').style.display = 'none';
+            document.getElementById('phoneError').style.display = 'none';
+            document.getElementById('messageError').style.display = 'none';
+            
+            // Validate name
             if (name.trim() === '') {
-                alert('कृपया अपना नाम दर्ज करें');
-                return;
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
             }
             
+            // Validate email
             if (email.trim() === '' || !isValidEmail(email)) {
-                alert('कृपया एक वैध ईमेल पता दर्ज करें');
-                return;
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
             }
             
+            // Validate phone
             if (phone.trim() === '' || !isValidPhone(phone)) {
-                alert('कृपया एक वैध फोन नंबर दर्ज करें');
-                return;
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
             }
             
+            // Validate message
             if (message.trim() === '') {
-                alert('कृपया एक संदेश दर्ज करें');
-                return;
+                document.getElementById('messageError').style.display = 'block';
+                isValid = false;
             }
             
-            // If all validation passes, you would typically send the form data to a server
-            alert('आपका संदेश सफलतापूर्वक भेज दिया गया है! हम जल्द ही आपसे संपर्क करेंगे।');
-            contactForm.reset();
+            if (isValid) {
+                // If all validation passes, show success message
+                document.getElementById('formSuccess').style.display = 'block';
+                contactForm.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('formSuccess').style.display = 'none';
+                }, 5000);
+            }
         });
         
         function isValidEmail(email) {
@@ -1966,6 +2260,22 @@
             const re = /^[0-9]{10}$/;
             return re.test(phone);
         }
+
+        // Newsletter Form
+        const newsletterForm = document.getElementById('newsletterForm');
+        
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+            
+            if (email && isValidEmail(email)) {
+                alert('आपकी सदस्यता सफलतापूर्वक पंजीकृत हो गई है! आपको जल्द ही विशेष ऑफर प्राप्त होगा।');
+                newsletterForm.reset();
+            } else {
+                alert('कृपया एक वैध ईमेल पता दर्ज करें');
+            }
+        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2075,6 +2385,14 @@
                     link.classList.add('active-nav');
                 }
             });
+
+            // Show/hide sticky CTA
+            const stickyCta = document.querySelector('.sticky-cta');
+            if (window.scrollY > 500) {
+                stickyCta.style.display = 'block';
+            } else {
+                stickyCta.style.display = 'none';
+            }
         });
 
         // Scroll animation for elements
@@ -2204,15 +2522,46 @@
         });
         
         // Product customization toggle
-        document.querySelectorAll('.product-card').forEach(card => {
-            const customizeBtn = card.querySelector('.btn');
-            const panel = card.querySelector('.customization-panel');
-            
-            customizeBtn.addEventListener('click', (e) => {
-                if (e.target.getAttribute('href') !== '#contact') {
-                    e.preventDefault();
-                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-                }
+        document.querySelectorAll('.customize-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const panel = e.target.closest('.product-card').querySelector('.customization-panel');
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Order button functionality
+        document.querySelectorAll('.order-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const product = e.target.dataset.product;
+                const card = e.target.closest('.product-card');
+                const quantity = card.querySelector('input[type="number"]').value;
+                const packaging = card.querySelector('select').options[card.querySelector('select').selectedIndex].text;
+                
+                const message = `नमस्ते, मुझे ऑर्डर देना है:\nउत्पाद: ${product}\nमात्रा: ${quantity} kg\nपैकेजिंग: ${packaging}`;
+                const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/918210846551?text=${encodedMessage}`, '_blank');
+            });
+        });
+        
+        // Product filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                
+                // Filter products
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
         
@@ -2252,8 +2601,8 @@
                             <p>${description}</p>
                             <div class="product-price">${price}</div>
                             <div class="product-actions">
-                                <a href="#contact" class="btn">पूछताछ करें</a>
-                                <a href="https://wa.me/+918210846551?text=मुझे ${title} की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                                <button class="btn customize-btn">कस्टमाइज करें</button>
+                                <a href="https://wa.me/+918210846551?text=मुझे ${title} की कीमत और उपलब्धता के बारे में जानकारी चाहिए" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
                             </div>
                         </div>
                     `;
@@ -2345,6 +2694,36 @@
                 sendMessage();
             }
         });
+
+        // Structured data for SEO
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "FoodEstablishment",
+            "name": "SHREE SHYAM FOOD",
+            "description": "धनबाद में सूजी, बेसन, मसाला, सोयाबीन, सेबई, पास्ता, धनिया, हल्दी के प्रीमियम आपूर्तिकर्ता",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "123 फूड स्ट्रीट",
+                "addressLocality": "धनबाद",
+                "addressRegion": "झारखंड",
+                "postalCode": "826001"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "23.7946",
+                "longitude": "86.4303"
+            },
+            "telephone": "+918210846551",
+            "openingHours": "Mo-Sa 09:00-20:00",
+            "servesCuisine": "Indian Food Products",
+            "priceRange": "₹₹"
+        };
+
+        // Add structured data to the page
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(structuredData);
+        document.head.appendChild(script);
     </script>
 </body>
 </html>
