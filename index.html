@@ -1119,6 +1119,7 @@
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
+            text-align: left;
         }
 
         .footer-col h3:after {
@@ -1481,6 +1482,262 @@
             to { transform: rotate(360deg); }
         }
 
+        /* NEW FEATURES */
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 150px;
+        }
+
+        .trust-badge i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .trust-badge span {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Recipe Section */
+        .recipes {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .recipe-card {
+            background-color: var(--white);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .recipe-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .recipe-content {
+            padding: 20px;
+        }
+
+        .recipe-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .recipe-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        .recipe-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Blog Section */
+        .blog {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background-color: var(--white);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .blog-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .blog-excerpt {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .blog-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .blog-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Advanced Product Filtering */
+        .advanced-filters {
+            background: var(--light);
+            padding: 20px;
+            border-radius: var(--card-radius);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+
+        .price-range {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #priceRange {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .stock-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .in-stock {
+            background: var(--accent);
+            color: white;
+        }
+
+        .out-of-stock {
+            background: #ccc;
+            color: #666;
+        }
+
+        /* Quick Order Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .order-modal {
+            background: white;
+            border-radius: var(--card-radius);
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            position: relative;
+            transform: translateY(-50px);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .order-modal {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .modal-title {
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary);
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             body {
@@ -1536,7 +1793,7 @@
                 margin-bottom: 30px;
             }
 
-            .product-grid, .testimonial-grid, .delivery-features, .certificates-grid {
+            .product-grid, .testimonial-grid, .delivery-features, .certificates-grid, .recipe-grid, .blog-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1597,6 +1854,15 @@
             .sticky-cta-buttons {
                 justify-content: center;
             }
+
+            .advanced-filters {
+                flex-direction: column;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1643,6 +1909,8 @@
                 <li><a href="#home"><i class="fas fa-home"></i> होम</a></li>
                 <li><a href="#about"><i class="fas fa-info-circle"></i> हमारे बारे में</a></li>
                 <li><a href="#products"><i class="fas fa-shopping-basket"></i> उत्पाद</a></li>
+                <li><a href="#recipes"><i class="fas fa-utensil-spoon"></i> रेसिपी</a></li>
+                <li><a href="#blog"><i class="fas fa-blog"></i> ब्लॉग</a></li>
                 <li><a href="#certificates"><i class="fas fa-certificate"></i> प्रमाणपत्र</a></li>
                 <li><a href="#testimonials"><i class="fas fa-star"></i> ग्राहक समीक्षा</a></li>
                 <li><a href="#contact"><i class="fas fa-phone-alt"></i> संपर्क</a></li>
@@ -1658,6 +1926,7 @@
             <div class="hero-buttons">
                 <a href="#products" class="btn">हमारे उत्पाद देखें</a>
                 <a href="https://wa.me/+918210846551?text=मुझे मुफ्त सैंपल चाहिए" class="btn btn-outline">मुफ्त सैंपल पाएं</a>
+                <button class="btn btn-accent" id="quickOrderBtn">क्विक ऑर्डर</button>
             </div>
             
             <div class="hero-slider owl-carousel owl-theme">
@@ -1679,6 +1948,32 @@
             </div>
         </div>
     </section>
+
+    <!-- Trust Badges -->
+    <div class="container">
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <i class="fas fa-truck"></i>
+                <span>शीघ्र डिलीवरी</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-check-circle"></i>
+                <span>गुणवत्ता की गारंटी</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>सुरक्षित भुगतान</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-leaf"></i>
+                <span>शुद्ध उत्पाद</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-headset"></i>
+                <span>24/7 सहायता</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Stats Section -->
     <section class="stats">
@@ -1729,6 +2024,29 @@
         <div class="container">
             <h2 class="section-title">हमारे उत्पाद</h2>
             
+            <div class="advanced-filters">
+                <div class="filter-group">
+                    <label>कीमत के अनुसार छाँटें:</label>
+                    <select id="priceSort">
+                        <option value="default">डिफॉल्ट</option>
+                        <option value="low-to-high">कम से ज्यादा</option>
+                        <option value="high-to-low">ज्यादा से कम</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>कीमत रेंज:</label>
+                    <div class="price-range">
+                        <input type="range" min="0" max="500" value="200" id="priceRange">
+                        <span id="priceValue">₹0 - ₹200</span>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>उपलब्धता:</label>
+                    <label><input type="checkbox" name="availability" value="in-stock" checked> स्टॉक में</label>
+                    <label><input type="checkbox" name="availability" value="out-of-stock"> आउट ऑफ स्टॉक</label>
+                </div>
+            </div>
+            
             <div class="product-filters">
                 <button class="filter-btn active" data-filter="all">सभी उत्पाद</button>
                 <button class="filter-btn" data-filter="suji-besan">सूजी/बेसन</button>
@@ -1743,8 +2061,9 @@
             </div>
             
             <div class="product-grid" id="productGridView">
-                <div class="product-card" data-category="suji-besan">
+                <div class="product-card" data-category="suji-besan" data-price="45">
                     <div class="product-badge">बेस्टसेलर</div>
+                    <div class="stock-badge in-stock">In Stock</div>
                     <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>सूजी</h3>
@@ -1770,8 +2089,9 @@
                         <button class="btn order-btn" data-product="सूजी">व्हाट्सएप पर ऑर्डर करें</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="suji-besan">
+                <div class="product-card" data-category="suji-besan" data-price="60">
                     <div class="product-badge">लोकप्रिय</div>
+                    <div class="stock-badge in-stock">In Stock</div>
                     <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1598630438563-00dc824f5a62?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>बेसन</h3>
@@ -1797,7 +2117,8 @@
                         <button class="btn order-btn" data-product="बेसन">व्हाट्सएप पर ऑर्डर करें</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="masala">
+                <div class="product-card" data-category="masala" data-price="150">
+                    <div class="stock-badge in-stock">In Stock</div>
                     <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1604322824011-8375a55d7d12?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>मसाला</h3>
@@ -1825,8 +2146,9 @@
                         <button class="btn order-btn" data-product="मसाला">व्हाट्सएप पर ऑर्डर करें</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="other">
+                <div class="product-card" data-category="other" data-price="70">
                     <div class="product-badge">नया</div>
+                    <div class="stock-badge out-of-stock">Out of Stock</div>
                     <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>सोयाबीन</h3>
@@ -1852,8 +2174,9 @@
                         <button class="btn order-btn" data-product="सोयाबीन">व्हाट्सएप पर ऑर्डर करें</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="pasta">
+                <div class="product-card" data-category="pasta" data-price="65">
                     <div class="product-badge">नया</div>
+                    <div class="stock-badge in-stock">In Stock</div>
                     <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1598866592120-ec2ba000e121?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>पास्ता</h3>
@@ -1881,7 +2204,8 @@
                         <button class="btn order-btn" data-product="पास्ता">व्हाट्सएप पर ऑर्डर करें</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="pasta">
+                <div class="product-card" data-category="pasta" data-price="90">
+                    <div class="stock-badge in-stock">In Stock</div>
                     <div class="product-image" style="background: #f1f8e9 url('https://images.unsplash.com/photo-1633896949678-5b4af5ef6c9a?ixlib=rb-4.0.3') center/cover no-repeat;"></div>
                     <div class="product-info">
                         <h3>सेबई</h3>
@@ -1912,6 +2236,95 @@
             
             <div class="product-list-view" id="productListView">
                 <!-- Product list view will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Section -->
+    <section class="section recipes" id="recipes">
+        <div class="container">
+            <h2 class="section-title">हमारे उत्पादों से रेसिपी</h2>
+            <p class="text-center">हमारे उत्पादों का उपयोग करके बनाई जाने वाली स्वादिष्ट रेसिपी</p>
+            
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-4.0.3')"></div>
+                    <div class="recipe-content">
+                        <h3>बेसन का चिला</h3>
+                        <div class="recipe-meta">
+                            <span><i class="fas fa-clock"></i> 20 मिनट</span>
+                            <span><i class="fas fa-user"></i> 4 सर्विंग</span>
+                        </div>
+                        <p>बेसन से बनने वाला स्वादिष्ट और पौष्टिक नाश्ता, जो सेहत के लिए भी अच्छा है।</p>
+                        <a href="#" class="recipe-link">पूरी रेसिपी देखें <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="recipe-card">
+                    <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?ixlib=rb-4.0.3')"></div>
+                    <div class="recipe-content">
+                        <h3>सूजी का हलवा</h3>
+                        <div class="recipe-meta">
+                            <span><i class="fas fa-clock"></i> 30 मिनट</span>
+                            <span><i class="fas fa-user"></i> 6 सर्विंग</span>
+                        </div>
+                        <p>मीठा और स्वादिष्ट सूजी का हलवा, जो किसी भी खास मौके के लिए परफेक्ट है।</p>
+                        <a href="#" class="recipe-link">पूरी रेसिपी देखें <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="recipe-card">
+                    <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3')"></div>
+                    <div class="recipe-content">
+                        <h3>मसालेदार सोयाबीन</h3>
+                        <div class="recipe-meta">
+                            <span><i class="fas fa-clock"></i> 40 मिनट</span>
+                            <span><i class="fas fa-user"></i> 4 सर्विंग</span>
+                        </div>
+                        <p>प्रोटीन से भरपूर सोयाबीन की स्वादिष्ट और मसालेदार रेसिपी, जो रोटी और चावल दोनों के साथ अच्छी लगती है।</p>
+                        <a href="#" class="recipe-link">पूरी रेसिपी देखें <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">हमारा ब्लॉग</h2>
+            <p class="text-center">खाद्य, स्वास्थ्य और रेसिपी से जुड़े नवीनतम लेख</p>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-4.0.3')"></div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 15 मार्च, 2025</div>
+                        <h3>सूजी के स्वास्थ्य लाभ</h3>
+                        <p class="blog-excerpt">सूजी न केवल स्वादिष्ट होती है बल्कि सेहत के लिए भी बहुत फायदेमंद होती है। जानिए इसके फायदे...</p>
+                        <a href="#" class="blog-link">आगे पढ़ें <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3')"></div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 28 फरवरी, 2025</div>
+                        <h3>मसालों का सही चुनाव कैसे करें</h3>
+                        <p class="blog-excerpt">अच्छे मसाले न केवल खाने का स्वाद बढ़ाते हैं बल्कि सेहत के लिए भी फायदेमंद होते हैं। जानिए कैसे चुनें सही मसाले...</p>
+                        <a href="#" class="blog-link">आगे पढ़ें <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3')"></div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 10 जनवरी, 2025</div>
+                        <h3>सोयाबीन - प्रोटीन का सबसे अच्छा स्रोत</h3>
+                        <p class="blog-excerpt">सोयाबीन प्रोटीन का एक उत्कृष्ट स्रोत है, खासकर शाकाहारी लोगों के लिए। जानिए इसके फायदे और उपयोग...</p>
+                        <a href="#" class="blog-link">आगे पढ़ें <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2255,6 +2668,8 @@
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> होम</a></li>
                         <li><a href="#about"><i class="fas fa-chevron-right"></i> हमारे बारे में</a></li>
                         <li><a href="#products"><i class="fas fa-chevron-right"></i> उत्पाद</a></li>
+                        <li><a href="#recipes"><i class="fas fa-chevron-right"></i> रेसिपी</a></li>
+                        <li><a href="#blog"><i class="fas fa-chevron-right"></i> ब्लॉग</a></li>
                         <li><a href="#certificates"><i class="fas fa-chevron-right"></i> प्रमाणपत्र</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> संपर्क</a></li>
                     </ul>
@@ -2313,6 +2728,45 @@
         <div class="chatbot-input">
             <input type="text" id="chatbotInput" placeholder="अपना संदेश यहाँ टाइप करें...">
             <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Quick Order Modal -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="order-modal">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">क्विक ऑर्डर</h2>
+            <form id="quickOrderForm">
+                <div class="form-group">
+                    <label for="orderProduct">उत्पाद चुनें *</label>
+                    <select id="orderProduct" class="form-control" required>
+                        <option value="">-- उत्पाद चुनें --</option>
+                        <option value="सूजी">सूजी</option>
+                        <option value="बेसन">बेसन</option>
+                        <option value="मसाला">मसाला</option>
+                        <option value="सोयाबीन">सोयाबीन</option>
+                        <option value="पास्ता">पास्ता</option>
+                        <option value="सेबई">सेबई</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="orderQuantity">मात्रा (किलो) *</label>
+                    <input type="number" id="orderQuantity" class="form-control" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="orderName">आपका नाम *</label>
+                    <input type="text" id="orderName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="orderPhone">फोन नंबर *</label>
+                    <input type="tel" id="orderPhone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="orderAddress">डिलीवरी पता</label>
+                    <textarea id="orderAddress" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn">ऑर्डर जमा करें</button>
+            </form>
         </div>
     </div>
 
@@ -2876,6 +3330,105 @@
             if (e.key === 'Enter') {
                 sendMessage();
             }
+        });
+
+        // Advanced filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const priceSort = document.getElementById('priceSort');
+            const priceRange = document.getElementById('priceRange');
+            const priceValue = document.getElementById('priceValue');
+            const availabilityFilters = document.querySelectorAll('input[name="availability"]');
+            
+            // Update price range value display
+            priceRange.addEventListener('input', function() {
+                priceValue.textContent = `₹0 - ₹${this.value}`;
+                filterProducts();
+            });
+            
+            // Add event listeners to all filter controls
+            priceSort.addEventListener('change', filterProducts);
+            availabilityFilters.forEach(filter => {
+                filter.addEventListener('change', filterProducts);
+            });
+            
+            function filterProducts() {
+                const sortBy = priceSort.value;
+                const maxPrice = parseInt(priceRange.value);
+                const showInStock = document.querySelector('input[name="availability"][value="in-stock"]').checked;
+                const showOutOfStock = document.querySelector('input[name="availability"][value="out-of-stock"]').checked;
+                
+                const products = Array.from(document.querySelectorAll('.product-card'));
+                
+                // Filter by availability
+                products.forEach(product => {
+                    const isInStock = !product.querySelector('.out-of-stock');
+                    
+                    if ((isInStock && showInStock) || (!isInStock && showOutOfStock)) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+                
+                // Filter by price
+                products.forEach(product => {
+                    if (product.style.display === 'none') return;
+                    
+                    const price = parseInt(product.dataset.price);
+                    
+                    if (price > maxPrice) {
+                        product.style.display = 'none';
+                    }
+                });
+                
+                // Sort products
+                if (sortBy !== 'default') {
+                    const visibleProducts = products.filter(p => p.style.display !== 'none');
+                    
+                    visibleProducts.sort((a, b) => {
+                        const priceA = parseInt(a.dataset.price);
+                        const priceB = parseInt(b.dataset.price);
+                        
+                        return sortBy === 'low-to-high' ? priceA - priceB : priceB - priceA;
+                    });
+                    
+                    const productGrid = document.getElementById('productGridView');
+                    visibleProducts.forEach(product => {
+                        productGrid.appendChild(product);
+                    });
+                }
+            }
+        });
+
+        // Quick Order Modal
+        const quickOrderBtn = document.getElementById('quickOrderBtn');
+        const orderModal = document.getElementById('orderModal');
+        const modalClose = document.getElementById('modalClose');
+        const quickOrderForm = document.getElementById('quickOrderForm');
+        
+        quickOrderBtn.addEventListener('click', () => {
+            orderModal.classList.add('active');
+        });
+        
+        modalClose.addEventListener('click', () => {
+            orderModal.classList.remove('active');
+        });
+        
+        quickOrderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const product = document.getElementById('orderProduct').value;
+            const quantity = document.getElementById('orderQuantity').value;
+            const name = document.getElementById('orderName').value;
+            const phone = document.getElementById('orderPhone').value;
+            const address = document.getElementById('orderAddress').value;
+            
+            const message = `नमस्ते, मुझे क्विक ऑर्डर देना है:\nउत्पाद: ${product}\nमात्रा: ${quantity} kg\nनाम: ${name}\nफोन: ${phone}\nपता: ${address || 'निर्धारित किया जाएगा'}`;
+            const encodedMessage = encodeURIComponent(message);
+            
+            window.open(`https://wa.me/918210846551?text=${encodedMessage}`, '_blank');
+            orderModal.classList.remove('active');
+            quickOrderForm.reset();
         });
 
         // Lazy loading for images
