@@ -77,14 +77,6 @@ img{max-width:100%;height:auto;display:block}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
-/* COUPON BANNER */
-.coupon-banner{background:linear-gradient(90deg,#ff6b6b,#ffa500,#ff6b6b);color:#fff;padding:10px 0;text-align:center;font-size:14px;font-weight:600;position:relative;overflow:hidden}
-.coupon-banner .container{display:flex;justify-content:center;align-items:center;gap:15px;flex-wrap:wrap}
-.coupon-code{background:rgba(0,0,0,.25);padding:4px 14px;border-radius:20px;font-weight:700;letter-spacing:1px;cursor:pointer;transition:.3s}
-.coupon-code:hover{background:rgba(0,0,0,.4)}
-.coupon-timer{background:#fff;color:#ff6b6b;padding:4px 12px;border-radius:20px;font-weight:700;font-family:monospace;font-size:13px}
-.coupon-close{position:absolute;right:15px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:20px;cursor:pointer}
-
 /* EMERGENCY BAR */
 .emergency-bar{background:#b21f1f;color:#fff;padding:8px 0;text-align:center;font-size:13px;font-weight:500}
 .emergency-bar i{animation:pulse-emergency 1.5s infinite}
@@ -190,32 +182,89 @@ body.dark .logos-scroll::after{background:linear-gradient(270deg,var(--bg),trans
 body.dark .why-card h3{color:var(--text)}
 .why-card p{font-size:13.5px;color:var(--text-light)}
 
-/* SERVICES */
+/* ============ SERVICES (REDESIGNED) ============ */
 .services{background:var(--bg)}
-.service-tabs{display:flex;justify-content:center;margin-bottom:32px;flex-wrap:wrap;gap:8px}
+.service-tabs{display:flex;justify-content:center;margin-bottom:36px;flex-wrap:wrap;gap:8px}
 .service-tab{padding:9px 20px;background:var(--card);border-radius:30px;cursor:pointer;transition:.3s;font-weight:500;font-size:13.5px;border:1px solid var(--border);color:var(--text)}
-.service-tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.service-tab.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 6px 18px rgba(26,42,108,.28)}
 .service-tab:hover:not(.active){background:var(--accent);color:var(--dark);border-color:var(--accent);transform:translateY(-2px)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
-.service-item{background:var(--card);padding:28px 24px;border-radius:12px;text-align:center;box-shadow:var(--shadow-sm);transition:.3s;position:relative;overflow:hidden;border:1px solid var(--border)}
-.service-item::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transform-origin:left;transition:.3s}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+
+.service-item{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 1px 2px rgba(16,24,64,.04);
+  transition:transform .4s cubic-bezier(.4,0,.2,1),box-shadow .4s cubic-bezier(.4,0,.2,1);
+}
+.service-item::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+}
 .service-item:hover::before{transform:scaleX(1)}
-.service-item:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
-.service-icon-wrap{width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,var(--light),var(--card));display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px;transition:.3s}
-.service-item:hover .service-icon-wrap{background:linear-gradient(135deg,var(--primary),var(--secondary));transform:rotate(-10deg) scale(1.05)}
-.service-item i{font-size:30px;color:var(--primary);transition:.3s}
-body.dark .service-item i{color:var(--accent)}
-.service-item:hover i{color:var(--accent)}
-.service-item h3{font-size:18px;margin-bottom:9px;color:var(--primary);font-weight:600}
-body.dark .service-item h3{color:var(--text)}
-.service-price{font-size:16px;font-weight:700;color:var(--secondary);margin:10px 0}
-.service-details{color:var(--text-light);margin-bottom:14px;font-size:13px;text-align:left}
-.service-features{text-align:left;margin-bottom:16px}
-.service-features li{margin-bottom:6px;font-size:12.5px;color:var(--text-light);position:relative;padding-left:20px}
-.service-features li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:0;color:var(--success);font-size:10px}
-.order-now-btn{background:var(--primary);color:#fff;padding:10px 24px;border-radius:50px;font-weight:600;border:none;cursor:pointer;font-size:13px;transition:.3s}
-.order-now-btn:hover{background:var(--accent);color:var(--dark);transform:translateY(-2px)}
-.pricing-badge{position:absolute;top:14px;right:14px;background:var(--accent);color:var(--dark);padding:3px 11px;border-radius:20px;font-weight:700;font-size:10.5px;text-transform:uppercase}
+.service-item:hover{transform:translateY(-6px);box-shadow:0 24px 48px -20px rgba(16,24,64,.4)}
+
+.service-head{display:flex;align-items:center;gap:14px;padding:24px 22px 0}
+.service-icon-wrap{
+  width:52px;height:52px;flex-shrink:0;border-radius:15px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(26,42,108,.09),rgba(253,187,45,.18));
+  transition:.45s cubic-bezier(.4,0,.2,1);
+}
+.service-item:hover .service-icon-wrap{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  transform:rotate(-8deg) scale(1.07);
+}
+.service-icon-wrap i{font-size:22px;color:var(--primary);transition:.4s}
+.service-item:hover .service-icon-wrap i{color:var(--accent)}
+.service-title-wrap{flex:1;min-width:0}
+.service-title-wrap h3{font-size:16px;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:3px}
+.service-cat{font-size:10.5px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text-light);font-weight:600}
+.pricing-badge{
+  flex-shrink:0;align-self:flex-start;
+  background:linear-gradient(135deg,#fdbb2d,#ff9800);
+  color:#3a2800;padding:4px 11px;border-radius:20px;
+  font-weight:700;font-size:9.5px;text-transform:uppercase;letter-spacing:.6px;
+  box-shadow:0 4px 12px rgba(253,187,45,.45);
+}
+
+.service-body{padding:16px 22px 0;flex:1}
+.service-details{font-size:13px;color:var(--text-light);line-height:1.6;margin-bottom:14px}
+.service-features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.service-features li{
+  font-size:11.5px;font-weight:500;padding:4px 10px;border-radius:20px;
+  background:var(--bg);border:1px solid var(--border);color:var(--text-light);
+  transition:.3s;
+}
+.service-item:hover .service-features li{border-color:rgba(253,187,45,.55)}
+
+.service-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:16px 22px 20px;margin-top:auto;border-top:1px dashed var(--border);
+}
+.service-price{font-size:16px;font-weight:700;color:var(--secondary);line-height:1.2}
+.service-price small{display:block;font-size:9.5px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:.7px;margin-bottom:2px}
+.order-now-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--primary);color:#fff;
+  padding:9px 16px;border-radius:50px;font-weight:600;font-size:12.5px;
+  border:none;cursor:pointer;transition:.3s;white-space:nowrap;
+}
+.order-now-btn i{font-size:11px;transition:transform .3s}
+.order-now-btn:hover{background:var(--accent);color:var(--dark);box-shadow:0 8px 18px rgba(253,187,45,.4)}
+.order-now-btn:hover i{transform:translateX(3px)}
+
+body.dark .service-title-wrap h3{color:var(--text)}
+body.dark .service-icon-wrap{background:linear-gradient(135deg,rgba(253,187,45,.14),rgba(26,42,108,.3))}
+body.dark .service-icon-wrap i{color:var(--accent)}
+body.dark .service-features li{background:#232b47;border-color:#2a3250}
 
 /* PRICING CALCULATOR */
 .calc-section{background:var(--card)}
@@ -617,7 +666,6 @@ nav ul li a{display:block;text-align:center}
 .trust-bar .container{gap:15px}
 .trust-item{font-size:12px}
 .live-activity{bottom:85px;left:12px;max-width:calc(100vw - 100px)}
-.coupon-banner{font-size:12px}
 .compare-table th,.compare-table td{padding:10px 8px;font-size:12px}
 }
 @media(max-width:480px){
@@ -626,7 +674,10 @@ nav ul li a{display:block;text-align:center}
 .areas-grid{grid-template-columns:repeat(2,1fr)}
 .modal-content{padding:24px}
 .calc-container{padding:22px}
-.coupon-banner .container{gap:8px}
+.service-head{padding:20px 18px 0}
+.service-body{padding:14px 18px 0}
+.service-foot{padding:14px 18px 18px;flex-wrap:wrap}
+.order-now-btn{width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -635,16 +686,6 @@ nav ul li a{display:block;text-align:center}
 <div class="loading-bar" id="loadingBar"></div>
 <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
 <div class="toast" id="toast"></div>
-
-<!-- COUPON BANNER -->
-<div class="coupon-banner" id="couponBanner">
-<div class="container">
-<span>🎉 New Year Offer: Get <strong>20% OFF</strong> on all websites! Use code:</span>
-<span class="coupon-code" onclick="copyCoupon()" title="Click to copy">NEW20</span>
-<span class="coupon-timer" id="couponTimer">00:00:00</span>
-<button class="coupon-close" onclick="document.getElementById('couponBanner').style.display='none'">&times;</button>
-</div>
-</div>
 
 <!-- EMERGENCY BAR -->
 <div class="emergency-bar">
@@ -825,7 +866,7 @@ nav ul li a{display:block;text-align:center}
 <div class="service-tab" data-category="data">Data</div>
 <div class="service-tab" data-category="web">Web</div>
 <div class="service-tab" data-category="hardware">Hardware</div>
-<div class="service-tab" data-category="meta">Meta & WhatsApp</div>
+<div class="service-tab" data-category="meta">Meta &amp; WhatsApp</div>
 </div>
 <div class="services-grid" id="servicesGrid"></div>
 </div>
@@ -957,7 +998,7 @@ nav ul li a{display:block;text-align:center}
 <p>Share your unique referral code with friends. When they book any service, both of you get 10% OFF on your next project!</p>
 <div class="referral-box">
 <div class="referral-code" id="referralCode">CYBER10</div>
-<p>Click to copy & share</p>
+<p>Click to copy &amp; share</p>
 </div>
 <button class="btn" onclick="copyReferral()"><i class="fas fa-copy"></i> Copy Referral Code</button>
 <button class="btn" style="background:transparent;border:2px solid #fff;color:#fff;margin-left:10px;" onclick="shareReferral()"><i class="fas fa-share-alt"></i> Share</button>
@@ -1116,7 +1157,7 @@ nav ul li a{display:block;text-align:center}
 <div class="team-member reveal reveal-up">
 <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Aman Kumar" class="lazy-load" loading="lazy">
 <div class="team-member-overlay">
-<h3>Aman Kumar</h3><p>Founder & CEO</p>
+<h3>Aman Kumar</h3><p>Founder &amp; CEO</p>
 <div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fas fa-envelope"></i></a></div>
 </div>
 </div>
@@ -1381,31 +1422,33 @@ nav ul li a{display:block;text-align:center}
 <script>
 /* ==================== DATA ==================== */
 const servicesData = [
-  {cat:'software',icon:'fa-file-word',title:'MS Word',price:499,priceLabel:'₹499',desc:'Professional document creation.',features:['Formatting','Templates','Mail merge','Advanced'],badge:''},
-  {cat:'software',icon:'fa-file-excel',title:'MS Excel',price:799,priceLabel:'₹799',desc:'Advanced spreadsheets.',features:['Data analysis','Modeling','Macros','Dashboards'],badge:''},
-  {cat:'software',icon:'fa-file-powerpoint',title:'MS PowerPoint',price:699,priceLabel:'₹699',desc:'Business presentations.',features:['Design','Templates','Animations','Branding'],badge:''},
-  {cat:'software',icon:'fa-database',title:'MS Access',price:999,priceLabel:'₹999',desc:'Database management.',features:['Design','Custom apps','Migration','Reports'],badge:''},
-  {cat:'data',icon:'fa-broom',title:'Data Cleaning',price:1499,priceLabel:'₹1,499',desc:'Clean and preprocess data.',features:['Validation','Duplicates','Format','Errors'],badge:''},
-  {cat:'data',icon:'fa-chart-line',title:'Data Analysis',price:2499,priceLabel:'₹2,499',desc:'Extract insights.',features:['Statistics','Trends','Predictive','Visualization'],badge:'Best Value'},
-  {cat:'web',icon:'fa-code',title:'Web Design',price:9999,priceLabel:'₹9,999',desc:'Responsive modern websites.',features:['Responsive','SEO','E-commerce','CMS'],badge:'Popular'},
-  {cat:'software',icon:'fa-cogs',title:'Software Solutions',price:15000,priceLabel:'From ₹15,000',desc:'Custom software.',features:['Custom apps','Integration','Desktop','Mobile'],badge:''},
-  {cat:'hardware',icon:'fa-server',title:'Hardware Solutions',price:2000,priceLabel:'From ₹2,000',desc:'Hardware installation.',features:['Installation','Network','Maintenance','Troubleshoot'],badge:''},
-  {cat:'web',icon:'fa-google',title:'Google Ads',price:5000,priceLabel:'₹5,000',desc:'Google Ads management.',features:['Campaign','Keywords','Optimization','Reports'],badge:''},
-  {cat:'meta',icon:'fa-facebook',title:'Facebook Ads',price:5000,priceLabel:'₹5,000',desc:'Facebook advertising.',features:['Campaigns','Targeting','Design','Tracking'],badge:''},
-  {cat:'web',icon:'fa-search',title:'SEO Services',price:3000,priceLabel:'₹3,000/mo',desc:'Rank on Google.',features:['Keywords','On-page','Backlinks','Reports'],badge:''},
-  {cat:'web',icon:'fa-share-alt',title:'Social Media Marketing',price:2000,priceLabel:'₹2,000/mo',desc:'Social media management.',features:['Scheduling','Design','Engagement','Ads'],badge:''},
-  {cat:'software',icon:'fa-mobile-alt',title:'Mobile App Development',price:25000,priceLabel:'₹25,000+',desc:'Android & iOS apps.',features:['UI/UX','Backend','Testing','Store'],badge:''},
-  {cat:'web',icon:'fa-shopping-cart',title:'E-commerce Website',price:15000,priceLabel:'₹15,000',desc:'Online store.',features:['Products','Cart','Payment','Inventory'],badge:''},
-  {cat:'software',icon:'fa-cloud',title:'Cloud Services',price:5000,priceLabel:'₹5,000',desc:'Cloud setup.',features:['Server','Migration','Security','24/7'],badge:''},
-  {cat:'data',icon:'fa-database',title:'Backup & Recovery',price:2000,priceLabel:'₹2,000/mo',desc:'Backup solutions.',features:['Auto backup','Cloud','Restore','Integrity'],badge:''},
-  {cat:'web',icon:'fa-tools',title:'Website Maintenance',price:2000,priceLabel:'₹2,000/mo',desc:'Updates and fixes.',features:['Updates','Security','Uptime','Bugs'],badge:''},
-  {cat:'meta',icon:'fa-whatsapp',title:'WhatsApp Business API',price:4999,priceLabel:'₹4,999',desc:'WhatsApp API setup.',features:['Verification','API','Templates','Chatbot'],badge:'New'},
-  {cat:'meta',icon:'fa-whatsapp',title:'WhatsApp Marketing',price:2999,priceLabel:'₹2,999/mo',desc:'Bulk messaging.',features:['Bulk','Auto-reply','Support','Campaigns'],badge:''},
-  {cat:'meta',icon:'fa-facebook',title:'Meta Ads',price:5000,priceLabel:'₹5,000',desc:'FB & IG ads.',features:['Setup','Targeting','Design','Tracking'],badge:'Popular'},
-  {cat:'meta',icon:'fa-code',title:'Meta Pixel & API',price:3499,priceLabel:'₹3,499',desc:'Pixel and Conversion API.',features:['Pixel','API','Events','Retargeting'],badge:''},
-  {cat:'meta',icon:'fa-chart-pie',title:'Meta Analytics',price:2499,priceLabel:'₹2,499',desc:'Meta data analysis.',features:['Analysis','Insights','Reports','ROI'],badge:''},
-  {cat:'meta',icon:'fa-instagram',title:'FB & IG Management',price:3999,priceLabel:'₹3,999/mo',desc:'Social media management.',features:['Posting','Engagement','Optimization','Reports'],badge:''}
+  {cat:'software',icon:'fa-file-word',title:'MS Word',price:499,priceLabel:'₹499',desc:'Professional document creation and formatting services.',features:['Formatting','Templates','Mail merge','Advanced']},
+  {cat:'software',icon:'fa-file-excel',title:'MS Excel',price:799,priceLabel:'₹799',desc:'Advanced spreadsheets, formulas and dashboards.',features:['Data analysis','Modeling','Macros','Dashboards']},
+  {cat:'software',icon:'fa-file-powerpoint',title:'MS PowerPoint',price:699,priceLabel:'₹699',desc:'Business presentations that impress clients.',features:['Design','Templates','Animations','Branding']},
+  {cat:'software',icon:'fa-database',title:'MS Access',price:999,priceLabel:'₹999',desc:'Custom database management and reporting.',features:['Design','Custom apps','Migration','Reports']},
+  {cat:'data',icon:'fa-broom',title:'Data Cleaning',price:1499,priceLabel:'₹1,499',desc:'Clean, validate and preprocess your raw data.',features:['Validation','Duplicates','Format','Errors']},
+  {cat:'data',icon:'fa-chart-line',title:'Data Analysis',price:2499,priceLabel:'₹2,499',desc:'Extract meaningful insights from your business data.',features:['Statistics','Trends','Predictive','Visualization'],badge:'Best Value'},
+  {cat:'web',icon:'fa-code',title:'Web Design',price:9999,priceLabel:'₹9,999',desc:'Responsive, modern and SEO-friendly websites.',features:['Responsive','SEO','E-commerce','CMS'],badge:'Popular'},
+  {cat:'software',icon:'fa-cogs',title:'Software Solutions',price:15000,priceLabel:'₹15,000',desc:'Custom software built around your workflow.',features:['Custom apps','Integration','Desktop','Mobile']},
+  {cat:'hardware',icon:'fa-server',title:'Hardware Solutions',price:2000,priceLabel:'₹2,000',desc:'Installation, networking and hardware maintenance.',features:['Installation','Network','Maintenance','Troubleshoot']},
+  {cat:'web',icon:'fa-google',title:'Google Ads',price:5000,priceLabel:'₹5,000',desc:'Managed Google Ads campaigns that convert.',features:['Campaign','Keywords','Optimization','Reports']},
+  {cat:'meta',icon:'fa-facebook',title:'Facebook Ads',price:5000,priceLabel:'₹5,000',desc:'Facebook advertising with precise targeting.',features:['Campaigns','Targeting','Design','Tracking']},
+  {cat:'web',icon:'fa-search',title:'SEO Services',price:3000,priceLabel:'₹3,000/mo',desc:'Rank higher on Google and get organic traffic.',features:['Keywords','On-page','Backlinks','Reports']},
+  {cat:'web',icon:'fa-share-alt',title:'Social Media Marketing',price:2000,priceLabel:'₹2,000/mo',desc:'Complete social media management and growth.',features:['Scheduling','Design','Engagement','Ads']},
+  {cat:'software',icon:'fa-mobile-alt',title:'Mobile App Development',price:25000,priceLabel:'₹25,000',desc:'Android & iOS apps built for performance.',features:['UI/UX','Backend','Testing','Store']},
+  {cat:'web',icon:'fa-shopping-cart',title:'E-commerce Website',price:15000,priceLabel:'₹15,000',desc:'Complete online store with payment gateway.',features:['Products','Cart','Payment','Inventory']},
+  {cat:'software',icon:'fa-cloud',title:'Cloud Services',price:5000,priceLabel:'₹5,000',desc:'Cloud setup, migration and security.',features:['Server','Migration','Security','24/7']},
+  {cat:'data',icon:'fa-database',title:'Backup & Recovery',price:2000,priceLabel:'₹2,000/mo',desc:'Automated backup solutions for your data.',features:['Auto backup','Cloud','Restore','Integrity']},
+  {cat:'web',icon:'fa-tools',title:'Website Maintenance',price:2000,priceLabel:'₹2,000/mo',desc:'Updates, security patches and bug fixes.',features:['Updates','Security','Uptime','Bugs']},
+  {cat:'meta',icon:'fa-whatsapp',title:'WhatsApp Business API',price:4999,priceLabel:'₹4,999',desc:'Official WhatsApp API setup and integration.',features:['Verification','API','Templates','Chatbot'],badge:'New'},
+  {cat:'meta',icon:'fa-whatsapp',title:'WhatsApp Marketing',price:2999,priceLabel:'₹2,999/mo',desc:'Bulk messaging and automated replies.',features:['Bulk','Auto-reply','Support','Campaigns']},
+  {cat:'meta',icon:'fa-facebook',title:'Meta Ads',price:5000,priceLabel:'₹5,000',desc:'Facebook & Instagram ad campaigns.',features:['Setup','Targeting','Design','Tracking'],badge:'Popular'},
+  {cat:'meta',icon:'fa-code',title:'Meta Pixel & API',price:3499,priceLabel:'₹3,499',desc:'Pixel and Conversion API implementation.',features:['Pixel','API','Events','Retargeting']},
+  {cat:'meta',icon:'fa-chart-pie',title:'Meta Analytics',price:2499,priceLabel:'₹2,499',desc:'Deep analysis of your Meta campaign data.',features:['Analysis','Insights','Reports','ROI']},
+  {cat:'meta',icon:'fa-instagram',title:'FB & IG Management',price:3999,priceLabel:'₹3,999/mo',desc:'Complete Facebook & Instagram page handling.',features:['Posting','Engagement','Optimization','Reports']}
 ];
+
+const catLabels = {software:'Software',data:'Data',web:'Web',hardware:'Hardware',meta:'Meta & WhatsApp'};
 
 const portfolioData=[
   {img:'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80',title:'Enterprise Security Setup',desc:'Security infrastructure for a Patna manufacturer.',result:'90% fewer incidents'},
@@ -1485,14 +1528,23 @@ function renderServices(){
   const g = document.getElementById('servicesGrid');
   if(!g) return;
   g.innerHTML = servicesData.map(s => `
-    <div class="service-item reveal reveal-up" data-category="${s.cat}">
-      ${s.badge ? `<div class="pricing-badge">${s.badge}</div>` : ''}
-      <div class="service-icon-wrap"><i class="fas ${s.icon}"></i></div>
-      <h3>${s.title}</h3>
-      <div class="service-price">Starting at ${s.priceLabel}</div>
-      <p class="service-details">${s.desc}</p>
-      <ul class="service-features">${s.features.map(f=>`<li>${f}</li>`).join('')}</ul>
-      <button class="order-now-btn" onclick="openBookingModal('${s.title}')">Order Now</button>
+    <div class="service-item" data-category="${s.cat}">
+      <div class="service-head">
+        <div class="service-icon-wrap"><i class="fas ${s.icon}"></i></div>
+        <div class="service-title-wrap">
+          <h3>${s.title}</h3>
+          <span class="service-cat">${catLabels[s.cat] || s.cat}</span>
+        </div>
+        ${s.badge ? `<span class="pricing-badge">${s.badge}</span>` : ''}
+      </div>
+      <div class="service-body">
+        <p class="service-details">${s.desc}</p>
+        <ul class="service-features">${s.features.map(f=>`<li>${f}</li>`).join('')}</ul>
+      </div>
+      <div class="service-foot">
+        <div class="service-price"><small>Starting at</small>${s.priceLabel.replace(/^From\s*/,'')}</div>
+        <button class="order-now-btn" onclick="openBookingModal('${s.title}')">Order Now <i class="fas fa-arrow-right"></i></button>
+      </div>
     </div>`).join('');
 }
 
@@ -1604,29 +1656,6 @@ function submitCalcQuote(){
   window.open('https://wa.me/917004863268?text=' + encodeURIComponent(msg), '_blank');
 }
 
-/* ==================== COUPON TIMER ==================== */
-function initCouponTimer(){
-  const el = document.getElementById('couponTimer');
-  if(!el) return;
-  const end = new Date();
-  end.setHours(23,59,59,999);
-  function tick(){
-    const now = new Date();
-    let diff = end - now;
-    if(diff < 0) diff = 0;
-    const h = String(Math.floor(diff/3600000)).padStart(2,'0');
-    const m = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
-    const s = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
-    el.textContent = h + ':' + m + ':' + s;
-  }
-  tick();
-  setInterval(tick, 1000);
-}
-
-function copyCoupon(){
-  navigator.clipboard.writeText('NEW20').then(() => showToast('✓ Coupon NEW20 copied!'));
-}
-
 /* ==================== DARK MODE ==================== */
 function toggleDarkMode(){
   document.body.classList.toggle('dark');
@@ -1683,7 +1712,7 @@ function runSEOAudit(){
   else checks.push({ok:false,text:'Use HTTPS for better security'});
   if(url.length < 60){ score += 15; checks.push({ok:true,text:'URL length is good'}); }
   else checks.push({ok:false,text:'URL is too long'});
-  if(!url.includes('www.') || url.includes('www.')){ score += 15; checks.push({ok:true,text:'Domain structure is fine'}); }
+  score += 15; checks.push({ok:true,text:'Domain structure is fine'});
   score += 20; checks.push({ok:true,text:'Add meta description (120-160 chars)'});
   score += 15; checks.push({ok:true,text:'Include keyword in H1 tag'});
   score += 15; checks.push({ok:true,text:'Add image alt text'});
@@ -1711,7 +1740,6 @@ document.addEventListener('DOMContentLoaded', function(){
   renderFAQ();
   renderCalc();
   renderLogos();
-  initCouponTimer();
   initDarkMode();
   initLiveActivity();
   initLoadingBar();
@@ -1791,7 +1819,7 @@ function initTabs(){
       const cat = tab.getAttribute('data-category');
       items.forEach(it => {
         if(cat === 'all' || it.getAttribute('data-category') === cat){
-          it.style.display = 'block';
+          it.style.display = 'flex';
           setTimeout(() => { it.style.opacity='1'; it.style.transform='translateY(0)'; }, 10);
         } else {
           it.style.opacity = '0'; it.style.transform = 'translateY(20px)';
