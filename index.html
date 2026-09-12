@@ -25,29 +25,97 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
 
+<!-- ✅ PWA MANIFEST (injected via JS blob) -->
+<link rel="manifest" id="pwaManifest">
+
+<!-- ✅ GOOGLE ANALYTICS + GOOGLE ADS CONVERSION TRACKING -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XXXXXXXXXX');
+// ✅ Google Ads Conversion ID (replace with real)
+gtag('config', 'AW-XXXXXXXXX');
 </script>
 
+<!-- ✅ META (FACEBOOK) PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<!-- ✅ LOCAL BUSINESS SCHEMA -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"CYBER Expert IT Solutions","image":"https://cyberkingaman.in/logo.jpg","url":"https://cyberkingaman.in/","telephone":"+917004863268","email":"cyberexpertpatna@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Sheikhpura","addressLocality":"Sheikhpura","addressRegion":"Bihar","postalCode":"811105","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":25.1388,"longitude":85.8422},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"priceRange":"₹499 - ₹25000","areaServed":["Sheikhpura","Patna","Bihar"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"250"}}
 </script>
 
+<!-- ✅ FAQ SCHEMA -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Which is the best IT company in Sheikhpura?","acceptedAnswer":{"@type":"Answer","text":"CYBER Expert IT Solutions is the leading IT company in Sheikhpura, Bihar with 15+ years experience and 500+ projects delivered."}},
+{"@type":"Question","name":"How much does web design cost?","acceptedAnswer":{"@type":"Answer","text":"Web design starts at ₹9,999 with responsive design, SEO, and CMS included."}},
+{"@type":"Question","name":"How long does a project take?","acceptedAnswer":{"@type":"Answer","text":"A standard website takes 7-15 days, mobile apps 4-8 weeks."}},
+{"@type":"Question","name":"Do you offer support?","acceptedAnswer":{"@type":"Answer","text":"Yes, we offer 24/7 support starting from ₹2,000/month."}},
+{"@type":"Question","name":"What payment methods do you accept?","acceptedAnswer":{"@type":"Answer","text":"We accept Bank Transfer, UPI, Credit/Debit Card, and PayPal."}},
+{"@type":"Question","name":"Do you serve remote clients?","acceptedAnswer":{"@type":"Answer","text":"Yes, we serve clients across India and internationally."}},
+{"@type":"Question","name":"Do you provide SEO services?","acceptedAnswer":{"@type":"Answer","text":"Yes, SEO services start from ₹3,000/month with keyword research and reporting."}},
+{"@type":"Question","name":"Do you build mobile apps?","acceptedAnswer":{"@type":"Answer","text":"Yes, Android and iOS apps start from ₹25,000."}}
+]}
+</script>
+
+<!-- ✅ SERVICE SCHEMA -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Web Design","provider":{"@type":"Organization","name":"CYBER Expert IT Solutions"},"offers":{"@type":"Offer","price":"9999","priceCurrency":"INR"}}},
+{"@type":"ListItem","position":2,"item":{"@type":"Service","name":"SEO Services","provider":{"@type":"Organization","name":"CYBER Expert IT Solutions"},"offers":{"@type":"Offer","price":"3000","priceCurrency":"INR"}}},
+{"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Mobile App Development","provider":{"@type":"Organization","name":"CYBER Expert IT Solutions"},"offers":{"@type":"Offer","price":"25000","priceCurrency":"INR"}}},
+{"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Digital Marketing","provider":{"@type":"Organization","name":"CYBER Expert IT Solutions"},"offers":{"@type":"Offer","price":"5000","priceCurrency":"INR"}}}
+]}
+</script>
+
+<!-- ✅ REVIEW SCHEMA -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"CYBER Expert IT Solutions","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"250"},"review":[
+{"@type":"Review","author":{"@type":"Person","name":"Rajesh Kumar"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Transformed our business with a modern website!"},
+{"@type":"Review","author":{"@type":"Person","name":"Priya Singh"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"30% productivity increase after their software solutions."},
+{"@type":"Review","author":{"@type":"Person","name":"Amit Sharma"},"reviewRating":{"@type":"Rating","ratingValue":"4"},"reviewBody":"Outstanding hardware and networking support."}
+]}
+</script>
+
+<!-- ✅ BREADCRUMB SCHEMA -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://cyberkingaman.in/"},
+{"@type":"ListItem","position":2,"name":"Services","item":"https://cyberkingaman.in/#services"},
+{"@type":"ListItem","position":3,"name":"Portfolio","item":"https://cyberkingaman.in/#portfolio"},
+{"@type":"ListItem","position":4,"name":"Contact","item":"https://cyberkingaman.in/#contact"}
+]}
+</script>
+
+<!-- ✅ ORGANIZATION SCHEMA -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"CYBER Expert IT Solutions","url":"https://cyberkingaman.in/","logo":"https://cyberkingaman.in/logo.jpg","sameAs":["https://www.facebook.com/cyberexpert","https://www.instagram.com/cyberexpert","https://twitter.com/cyberexpert","https://www.linkedin.com/company/cyberexpert"],"contactPoint":{"@type":"ContactPoint","telephone":"+917004863268","contactType":"customer service","areaServed":"IN","availableLanguage":["English","Hindi"]}}
+</script>
+
 <style>
 @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
-
 :root{--primary:#1a2a6c;--secondary:#b21f1f;--accent:#fdbb2d;--light:#f5f7fa;--dark:#333;--gray:#666;--success:#1dbf73;--white:#fff;--bg:#f5f7fa;--card:#ffffff;--text:#333;--text-light:#666;--border:#eef0f5;--transition:all .3s ease;--shadow-sm:0 2px 10px rgba(0,0,0,.08);--shadow-md:0 5px 20px rgba(0,0,0,.1);--shadow-lg:0 15px 40px rgba(0,0,0,.15)}
-
 body.dark{--light:#0f1424;--bg:#0f1424;--card:#1a2035;--text:#e8eaf2;--dark:#e8eaf2;--text-light:#a0a8c0;--gray:#a0a8c0;--border:#2a3250}
 body.dark section{background:var(--bg)!important}
 body.dark .why-card,body.dark .portfolio-card,body.dark .review-item,body.dark .blog-card,body.dark .faq-item,body.dark .pricing-card,body.dark .team-member,body.dark .area-item,body.dark .contact-form,body.dark .about-stat{background:var(--card)!important;border-color:var(--border)!important}
 body.dark .modal-content,body.dark .chat-window{background:var(--card)!important;color:var(--text)}
 body.dark input,body.dark textarea,body.dark select{background:#1f2640;color:#e8eaf2;border-color:#2a3250}
-
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .4s,color .4s}
@@ -55,10 +123,7 @@ body{background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;tr
 img{max-width:100%;height:auto;display:block}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
-
 .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),#ff9800,var(--secondary));z-index:10001;transition:width .1s linear;box-shadow:0 0 12px rgba(253,187,45,.7)}
-
-/* ============ NEW: LIVE VISITOR COUNTER BAR ============ */
 .visitor-bar{background:linear-gradient(90deg,rgba(29,191,115,.1),rgba(253,187,45,.1));color:var(--text);padding:7px 0;text-align:center;font-size:12px;font-weight:600;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
 .visitor-bar .container{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
 .visitor-dot{width:8px;height:8px;background:#28e88b;border-radius:50%;display:inline-block;animation:onlinePulse 1.6s infinite;margin-right:6px}
@@ -66,8 +131,6 @@ ul{list-style:none}
 .visitor-bar strong{color:var(--primary);font-weight:800}
 body.dark .visitor-bar strong{color:var(--accent)}
 .visitor-item{display:flex;align-items:center;gap:6px}
-
-/* ============ NEW: COUNTDOWN TIMER BAR ============ */
 .countdown-bar{background:linear-gradient(90deg,#b21f1f,#ff6b6b,#b21f1f);color:#fff;padding:9px 0;text-align:center;font-size:13px;font-weight:600;position:relative;overflow:hidden}
 .countdown-bar::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);animation:emergencyShine 3s linear infinite}
 @keyframes emergencyShine{0%{left:-100%}100%{left:100%}}
@@ -76,8 +139,6 @@ body.dark .visitor-bar strong{color:var(--accent)}
 @keyframes pulse-emergency{0%,100%{opacity:1}50%{opacity:.5}}
 .countdown-timer{display:inline-flex;gap:6px;align-items:center;font-family:monospace}
 .countdown-timer span{background:rgba(0,0,0,.35);padding:3px 9px;border-radius:6px;font-weight:800;letter-spacing:1px;min-width:36px;text-align:center;color:#fdbb2d}
-
-/* ============ TOP BAR ============ */
 .top-bar{background:rgba(0,0,0,.25);padding:7px 0;font-size:12px;color:#fff}
 .top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .top-bar-info span{margin-right:18px}
@@ -91,7 +152,6 @@ body.dark .visitor-bar strong{color:var(--accent)}
 .dark-toggle button.active{background:var(--accent);color:var(--dark)}
 .top-bar-social a{color:#fff;margin-left:8px;transition:.3s;display:inline-block}
 .top-bar-social a:hover{color:var(--accent);transform:translateY(-3px) scale(1.15)}
-
 header{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:12px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 15px rgba(0,0,0,.2);transition:padding .3s,box-shadow .3s}
 header.shrink{padding:6px 0;box-shadow:0 4px 22px rgba(0,0,0,.35)}
 header.shrink .logo i{font-size:26px}
@@ -114,7 +174,6 @@ nav ul li a:hover::after{transform:translateX(-50%) scaleX(1)}
 .fiverr-btn{background:var(--success);color:#fff}
 .fiverr-btn:hover{background:#19a463;transform:translateY(-2px)}
 .mobile-menu-btn{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer}
-
 .hero{background:linear-gradient(135deg,rgba(10,20,60,.92),rgba(120,20,20,.85)),url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;min-height:700px;display:flex;align-items:center;color:#fff;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(253,187,45,.14),transparent 45%),radial-gradient(circle at 80% 70%,rgba(178,31,31,.18),transparent 50%);animation:heroBgPulse 8s ease-in-out infinite;pointer-events:none}
 @keyframes heroBgPulse{0%,100%{opacity:.7}50%{opacity:1}}
@@ -130,7 +189,6 @@ nav ul li a:hover::after{transform:translateX(-50%) scaleX(1)}
 @keyframes blink{50%{opacity:0}}
 .hero p{font-size:18px;margin-bottom:34px;max-width:740px;margin-left:auto;margin-right:auto;opacity:.95}
 .hero-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-
 .btn{display:inline-block;background:var(--accent);color:var(--dark);padding:14px 32px;border-radius:50px;font-weight:600;transition:all .35s cubic-bezier(.4,0,.2,1);border:none;cursor:pointer;box-shadow:0 6px 22px rgba(253,187,45,.4);font-size:14.5px;position:relative;overflow:hidden;z-index:1}
 .btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(255,255,255,.35);border-radius:50%;transform:translate(-50%,-50%);transition:width .6s,height .6s;z-index:-1}
 .btn:hover::before{width:320px;height:320px}
@@ -139,16 +197,14 @@ nav ul li a:hover::after{transform:translateX(-50%) scaleX(1)}
 .btn-outline::before{background:rgba(255,255,255,.15)}
 .btn-outline:hover{background:#fff;color:var(--primary)}
 .btn i{margin-right:7px}
-
+.btn-sm{padding:8px 16px;font-size:12.5px}
 .hero-stats{display:flex;justify-content:center;gap:45px;margin-top:52px;flex-wrap:wrap}
 .hero-stat h3{font-size:34px;color:var(--accent);font-weight:800;text-shadow:0 0 22px rgba(253,187,45,.55);transition:.3s}
 .hero-stat:hover h3{text-shadow:0 0 34px rgba(253,187,45,.95);transform:scale(1.06)}
 .hero-stat p{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;opacity:.9}
-
 .money-back{background:#fff;padding:15px 0;text-align:center;font-size:14px;color:var(--primary);font-weight:600;border-bottom:1px solid #eee}
 body.dark .money-back{background:#1a2035;border-bottom-color:#2a3250}
 .money-back i{color:var(--success);font-size:18px;margin-right:8px;animation:pulse-emergency 2s infinite}
-
 .trust-bar{background:var(--card);padding:22px 0;border-bottom:1px solid var(--border)}
 .trust-bar .container{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
 .trust-item{display:flex;align-items:center;gap:10px;color:var(--gray);font-size:13.5px;font-weight:500;transition:.3s;cursor:default}
@@ -157,7 +213,6 @@ body.dark .trust-item:hover{color:var(--accent)}
 .trust-item i{font-size:24px;color:var(--primary);transition:.3s}
 .trust-item:hover i{transform:rotate(-10deg) scale(1.15)}
 body.dark .trust-item i{color:var(--accent)}
-
 section{padding:80px 0}
 .section-title{text-align:center;margin-bottom:48px}
 .section-title .subtitle{display:inline-block;background:rgba(26,42,108,.08);color:var(--primary);padding:6px 18px;border-radius:50px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:15px}
@@ -166,7 +221,6 @@ body.dark .section-title .subtitle{background:rgba(253,187,45,.15);color:var(--a
 body.dark .section-title h2{color:var(--text)}
 .section-title h2::after{content:'';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);width:75px;height:4px;background:var(--accent);border-radius:2px}
 .section-title p{color:var(--text-light);max-width:720px;margin:20px auto 0;font-size:15.5px}
-
 .logos-scroll{overflow:hidden;padding:20px 0;position:relative}
 .logos-scroll::before,.logos-scroll::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
 .logos-scroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
@@ -179,7 +233,6 @@ body.dark .logos-scroll::after{background:linear-gradient(270deg,var(--bg),trans
 .logo-item{opacity:.65;transition:.3s;color:var(--primary);flex-shrink:0;display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px}
 .logo-item i{font-size:38px}
 .logo-item:hover{opacity:1;color:var(--accent);transform:scale(1.12)}
-
 .why-choose{background:var(--card)}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;perspective:1200px}
 .why-card{background:linear-gradient(135deg,var(--light),var(--card));padding:32px 24px;border-radius:16px;text-align:center;border:1.5px solid var(--border);transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s,border-color .35s;position:relative;transform-style:preserve-3d;overflow:hidden}
@@ -196,7 +249,6 @@ body.dark .why-card .card-num{color:rgba(253,187,45,.12)}
 .why-card h3{font-size:18px;color:var(--primary);margin-bottom:9px;font-weight:700}
 body.dark .why-card h3{color:var(--text)}
 .why-card p{font-size:13.5px;color:var(--text-light)}
-
 .services{background:#05080f;position:relative;overflow:hidden;padding:95px 0 110px}
 .services::before{content:'';position:absolute;top:-220px;left:-120px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(253,187,45,.22),transparent 62%);animation:floatOrb1 18s ease-in-out infinite;pointer-events:none}
 .services::after{content:'';position:absolute;bottom:-240px;right:-140px;width:660px;height:660px;border-radius:50%;background:radial-gradient(circle,rgba(178,31,31,.25),transparent 62%);animation:floatOrb2 22s ease-in-out infinite;pointer-events:none}
@@ -210,14 +262,12 @@ body.dark .why-card h3{color:var(--text)}
 .services .section-title h2::after{width:120px;height:5px;background:linear-gradient(90deg,var(--accent),var(--secondary),var(--accent));border-radius:3px;animation:underlinePulse 2s ease-in-out infinite}
 @keyframes underlinePulse{0%,100%{transform:translateX(-50%) scaleX(1);box-shadow:0 0 0 rgba(253,187,45,.6)}50%{transform:translateX(-50%) scaleX(1.35);box-shadow:0 0 22px rgba(253,187,45,.9)}}
 .services .section-title p{color:#9aa4bf;font-size:16px;font-weight:400}
-
 .service-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:52px}
 .service-tab{position:relative;padding:12px 26px;background:rgba(255,255,255,.03);border:1.5px solid rgba(255,255,255,.12);border-radius:50px;color:#c7cfe0;font-size:12.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;transition:all .35s cubic-bezier(.4,0,.2,1);overflow:hidden}
 .service-tab::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent),#ff9800);transform:translateY(101%);transition:transform .38s cubic-bezier(.4,0,.2,1);z-index:-1}
 .service-tab:hover{color:#fff;border-color:rgba(253,187,45,.6);transform:translateY(-3px);box-shadow:0 12px 26px -12px rgba(253,187,45,.5)}
 .service-tab:hover::before{transform:translateY(0)}
 .service-tab.active{background:linear-gradient(135deg,var(--accent),#ff9800);color:#231a00;border-color:transparent;font-weight:900;transform:translateY(-3px);box-shadow:0 16px 34px -12px rgba(253,187,45,.85)}
-
 .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
 .service-item{position:relative;display:flex;flex-direction:column;padding:32px 26px 24px;border-radius:24px;background:linear-gradient(160deg,#0e1526 0%,#060a16 100%);overflow:hidden;isolation:isolate;transition:transform .5s cubic-bezier(.4,0,.2,1),box-shadow .5s;animation:cardEntrance .85s cubic-bezier(.4,0,.2,1) both}
 @keyframes cardEntrance{from{opacity:0;transform:translateY(50px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
@@ -247,27 +297,11 @@ body.dark .why-card h3{color:var(--text)}
 @keyframes badgeBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 .service-body{position:relative;z-index:2;flex:1}
 .service-details{font-size:13.5px;color:#9aa4bf;line-height:1.65;margin-bottom:18px}
-
-/* Premium feature tags */
 .service-features{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
 .service-features li{position:relative;display:inline-flex;align-items:center;gap:8px;padding:6px 13px 6px 7px;border-radius:50px;font-size:10.5px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;color:#cdd6e8;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.1);transition:all .45s cubic-bezier(.4,0,.2,1);overflow:hidden;isolation:isolate;cursor:default;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
 .service-features li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#ff9800);color:#1a1200;font-size:9px;flex-shrink:0;transition:all .45s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 12px -3px rgba(253,187,45,.75),inset 0 -1px 0 rgba(0,0,0,.2)}
-.service-features li::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-120%);transition:transform .75s cubic-bezier(.4,0,.2,1);pointer-events:none}
-.service-features li:nth-child(4n+1)::before{background:linear-gradient(135deg,#fdbb2d,#ff9800);color:#1a1200;box-shadow:0 4px 14px -3px rgba(253,187,45,.9)}
-.service-features li:nth-child(4n+2)::before{background:linear-gradient(135deg,#ff6b6b,#b21f1f);color:#fff;box-shadow:0 4px 14px -3px rgba(255,107,107,.8)}
-.service-features li:nth-child(4n+3)::before{background:linear-gradient(135deg,#4facfe,#1a2a6c);color:#fff;box-shadow:0 4px 14px -3px rgba(79,172,254,.8)}
-.service-features li:nth-child(4n+4)::before{background:linear-gradient(135deg,#28e88b,#1dbf73);color:#062d18;box-shadow:0 4px 14px -3px rgba(40,232,139,.8)}
-.service-features li:hover{color:#fff;background:linear-gradient(135deg,rgba(253,187,45,.18),rgba(178,31,31,.15));border-color:rgba(253,187,45,.7);transform:translateY(-3px) scale(1.05);box-shadow:0 12px 26px -10px rgba(253,187,45,.75),inset 0 1px 0 rgba(255,255,255,.18)}
-.service-features li:hover::before{transform:rotate(360deg) scale(1.18)}
-.service-features li:hover::after{transform:translateX(120%)}
-.service-item:hover .service-features li{background:linear-gradient(135deg,rgba(253,187,45,.13),rgba(178,31,31,.1));border-color:rgba(253,187,45,.55);color:#ffe6a3;transform:translateY(-3px);box-shadow:0 10px 22px -10px rgba(253,187,45,.6),inset 0 1px 0 rgba(255,255,255,.15);text-shadow:0 0 12px rgba(253,187,45,.4)}
-.service-item:hover .service-features li::before{transform:rotate(360deg) scale(1.12)}
-.service-item:hover .service-features li::after{transform:translateX(120%)}
-.service-item:hover .service-features li:nth-child(1){transition-delay:0s}
-.service-item:hover .service-features li:nth-child(2){transition-delay:.06s}
-.service-item:hover .service-features li:nth-child(3){transition-delay:.12s}
-.service-item:hover .service-features li:nth-child(4){transition-delay:.18s}
-
+.service-features li:hover{color:#fff;background:linear-gradient(135deg,rgba(253,187,45,.18),rgba(178,31,31,.15));border-color:rgba(253,187,45,.7);transform:translateY(-3px) scale(1.05)}
+.service-item:hover .service-features li{background:linear-gradient(135deg,rgba(253,187,45,.13),rgba(178,31,31,.1));border-color:rgba(253,187,45,.55);color:#ffe6a3;transform:translateY(-3px)}
 .service-foot{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:20px;border-top:1.5px dashed rgba(255,255,255,.1);margin-top:auto}
 .service-price{font-size:23px;font-weight:900;color:var(--accent);line-height:1.1;letter-spacing:-.6px}
 .service-price small{display:block;font-size:9.5px;font-weight:900;color:#7b87a3;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:4px}
@@ -277,8 +311,6 @@ body.dark .why-card h3{color:var(--text)}
 .order-now-btn:hover{color:#231a00;border-color:transparent;box-shadow:0 14px 32px -8px rgba(253,187,45,.9);transform:translateY(-2px)}
 .order-now-btn:hover::before{transform:translateX(0)}
 .order-now-btn:hover i{transform:translateX(5px)}
-
-/* ============ NEW: VIDEO TESTIMONIALS ============ */
 .video-testimonials{background:var(--bg)}
 .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px}
 .video-card{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md);transition:.4s cubic-bezier(.4,0,.2,1);background:var(--card);border:1.5px solid var(--border);cursor:pointer}
@@ -295,8 +327,6 @@ body.dark .why-card h3{color:var(--text)}
 body.dark .video-info h3{color:var(--text)}
 .video-info p{font-size:12.5px;color:var(--text-light)}
 .video-info .v-stars{color:#fbbc04;font-size:13px;margin-top:6px;letter-spacing:1px}
-
-/* ============ CALCULATOR ============ */
 .calc-section{background:var(--card)}
 .calc-container{max-width:940px;margin:0 auto;background:linear-gradient(135deg,#f9fafc,#fff);border:2px solid var(--border);border-radius:18px;padding:38px;box-shadow:var(--shadow-md)}
 body.dark .calc-container{background:linear-gradient(135deg,#1a2035,#232b47)}
@@ -323,8 +353,6 @@ body.dark .calc-title{color:var(--text)}
 .calc-total{font-size:13px;margin-bottom:18px;padding-top:16px;border-top:2px solid var(--accent);text-transform:uppercase;letter-spacing:1.2px;font-weight:600}
 .calc-total strong{font-size:32px;color:var(--accent);display:block;margin-top:6px;letter-spacing:-1px}
 .calc-summary .btn{background:var(--accent);color:var(--dark);width:100%}
-
-/* ============ PRICING ============ */
 .pricing-section{background:var(--card)}
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px;margin-top:44px;align-items:stretch}
 .pricing-card{background:var(--card);border:2px solid var(--border);border-radius:18px;padding:38px 30px;text-align:center;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;display:flex;flex-direction:column}
@@ -341,8 +369,6 @@ body.dark .price-display{color:var(--text)}
 .pricing-features li{padding:10px 0 10px 28px;font-size:13.5px;color:var(--text-light);border-bottom:1px solid var(--border);position:relative;transition:.3s}
 .pricing-features li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--success);font-size:12px;width:18px;height:18px;background:rgba(29,191,115,.15);border-radius:50%;display:flex;align-items:center;justify-content:center}
 .featured-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--accent),#ff9800);color:var(--dark);padding:6px 20px;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;box-shadow:0 8px 22px -6px rgba(253,187,45,.8);animation:badgeBounce 2s ease-in-out infinite;white-space:nowrap}
-
-/* Google Reviews */
 .google-reviews{background:var(--bg)}
 .gr-header{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:32px}
 .gr-rating{display:flex;align-items:center;gap:15px;background:var(--card);padding:22px 32px;border-radius:14px;box-shadow:var(--shadow-sm);border:1px solid var(--border)}
@@ -367,8 +393,6 @@ body.dark .gr-name{color:var(--text)}
 .gr-stars{color:#fbbc04;font-size:14px;margin-bottom:8px;letter-spacing:1px}
 .gr-text{font-size:13.5px;color:var(--text-light);line-height:1.6}
 .gr-verified{color:#4285f4;font-size:11px;margin-top:10px;display:flex;align-items:center;gap:5px;font-weight:600}
-
-/* Comparison */
 .comparison{background:var(--card)}
 .compare-table{max-width:900px;margin:0 auto;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md)}
 .compare-table table{width:100%;border-collapse:collapse}
@@ -379,8 +403,6 @@ body.dark .gr-name{color:var(--text)}
 .compare-table td:nth-child(3){text-align:center;color:var(--text-light)}
 .compare-table i.fa-check{color:var(--success)}
 .compare-table i.fa-times{color:#dc3545}
-
-/* Referral */
 .referral{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;text-align:center;padding:70px 0;position:relative;overflow:hidden}
 .referral::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(253,187,45,.15),transparent 60%);pointer-events:none}
 .referral-content{max-width:700px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
@@ -389,8 +411,6 @@ body.dark .gr-name{color:var(--text)}
 .referral p{font-size:16px;margin-bottom:28px;opacity:.95}
 .referral-box{background:rgba(255,255,255,.15);padding:22px;border-radius:14px;backdrop-filter:blur(10px);max-width:520px;margin:0 auto 22px;border:2px dashed var(--accent)}
 .referral-code{font-size:28px;font-weight:800;color:var(--accent);letter-spacing:3px;margin-bottom:10px;font-family:monospace}
-
-/* Portfolio */
 .portfolio-section{background:var(--bg)}
 .portfolio-filter{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:32px}
 .portfolio-filter-btn{padding:9px 20px;background:var(--card);border:1.5px solid var(--border);color:var(--text);font-size:12.5px;font-weight:600;border-radius:50px;cursor:pointer;transition:.3s;text-transform:uppercase;letter-spacing:.8px}
@@ -410,8 +430,6 @@ body.dark .gr-name{color:var(--text)}
 body.dark .portfolio-content h3{color:var(--text)}
 .portfolio-content p{color:var(--text-light);font-size:13.5px;margin-bottom:12px}
 .portfolio-results{background:rgba(29,191,115,.1);color:var(--success);padding:9px 13px;border-radius:8px;font-weight:700;font-size:12.5px;display:inline-flex;align-items:center;gap:6px}
-
-/* Process */
 .process-steps{display:flex;justify-content:space-between;position:relative;margin:50px 0;gap:20px}
 .process-steps::before{content:'';position:absolute;top:30px;left:8%;right:8%;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent),var(--primary));border-radius:2px;z-index:1;opacity:.35}
 .process-step{text-align:center;position:relative;z-index:2;flex:1;transition:transform .35s}
@@ -421,8 +439,6 @@ body.dark .portfolio-content h3{color:var(--text)}
 .process-step h3{font-size:16px;color:var(--primary);margin-bottom:7px;font-weight:700}
 body.dark .process-step h3{color:var(--text)}
 .process-step p{font-size:12.5px;color:var(--text-light)}
-
-/* Gallery */
 .gallery{background:var(--card)}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
 .gallery-item{border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.4s;height:250px;position:relative;cursor:pointer}
@@ -433,8 +449,6 @@ body.dark .process-step h3{color:var(--text)}
 .gallery-item:hover .gallery-overlay{transform:translateY(0)}
 .gallery-overlay h3{font-size:16px;margin-bottom:5px}
 .gallery-overlay p{font-size:12px;opacity:.9}
-
-/* Reviews slider */
 .reviews{background:var(--bg)}
 .reviews-slider{overflow:hidden;position:relative;padding:10px 0;cursor:grab}
 .reviews-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
@@ -454,16 +468,18 @@ body.dark .review-name{color:var(--text)}
 .slider-dots{display:flex;gap:8px}
 .slider-dot{width:9px;height:9px;border-radius:50%;background:rgba(26,42,108,.25);cursor:pointer;transition:.3s}
 .slider-dot.active{background:var(--accent);width:26px;border-radius:6px}
-.submit-review-btn{display:block;margin:24px auto 0}
-
-/* Blog */
 .blog-section{background:var(--card)}
 .blog-filter{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:32px}
 .blog-filter-btn{padding:8px 18px;background:var(--bg);border:1.5px solid var(--border);color:var(--text);font-size:12px;font-weight:600;border-radius:50px;cursor:pointer;transition:.3s;text-transform:uppercase}
 .blog-filter-btn.active{background:var(--primary);color:#fff}
+.blog-search-wrap{max-width:600px;margin:0 auto 28px;position:relative}
+.blog-search-wrap input{width:100%;padding:14px 50px 14px 20px;border:2px solid var(--border);border-radius:50px;font-size:14.5px;font-family:inherit;background:var(--card);color:var(--text)}
+.blog-search-wrap input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(253,187,45,.15)}
+.blog-search-wrap i{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--accent)}
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px}
-.blog-card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.4s;border:1px solid var(--border);display:flex;flex-direction:column}
+.blog-card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.4s;border:1px solid var(--border);display:flex;flex-direction:column;cursor:pointer}
 .blog-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg);border-color:var(--accent)}
+.blog-card.hide{display:none}
 .blog-img-wrap{position:relative;overflow:hidden;height:200px}
 .blog-card img{width:100%;height:100%;object-fit:cover;transition:.55s}
 .blog-card:hover img{transform:scale(1.09)}
@@ -477,8 +493,12 @@ body.dark .blog-content h3{color:var(--text)}
 .read-more{color:var(--secondary);font-weight:600;font-size:13.5px;display:inline-flex;align-items:center;gap:6px}
 .read-more:hover{color:var(--accent)}
 .blog-load-more{display:block;margin:36px auto 0}
-
-/* FAQ */
+.blog-full-content{font-size:15px;line-height:1.8;color:var(--text-light)}
+.blog-full-content h3{color:var(--primary);margin:22px 0 12px;font-size:19px;font-weight:700}
+body.dark .blog-full-content h3{color:var(--text)}
+.blog-full-content p{margin-bottom:14px}
+.blog-full-content ul{margin:12px 0 18px 22px;list-style:disc}
+.blog-full-content li{margin-bottom:8px}
 .faq-section{background:var(--bg)}
 .faq-search-wrap{max-width:600px;margin:0 auto 32px;position:relative}
 .faq-search-wrap input{width:100%;padding:15px 50px 15px 20px;border:2px solid var(--border);border-radius:50px;font-size:14.5px;font-family:inherit;background:var(--card);color:var(--text)}
@@ -494,8 +514,6 @@ body.dark .faq-question{color:var(--text)}
 .faq-item.active .faq-question i{transform:rotate(180deg);color:#fff}
 .faq-answer{padding:0 24px;max-height:0;overflow:hidden;background:var(--bg);transition:max-height .45s,padding .35s;font-size:13.5px;color:var(--text-light)}
 .faq-item.active .faq-answer{padding:18px 24px;max-height:520px}
-
-/* About */
 .about{background:var(--card)}
 .about-content{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
 .about-text h3{font-size:27px;color:var(--primary);margin-bottom:18px;font-weight:700}
@@ -508,8 +526,6 @@ body.dark .about-text h3{color:var(--text)}
 body.dark .about-stat h4{color:var(--accent)}
 .about-stat p{color:var(--text-light);font-size:12px;text-transform:uppercase;letter-spacing:1.2px;font-weight:600}
 .about-image{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg)}
-
-/* Team */
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:26px;margin-top:36px}
 .team-member{position:relative;overflow:hidden;border-radius:14px;transition:.4s;box-shadow:var(--shadow-sm);background:var(--card)}
 .team-member img{width:100%;height:320px;object-fit:cover;transition:.5s}
@@ -522,8 +538,6 @@ body.dark .about-stat h4{color:var(--accent)}
 .team-social{display:flex;gap:9px;margin-top:12px}
 .team-social a{width:32px;height:32px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;transition:.3s}
 .team-social a:hover{background:var(--accent);color:var(--dark)}
-
-/* Areas */
 .areas-section{background:var(--bg)}
 .areas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:15px;margin-top:32px}
 .area-item{background:var(--card);padding:17px;border-radius:12px;text-align:center;border:1.5px solid var(--border);transition:.35s;font-size:13.5px;color:var(--primary);font-weight:600;cursor:pointer;position:relative;overflow:hidden}
@@ -532,15 +546,11 @@ body.dark .area-item{color:var(--text)}
 .area-item:hover{color:#fff;transform:translateY(-5px);border-color:transparent}
 .area-item:hover::before{transform:translateY(0)}
 .area-item i{display:block;font-size:22px;color:var(--accent);margin-bottom:8px}
-
-/* CTA */
 .cta-section{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;text-align:center;padding:70px 0;position:relative;overflow:hidden}
 .cta-content{max-width:820px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
 .cta-content h2{font-size:36px;margin-bottom:16px;font-weight:700}
 .cta-content p{font-size:16px;margin-bottom:30px}
 .cta-buttons{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
-
-/* Contact */
 .contact{background:var(--card)}
 .contact-container{display:grid;grid-template-columns:1fr 1.1fr;gap:35px}
 .contact-info{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:36px;border-radius:16px;box-shadow:var(--shadow-md);position:relative;overflow:hidden}
@@ -574,8 +584,6 @@ body.dark .form-group label{color:var(--text)}
 .form-group.error .error-message{display:block}
 .map{margin-top:35px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md);grid-column:1/-1}
 .map iframe{width:100%;height:380px;border:none;display:block}
-
-/* Footer */
 footer{background:#0d1a45;color:#fff;padding:60px 0 22px}
 .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-bottom:32px}
 .footer-section h3{font-size:17px;margin-bottom:22px;padding-bottom:12px;position:relative;font-weight:700}
@@ -598,13 +606,9 @@ footer{background:#0d1a45;color:#fff;padding:60px 0 22px}
 .footer-links{display:flex;justify-content:center;gap:22px;margin-bottom:12px;flex-wrap:wrap}
 .footer-links a{color:#8892b0;font-size:12.5px}
 .footer-links a:hover{color:var(--accent)}
-
-/* FLOATING */
 .admin-access{position:fixed;bottom:18px;left:18px;z-index:999}
 .admin-key{width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,.7);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px;transition:.3s}
 .admin-key:hover{background:var(--accent);color:var(--dark);transform:scale(1.1) rotate(15deg)}
-
-/* ============ NEW: STICKY QUOTE BAR (DESKTOP) ============ */
 .sticky-quote-bar{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:996;display:flex;flex-direction:column;gap:0;background:var(--primary);border-radius:12px 0 0 12px;box-shadow:-6px 6px 24px rgba(0,0,0,.25);overflow:hidden}
 .sticky-quote-bar a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 12px;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;transition:.3s;border-bottom:1px solid rgba(255,255,255,.1);writing-mode:vertical-rl;text-orientation:mixed}
 .sticky-quote-bar a:last-child{border-bottom:none}
@@ -613,8 +617,6 @@ footer{background:#0d1a45;color:#fff;padding:60px 0 22px}
 .sticky-quote-bar a.wa{background:#25d366}
 .sticky-quote-bar a.wa:hover{background:#1ebe57;color:#fff}
 .sticky-quote-bar a.call{background:var(--secondary)}
-
-/* WhatsApp float */
 .whatsapp-float{position:fixed;bottom:95px;right:22px;width:56px;height:56px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:27px;box-shadow:0 8px 26px rgba(37,211,102,.55);z-index:997;transition:.3s;animation:waPulse 2s infinite}
 @keyframes waPulse{0%,100%{box-shadow:0 8px 26px rgba(37,211,102,.55)}50%{box-shadow:0 8px 38px rgba(37,211,102,.85)}}
 .whatsapp-float:hover{transform:scale(1.12) rotate(10deg);background:#1ebe57}
@@ -622,15 +624,12 @@ footer{background:#0d1a45;color:#fff;padding:60px 0 22px}
 .back-to-top.visible{opacity:1;visibility:visible}
 .back-to-top:hover{background:var(--accent);color:var(--dark);transform:translateY(-6px)}
 .loading-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--secondary));width:0%;z-index:9999;transition:width .35s,opacity .3s}
-
-/* Mobile CTA */
 .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--primary);z-index:996;box-shadow:0 -4px 20px rgba(0,0,0,.15)}
 .mobile-cta-inner{display:flex;justify-content:space-around;padding:8px}
 .mobile-cta a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px;color:#fff;font-size:11px;font-weight:600;border-radius:8px}
 .mobile-cta a i{font-size:18px}
 .mobile-cta a.call{background:rgba(255,255,255,.08)}
 .mobile-cta a.wa{background:#25d366}
-
 .toast{position:fixed;bottom:20px;right:20px;background:var(--primary);color:#fff;padding:16px 26px;border-radius:10px;box-shadow:var(--shadow-lg);transform:translateY(100px);opacity:0;transition:.35s;z-index:9999;font-size:13.5px;max-width:340px;font-weight:500}
 .toast.visible{transform:translateY(0);opacity:1}
 .skip-to-content{position:absolute;top:-40px;left:0;background:var(--primary);color:#fff;padding:10px 15px;z-index:10000;transition:top .3s}
@@ -639,7 +638,6 @@ footer{background:#0d1a45;color:#fff;padding:60px 0 22px}
 .cookie-consent.visible{transform:translateY(0)}
 .cookie-consent p{margin-right:20px;flex:1;font-size:13.5px}
 .cookie-consent a{color:var(--accent);text-decoration:underline}
-
 .live-activity{position:fixed;bottom:22px;left:22px;background:var(--card);padding:14px 20px;border-radius:14px;box-shadow:0 10px 35px rgba(0,0,0,.18);display:flex;align-items:center;gap:12px;z-index:996;transform:translateX(-420px);transition:.55s;max-width:340px;border:1px solid var(--border)}
 .live-activity.show{transform:translateX(0)}
 .live-activity .la-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0;position:relative}
@@ -649,15 +647,13 @@ footer{background:#0d1a45;color:#fff;padding:60px 0 22px}
 body.dark .live-activity .la-content strong{color:var(--accent)}
 .live-activity .la-content span{color:var(--text-light);font-size:11.5px;display:block}
 .live-activity .la-close{background:none;border:none;color:var(--text-light);font-size:18px;cursor:pointer;padding:0}
-
-/* Modals */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:1000;align-items:center;justify-content:center;padding:20px;overflow-y:auto;backdrop-filter:blur(6px)}
 .modal.show{display:flex}
 .modal-content{background:var(--card);color:var(--text);padding:36px;border-radius:18px;width:100%;max-width:560px;box-shadow:0 22px 60px rgba(0,0,0,.5);position:relative;animation:modalFadeIn .35s;max-height:90vh;overflow-y:auto;margin:auto}
 .modal-content.wide{max-width:820px}
 @keyframes modalFadeIn{from{opacity:0;transform:translateY(-40px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.close-modal{position:absolute;top:16px;right:18px;font-size:26px;cursor:pointer;color:var(--text-light);background:none;border:none;line-height:1;transition:.3s}
+.close-modal{position:absolute;top:16px;right:18px;font-size:26px;cursor:pointer;color:var(--text-light);background:none;border:none;line-height:1;transition:.3s;z-index:2}
 .close-modal:hover{color:var(--secondary);transform:rotate(90deg)}
 .modal-title{text-align:center;margin-bottom:24px;color:var(--primary);font-size:22px;font-weight:700}
 body.dark .modal-title{color:var(--text)}
@@ -665,8 +661,6 @@ body.dark .modal-title{color:var(--text)}
 .policy-content{font-size:14px;line-height:1.75;color:var(--text-light)}
 .policy-content h3{color:var(--primary);margin:20px 0 10px;font-size:16px;font-weight:700}
 body.dark .policy-content h3{color:var(--text)}
-
-/* ============ NEW: SPIN THE WHEEL ============ */
 .spin-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:10003;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px);animation:fadeIn .3s}
 .spin-popup.show{display:flex}
 .spin-box{background:linear-gradient(135deg,#1a1a2e,#0d1a45);border:3px solid var(--accent);border-radius:24px;padding:38px 30px;max-width:520px;width:100%;text-align:center;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.7);animation:modalFadeIn .4s;overflow:hidden}
@@ -688,19 +682,13 @@ body.dark .policy-content h3{color:var(--text)}
 .spin-code-box{background:rgba(253,187,45,.15);border:2px dashed #fdbb2d;border-radius:12px;padding:14px;margin-top:14px;display:none}
 .spin-code-box.show{display:block;animation:fadeIn .4s}
 .spin-code-box .code{font-family:monospace;font-size:26px;font-weight:800;color:#fdbb2d;letter-spacing:3px;display:block;margin:6px 0}
-
-/* ============ NEW: CALLBACK MODAL ============ */
 .callback-modal .modal-content{max-width:480px}
 .callback-icon{width:80px;height:80px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:36px;animation:ringRing 1.5s ease-in-out infinite}
 @keyframes ringRing{0%,100%{transform:rotate(0)}10%,30%{transform:rotate(-15deg)}20%,40%{transform:rotate(15deg)}}
 .callback-badge{display:inline-block;background:rgba(29,191,115,.15);color:var(--success);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
-
-/* ============ NEW: CONFETTI ============ */
 .confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10004;overflow:hidden}
 .confetti-piece{position:absolute;width:10px;height:14px;top:-20px;opacity:.9;animation:confettiFall linear forwards}
 @keyframes confettiFall{0%{transform:translateY(0) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
-
-/* AI Chatbot */
 .ai-chatbot{position:fixed;bottom:22px;right:22px;z-index:997}
 .chat-btn{width:58px;height:58px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 26px rgba(26,42,108,.5);transition:.3s;font-size:22px;position:relative}
 .chat-btn::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--accent);opacity:.8;animation:chatPulse 2s ease-in-out infinite}
@@ -720,8 +708,10 @@ body.dark .policy-content h3{color:var(--text)}
 .message.user{align-self:flex-end;flex-direction:row-reverse}
 .message-avatar{width:32px;height:32px;border-radius:50%;background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;flex-shrink:0}
 .message.user .message-avatar{background:var(--accent);color:var(--dark)}
+.message.agent .message-avatar{background:var(--success)}
 .message-content{background:var(--card);padding:11px 14px;border-radius:16px;line-height:1.45;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
 .message.user .message-content{background:var(--primary);color:#fff}
+.message.agent .message-content{background:linear-gradient(135deg,rgba(29,191,115,.15),rgba(29,191,115,.08));border-left:3px solid var(--success)}
 .typing-dots{display:flex;gap:4px;padding:4px 0}
 .typing-dots span{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:typingBounce 1.4s infinite}
 .typing-dots span:nth-child(2){animation-delay:.2s}
@@ -734,8 +724,6 @@ body.dark .policy-content h3{color:var(--text)}
 .chat-input{display:flex;padding:11px;border-top:1px solid var(--border);background:var(--card);gap:8px}
 .chat-input input{flex:1;padding:11px 15px;border:1.5px solid var(--border);border-radius:24px;outline:none;font-size:13px;font-family:inherit;background:var(--bg);color:var(--text)}
 .chat-input button{background:var(--primary);color:#fff;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer}
-
-/* Exit popup */
 .exit-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:10002;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
 .exit-popup.show{display:flex}
 .exit-popup-content{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:44px 34px;border-radius:22px;max-width:520px;width:100%;text-align:center;position:relative;border:3px solid var(--accent)}
@@ -744,7 +732,6 @@ body.dark .policy-content h3{color:var(--text)}
 .exit-popup-content p{font-size:15px;margin-bottom:22px}
 .exit-offer{font-size:56px;font-weight:900;color:var(--accent);letter-spacing:-2px;margin:10px 0;text-shadow:0 0 30px rgba(253,187,45,.7)}
 .exit-popup-skip{display:block;margin-top:16px;font-size:12.5px;color:rgba(255,255,255,.7);cursor:pointer;text-decoration:underline;background:none;border:none}
-
 .reveal{opacity:0;transition:all .9s cubic-bezier(.4,0,.2,1)}
 .reveal.reveal-visible{opacity:1;transform:translateY(0)}
 .reveal-up{transform:translateY(60px)}
@@ -753,8 +740,6 @@ body.dark .policy-content h3{color:var(--text)}
 .reveal-up.reveal-visible,.reveal-left.reveal-visible,.reveal-right.reveal-visible{transform:translate(0,0)}
 .lazy-load{opacity:0;transition:opacity .5s}
 .lazy-load.loaded{opacity:1}
-
-/* Admin */
 .admin-panel{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:1001;overflow-y:auto}
 .admin-panel.show{display:block}
 .admin-header{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
@@ -779,6 +764,110 @@ table th{background:var(--primary);color:#fff;font-weight:500;font-size:12.5px}
 .edit-btn{background:var(--accent);color:var(--dark)}
 .delete-btn{background:var(--secondary);color:#fff}
 
+/* ===== ✅ NEW: PWA INSTALL BUTTON ===== */
+.pwa-install-btn{position:fixed;bottom:22px;left:80px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:12px 20px;border-radius:50px;border:none;cursor:pointer;font-weight:700;font-size:13px;box-shadow:0 8px 26px rgba(26,42,108,.5);z-index:996;display:none;align-items:center;gap:8px;animation:badgeFloat 3s ease-in-out infinite}
+.pwa-install-btn.show{display:flex}
+.pwa-install-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(26,42,108,.7)}
+
+/* ===== ✅ NEW: APPOINTMENT BOOKING ===== */
+.appt-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:10px}
+.appt-calendar{background:var(--bg);border-radius:14px;padding:18px;border:1.5px solid var(--border)}
+.cal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.cal-header button{background:var(--card);border:1.5px solid var(--border);width:34px;height:34px;border-radius:50%;cursor:pointer;color:var(--text);transition:.3s}
+.cal-header button:hover{background:var(--accent);color:var(--dark);border-color:var(--accent)}
+.cal-header span{font-weight:700;color:var(--primary);font-size:14.5px}
+body.dark .cal-header span{color:var(--text)}
+.cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px}
+.cal-weekdays span{text-align:center;font-size:11px;font-weight:700;color:var(--text-light);text-transform:uppercase;padding:4px 0}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;border-radius:8px;cursor:pointer;transition:.2s;color:var(--text);background:var(--card);border:1px solid transparent}
+.cal-day:hover:not(.disabled):not(.empty){background:rgba(253,187,45,.15);border-color:var(--accent)}
+.cal-day.selected{background:linear-gradient(135deg,var(--accent),#ff9800);color:var(--dark);font-weight:800}
+.cal-day.disabled{color:#bbb;cursor:not-allowed;opacity:.4}
+.cal-day.empty{cursor:default;background:transparent}
+.appt-slots h3{color:var(--primary);font-size:15px;margin-bottom:14px;font-weight:700}
+body.dark .appt-slots h3{color:var(--text)}
+.slots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+.slot{padding:10px 6px;text-align:center;border:1.5px solid var(--border);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;background:var(--card);color:var(--text);transition:.3s}
+.slot:hover{border-color:var(--accent);color:var(--primary);transform:translateY(-2px)}
+.slot.selected{background:var(--primary);color:#fff;border-color:var(--primary)}
+.slot.booked{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+
+/* ===== ✅ NEW: CLIENT PORTAL ===== */
+.portal-tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap;border-bottom:2px solid var(--border);padding-bottom:8px}
+.portal-tab{padding:9px 18px;background:transparent;border:none;font-size:13px;font-weight:600;color:var(--text-light);cursor:pointer;border-radius:8px;transition:.3s;font-family:inherit}
+.portal-tab:hover{background:var(--bg);color:var(--primary)}
+.portal-tab.active{background:var(--primary);color:#fff}
+.portal-pane{display:none}
+.portal-pane.active{display:block;animation:fadeIn .35s}
+.portal-project{background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:18px;margin-bottom:14px}
+.portal-project h4{color:var(--primary);font-size:15px;margin-bottom:6px;font-weight:700}
+body.dark .portal-project h4{color:var(--text)}
+.portal-project .proj-meta{font-size:12px;color:var(--text-light);margin-bottom:10px}
+.progress-bar-wrap{background:rgba(0,0,0,.06);border-radius:20px;height:8px;overflow:hidden;margin:8px 0}
+body.dark .progress-bar-wrap{background:rgba(255,255,255,.1)}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--success),#28e88b);border-radius:20px;transition:width .6s}
+.portal-invoice-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);font-size:13px}
+.portal-invoice-row:last-child{border-bottom:none}
+.portal-status{padding:4px 10px;border-radius:20px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+.status-paid{background:rgba(29,191,115,.15);color:var(--success)}
+.status-pending{background:rgba(253,187,45,.2);color:#b8860b}
+.status-overdue{background:rgba(178,31,31,.15);color:var(--secondary)}
+.portal-ticket{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px}
+.portal-ticket h5{color:var(--primary);font-size:13.5px;margin-bottom:6px;font-weight:700}
+body.dark .portal-ticket h5{color:var(--text)}
+.portal-ticket p{font-size:12px;color:var(--text-light);margin-bottom:6px}
+.portal-empty{text-align:center;padding:30px;color:var(--text-light);font-size:13.5px}
+.portal-empty i{font-size:42px;color:var(--accent);margin-bottom:12px;display:block;opacity:.5}
+
+/* ===== ✅ NEW: INVOICE GENERATOR ===== */
+.inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.inv-items-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:13px}
+.inv-items-table th,.inv-items-table td{padding:8px 6px;border-bottom:1px solid var(--border);text-align:left}
+.inv-items-table th{background:var(--bg);font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-light)}
+.inv-items-table input{width:100%;border:none;background:transparent;padding:6px;font-family:inherit;font-size:13px;color:var(--text)}
+.inv-items-table input:focus{outline:1.5px solid var(--accent);border-radius:5px;background:var(--bg)}
+.inv-remove{background:rgba(178,31,31,.1);color:var(--secondary);border:none;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:12px}
+.inv-remove:hover{background:var(--secondary);color:#fff}
+.inv-totals{background:var(--bg);padding:16px;border-radius:10px;margin-bottom:14px}
+.inv-row{display:flex;justify-content:space-between;padding:6px 0;font-size:13.5px}
+.inv-row.total{border-top:2px solid var(--accent);padding-top:10px;margin-top:6px;font-weight:800;font-size:17px;color:var(--primary)}
+body.dark .inv-row.total{color:var(--accent)}
+.inv-add-item{background:rgba(29,191,115,.1);color:var(--success);border:1.5px dashed var(--success);padding:8px;border-radius:8px;width:100%;cursor:pointer;font-weight:600;font-size:12.5px;margin-bottom:14px}
+.inv-add-item:hover{background:var(--success);color:#fff}
+.invoice-preview{background:#fff;color:#333;padding:32px;border-radius:10px;border:1px solid #ddd;font-size:12.5px}
+.invoice-preview-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;padding-bottom:16px;border-bottom:3px solid var(--primary)}
+.invoice-preview-header h2{color:var(--primary);font-size:22px;font-weight:800;letter-spacing:-.6px}
+.invoice-preview-header .inv-num{font-size:12px;color:#666;margin-top:4px}
+.invoice-preview-meta{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
+.invoice-preview-meta div h4{color:var(--primary);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.invoice-preview-meta div p{font-size:12.5px;color:#333;line-height:1.5}
+.invoice-preview-table{width:100%;border-collapse:collapse;margin-bottom:16px}
+.invoice-preview-table th{background:var(--primary);color:#fff;padding:9px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.invoice-preview-table td{padding:9px;border-bottom:1px solid #eee;font-size:12px}
+.invoice-preview-totals{text-align:right}
+.invoice-preview-totals .row{display:flex;justify-content:flex-end;gap:30px;padding:5px 0;font-size:12.5px}
+.invoice-preview-totals .row.grand{border-top:2px solid var(--primary);padding-top:8px;margin-top:6px;font-weight:800;font-size:15px;color:var(--primary)}
+
+/* ===== ✅ NEW: NEWSLETTER POPUP ===== */
+.newsletter-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:10005;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px);animation:fadeIn .3s}
+.newsletter-popup.show{display:flex}
+.newsletter-content{background:var(--card);border-radius:22px;max-width:520px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:modalFadeIn .4s;position:relative}
+.newsletter-hero{background:linear-gradient(135deg,var(--primary),var(--secondary));padding:30px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.newsletter-hero::before{content:'';position:absolute;top:-50%;right:-30%;width:200%;height:200%;background:radial-gradient(circle,rgba(253,187,45,.25),transparent 55%);animation:spinBorder 12s linear infinite}
+.newsletter-hero i{font-size:52px;color:var(--accent);margin-bottom:14px;display:block;position:relative}
+.newsletter-hero h3{font-size:24px;font-weight:800;margin-bottom:8px;position:relative}
+.newsletter-hero p{font-size:13.5px;opacity:.95;position:relative}
+.newsletter-body{padding:26px}
+.newsletter-body p{font-size:13.5px;color:var(--text-light);margin-bottom:16px;text-align:center}
+.newsletter-form{display:flex;gap:8px;flex-direction:column}
+.newsletter-form input{padding:14px 16px;border:2px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;background:var(--bg);color:var(--text)}
+.newsletter-form input:focus{outline:none;border-color:var(--accent)}
+.newsletter-form button{padding:14px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff9800);color:var(--dark);border:none;font-weight:800;font-size:14px;cursor:pointer;text-transform:uppercase;letter-spacing:1px}
+.newsletter-form button:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(253,187,45,.5)}
+.newsletter-skip{text-align:center;margin-top:12px;font-size:12px;color:var(--text-light);cursor:pointer;text-decoration:underline;background:none;border:none;width:100%}
+.newsletter-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.2);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;z-index:2}
+
 @media(max-width:992px){
 .about-content,.contact-container{grid-template-columns:1fr}
 nav ul{display:none;width:100%;flex-direction:column;margin-top:12px;background:rgba(0,0,0,.2);border-radius:12px;padding:8px}
@@ -793,6 +882,8 @@ nav ul li a{display:block;text-align:center}
 .calc-grid{grid-template-columns:1fr}
 .services .section-title h2{font-size:38px}
 .sticky-quote-bar{display:none}
+.appt-grid{grid-template-columns:1fr}
+.inv-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
 .services-grid,.gallery-grid,.portfolio-grid,.blog-grid,.team-grid,.video-grid{grid-template-columns:1fr}
@@ -815,6 +906,8 @@ footer{padding-bottom:80px}
 .wheel-wrapper{width:240px;height:240px}
 .spin-box{padding:28px 20px}
 .spin-box h2{font-size:20px}
+.pwa-install-btn{bottom:130px;left:12px;padding:10px 16px;font-size:11.5px}
+.slots-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:480px){
 .hero h1{font-size:23px}
@@ -827,6 +920,14 @@ footer{padding-bottom:80px}
 .pricing-card.featured{transform:scale(1)}
 .wheel-wrapper{width:200px;height:200px}
 }
+
+/* ✅ PRINT STYLES FOR INVOICE */
+@media print{
+body *{visibility:hidden}
+#invoicePreview,#invoicePreview *{visibility:visible}
+#invoicePreview{position:absolute;left:0;top:0;width:100%;box-shadow:none!important;border:none!important}
+.inv-no-print{display:none!important}
+}
 </style>
 </head>
 <body>
@@ -837,7 +938,149 @@ footer{padding-bottom:80px}
 <div class="toast" id="toast"></div>
 <div class="confetti" id="confetti"></div>
 
-<!-- NEW: LIVE VISITOR BAR -->
+<!-- ✅ NEW: PWA INSTALL BUTTON -->
+<button class="pwa-install-btn" id="pwaInstallBtn"><i class="fas fa-download"></i> Install App</button>
+
+<!-- ✅ NEW: NEWSLETTER LEAD MAGNET POPUP -->
+<div class="newsletter-popup" id="newsletterPopup">
+<div class="newsletter-content">
+<button class="newsletter-close" onclick="closeNewsletter()">&times;</button>
+<div class="newsletter-hero">
+<i class="fas fa-file-pdf"></i>
+<h3>Free Website Checklist 🎁</h3>
+<p>Get our 25-point checklist used by 250+ businesses</p>
+</div>
+<div class="newsletter-body">
+<p>Download the free PDF + get weekly IT tips delivered to your inbox.</p>
+<form class="newsletter-form" id="newsletterForm">
+<input type="text" id="nlName" placeholder="Your Name" required>
+<input type="email" id="nlEmail" placeholder="Your Email Address" required>
+<button type="submit"><i class="fas fa-download"></i> Send Me The PDF</button>
+</form>
+<button class="newsletter-skip" onclick="closeNewsletter()">No thanks, maybe later</button>
+</div>
+</div>
+</div>
+
+<!-- ✅ NEW: APPOINTMENT BOOKING MODAL -->
+<div class="modal" id="appointmentModal">
+<div class="modal-content wide">
+<button class="close-modal" onclick="closeModal('appointmentModal')">&times;</button>
+<h2 class="modal-title"><i class="fas fa-calendar-check" style="color:var(--accent)"></i> Book Free Consultation</h2>
+<p style="text-align:center;color:var(--text-light);font-size:13px;margin-bottom:20px">Pick a date & time that works for you. 30 min free session.</p>
+<div class="appt-grid">
+<div class="appt-calendar">
+<div class="cal-header">
+<button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+<span id="calMonthYear"></span>
+<button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+</div>
+<div class="cal-weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+<div class="cal-days" id="calDays"></div>
+</div>
+<div class="appt-slots">
+<h3><i class="fas fa-clock"></i> Select Time</h3>
+<div class="slots-grid" id="slotsGrid"></div>
+<div id="apptFormWrap" style="display:none">
+<form id="apptForm">
+<div class="form-group"><label>Your Name</label><input type="text" id="apptName" required></div>
+<div class="form-group"><label>Phone</label><input type="tel" id="apptPhone" required></div>
+<div class="form-group"><label>Service</label>
+<select id="apptService" required>
+<option value="">Select...</option>
+<option>Web Design</option><option>Software</option><option>Mobile App</option><option>SEO</option><option>Digital Marketing</option><option>Other</option>
+</select>
+</div>
+<button type="submit" class="btn"><i class="fas fa-check-circle"></i> Confirm Appointment</button>
+</form>
+</div>
+<p id="apptHint" style="text-align:center;color:var(--text-light);font-size:12.5px;padding:12px"><i class="fas fa-arrow-left"></i> Please select a date first</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ✅ NEW: CLIENT PORTAL MODAL -->
+<div class="modal" id="portalModal">
+<div class="modal-content wide">
+<button class="close-modal" onclick="closeModal('portalModal')">&times;</button>
+<h2 class="modal-title"><i class="fas fa-user-circle" style="color:var(--accent)"></i> Client Dashboard</h2>
+<div id="portalLoginView">
+<p style="text-align:center;color:var(--text-light);font-size:13px;margin-bottom:16px">Login to view your projects, invoices, and support tickets.</p>
+<form id="portalLoginForm">
+<div class="form-group"><label>Email</label><input type="email" id="portalEmail" placeholder="client@demo.com" required></div>
+<div class="form-group"><label>Password</label><input type="password" id="portalPassword" placeholder="demo123" required></div>
+<button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+<p style="text-align:center;font-size:11.5px;margin-top:10px;color:var(--text-light)">Demo: <strong>client@demo.com</strong> / <strong>demo123</strong></p>
+</form>
+</div>
+<div id="portalDashView" style="display:none">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+<div><strong id="portalWelcome" style="color:var(--primary);font-size:15px"></strong><div style="font-size:12px;color:var(--text-light)">Welcome back!</div></div>
+<button class="btn btn-sm" onclick="portalLogout()" style="background:var(--secondary);color:#fff"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
+<div class="portal-tabs">
+<button class="portal-tab active" data-pane="projects"><i class="fas fa-project-diagram"></i> Projects</button>
+<button class="portal-tab" data-pane="invoices"><i class="fas fa-file-invoice-dollar"></i> Invoices</button>
+<button class="portal-tab" data-pane="tickets"><i class="fas fa-headset"></i> Tickets</button>
+</div>
+<div class="portal-pane active" id="pane-projects"></div>
+<div class="portal-pane" id="pane-invoices"></div>
+<div class="portal-pane" id="pane-tickets"></div>
+</div>
+</div>
+</div>
+
+<!-- ✅ NEW: INVOICE GENERATOR MODAL -->
+<div class="modal" id="invoiceModal">
+<div class="modal-content wide">
+<button class="close-modal" onclick="closeModal('invoiceModal')">&times;</button>
+<h2 class="modal-title inv-no-print"><i class="fas fa-file-invoice-dollar" style="color:var(--accent)"></i> Invoice Generator</h2>
+<div class="inv-no-print">
+<div class="inv-grid">
+<div class="form-group"><label>Client Name</label><input type="text" id="invClientName" placeholder="ABC Enterprises"></div>
+<div class="form-group"><label>Client Phone</label><input type="tel" id="invClientPhone" placeholder="+91 XXXXX"></div>
+<div class="form-group"><label>Client Email</label><input type="email" id="invClientEmail" placeholder="client@abc.com"></div>
+<div class="form-group"><label>Invoice Date</label><input type="date" id="invDate"></div>
+</div>
+<table class="inv-items-table" id="invItemsTable">
+<thead><tr><th>Description</th><th style="width:80px">Qty</th><th style="width:110px">Price</th><th style="width:100px">Amount</th><th style="width:40px"></th></tr></thead>
+<tbody id="invItemsBody"></tbody>
+</table>
+<button class="inv-add-item" id="invAddItem"><i class="fas fa-plus"></i> Add Line Item</button>
+<div class="inv-totals">
+<div class="inv-row"><span>Subtotal</span><span id="invSubtotal">₹0</span></div>
+<div class="inv-row"><span>GST (18%)</span><span id="invTax">₹0</span></div>
+<div class="inv-row total"><span>Total</span><span id="invGrand">₹0</span></div>
+</div>
+<button class="btn" id="invGenerate" style="background:var(--success);color:#fff"><i class="fas fa-eye"></i> Generate Invoice</button>
+</div>
+<div id="invoicePreviewWrap" style="display:none;margin-top:20px">
+<div class="invoice-preview" id="invoicePreview"></div>
+<div class="inv-no-print" style="display:flex;gap:10px;margin-top:16px">
+<button class="btn" id="invPrint" style="background:var(--primary)"><i class="fas fa-print"></i> Print / Save PDF</button>
+<button class="btn" onclick="closeModal('invoiceModal')" style="background:var(--text-light)"><i class="fas fa-times"></i> Close</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ✅ NEW: BLOG DETAIL MODAL -->
+<div class="modal" id="blogModal">
+<div class="modal-content wide">
+<button class="close-modal" onclick="closeModal('blogModal')">&times;</button>
+<img id="blogModalImg" style="width:100%;height:240px;object-fit:cover;border-radius:12px;margin-bottom:20px" alt="">
+<div class="blog-meta" id="blogModalMeta"></div>
+<h2 class="modal-title" id="blogModalTitle" style="text-align:left;margin-bottom:14px"></h2>
+<div class="blog-full-content" id="blogModalBody"></div>
+<div style="text-align:center;margin-top:22px;padding-top:20px;border-top:2px dashed var(--border)">
+<p style="font-size:13px;color:var(--text-light);margin-bottom:12px">Need help with this? Let's talk!</p>
+<button class="btn" onclick="closeModal('blogModal');openModal('callbackModal')"><i class="fas fa-phone-volume"></i> Get Free Consultation</button>
+</div>
+</div>
+</div>
+
+<!-- Existing LIVE VISITOR BAR -->
 <div class="visitor-bar">
 <div class="container">
 <span class="visitor-item"><span class="visitor-dot"></span> <strong id="liveVisitors">47</strong> people viewing this page</span>
@@ -846,7 +1089,7 @@ footer{padding-bottom:80px}
 </div>
 </div>
 
-<!-- NEW: COUNTDOWN BAR -->
+<!-- Existing COUNTDOWN BAR -->
 <div class="countdown-bar">
 <div class="container">
 <i class="fas fa-bolt"></i>
@@ -857,19 +1100,20 @@ footer{padding-bottom:80px}
 </div>
 </div>
 
-<div class="emergency-bar" style="background:#b21f1f">
+<div class="emergency-bar" style="background:#b21f1f;color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:600">
 <i class="fas fa-bolt"></i> Emergency IT Support 24/7 — <a href="tel:+917004863268" style="color:#fff;text-decoration:underline;">Call Now: +91 7004863268</a>
 </div>
 
-<!-- NEW: DESKTOP STICKY QUOTE BAR -->
+<!-- Existing STICKY QUOTE BAR -->
 <div class="sticky-quote-bar">
 <a href="#contact" title="Get Free Quote"><i class="fas fa-file-invoice"></i></a>
 <a href="tel:+917004863268" class="call" title="Call Now"><i class="fas fa-phone"></i></a>
 <a href="https://wa.me/917004863268?text=Hi!%20I%20want%20a%20free%20quote." target="_blank" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <a href="#" onclick="openModal('callbackModal');return false;" title="Request Callback"><i class="fas fa-phone-volume"></i></a>
+<a href="#" onclick="openModal('appointmentModal');return false;" title="Book Appointment"><i class="fas fa-calendar-check"></i></a>
 </div>
 
-<!-- Live activity -->
+<!-- Existing Live activity -->
 <div class="live-activity" id="liveActivity">
 <div class="la-avatar" id="laAvatar">R</div>
 <div class="la-content">
@@ -886,7 +1130,7 @@ footer{padding-bottom:80px}
 
 <a href="https://wa.me/917004863268?text=Hello%20CYBER%20Expert!%20I%20need%20IT%20services." target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-<!-- NEW: SPIN THE WHEEL POPUP -->
+<!-- SPIN POPUP (existing) -->
 <div class="spin-popup" id="spinPopup">
 <div class="spin-box">
 <button class="spin-close" onclick="closeSpinPopup()">&times;</button>
@@ -906,7 +1150,7 @@ Your Discount Code
 </div>
 </div>
 
-<!-- NEW: CALLBACK MODAL -->
+<!-- CALLBACK MODAL (existing) -->
 <div class="modal callback-modal" id="callbackModal">
 <div class="modal-content">
 <button class="close-modal" onclick="closeModal('callbackModal')">&times;</button>
@@ -915,24 +1159,12 @@ Your Discount Code
 <h2 class="modal-title">Request a Free Callback</h2>
 <p style="text-align:center;color:var(--text-light);font-size:13.5px;margin-bottom:20px">Enter your details — we'll call you within <strong style="color:var(--success)">30 seconds</strong>.</p>
 <form id="callbackForm">
-<div class="form-group">
-<label>Your Name</label>
-<input type="text" id="cbName" placeholder="Enter name" required>
-</div>
-<div class="form-group">
-<label>Mobile Number</label>
-<input type="tel" id="cbPhone" placeholder="+91 XXXXX XXXXX" required>
-</div>
-<div class="form-group">
-<label>Service Interested In</label>
+<div class="form-group"><label>Your Name</label><input type="text" id="cbName" placeholder="Enter name" required></div>
+<div class="form-group"><label>Mobile Number</label><input type="tel" id="cbPhone" placeholder="+91 XXXXX XXXXX" required></div>
+<div class="form-group"><label>Service Interested In</label>
 <select id="cbService" required>
 <option value="">Select service</option>
-<option>Web Design</option>
-<option>Software Development</option>
-<option>Mobile App</option>
-<option>SEO Services</option>
-<option>Digital Marketing</option>
-<option>Other</option>
+<option>Web Design</option><option>Software Development</option><option>Mobile App</option><option>SEO Services</option><option>Digital Marketing</option><option>Other</option>
 </select>
 </div>
 <button type="submit" class="btn"><i class="fas fa-phone-volume"></i> Call Me Now</button>
@@ -940,6 +1172,7 @@ Your Discount Code
 </div>
 </div>
 
+<!-- AI CHATBOT (enhanced with human handoff) -->
 <div class="ai-chatbot">
 <div class="chat-btn" id="chatBtn"><i class="fas fa-robot"></i></div>
 <div class="chat-window" id="chatWindow">
@@ -960,9 +1193,9 @@ Your Discount Code
 <div class="quick-reply" data-message="What services do you offer?">Services</div>
 <div class="quick-reply" data-message="Web design pricing?">Pricing</div>
 <div class="quick-reply" data-message="How to contact?">Contact</div>
-<div class="quick-reply" data-message="Do you offer support?">Support</div>
+<div class="quick-reply" data-message="Talk to human">Human Agent</div>
 </div>
-<button class="chat-human-btn" onclick="window.open('https://wa.me/917004863268?text=Hello%2C%20I%20want%20human%20support.', '_blank')"><i class="fas fa-user"></i> Chat with Human</button>
+<button class="chat-human-btn" onclick="connectHumanAgent()"><i class="fas fa-user"></i> Connect to Human Agent</button>
 <div class="chat-input">
 <input type="text" placeholder="Type your message..." id="chatInput">
 <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
@@ -970,6 +1203,7 @@ Your Discount Code
 </div>
 </div>
 
+<!-- EXIT POPUP (existing) -->
 <div class="exit-popup" id="exitPopup">
 <div class="exit-popup-content">
 <button class="exit-close" onclick="closeExitPopup()">&times;</button>
@@ -1026,7 +1260,7 @@ Your Discount Code
 <li><a href="#calculator">Calculator</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#reviews">Reviews</a></li>
+<li><a href="#blog">Blog</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="https://www.fiverr.com/aman70503" target="_blank" class="fiverr-btn"><i class="fab fa-fiverr"></i> Order</a></li>
 <li><button class="login-btn" id="clientLoginBtn"><i class="fas fa-user"></i> Login</button></li>
@@ -1045,7 +1279,7 @@ Your Discount Code
 <p>We build websites, mobile apps, custom software, and run digital marketing campaigns that grow businesses. Serving Sheikhpura, Patna, and all of Bihar since 2010.</p>
 <div class="hero-buttons">
 <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i> Get Free Quote</a>
-<button class="btn btn-outline" onclick="openModal('callbackModal')"><i class="fas fa-phone-volume"></i> Request Callback</button>
+<button class="btn btn-outline" onclick="openModal('appointmentModal')"><i class="fas fa-calendar-check"></i> Book Appointment</button>
 </div>
 <div class="hero-stats">
 <div class="hero-stat"><h3 data-count="500">0</h3><p>Projects Done</p></div>
@@ -1108,7 +1342,6 @@ Your Discount Code
 </div>
 </section>
 
-<!-- NEW: VIDEO TESTIMONIALS -->
 <section id="video-testimonials" class="video-testimonials">
 <div class="container">
 <div class="section-title">
@@ -1293,6 +1526,29 @@ Your Discount Code
 </div>
 </section>
 
+<!-- ✅ NEW: BLOG SECTION -->
+<section id="blog" class="blog-section">
+<div class="container">
+<div class="section-title">
+<span class="subtitle">Blog & Insights</span>
+<h2>Latest from Our Blog</h2>
+<p>Tips, trends, and guides for growing your business online.</p>
+</div>
+<div class="blog-search-wrap">
+<input type="text" id="blogSearch" placeholder="Search articles...">
+<i class="fas fa-search"></i>
+</div>
+<div class="blog-filter">
+<button class="blog-filter-btn active" data-cat="all">All</button>
+<button class="blog-filter-btn" data-cat="web">Web</button>
+<button class="blog-filter-btn" data-cat="seo">SEO</button>
+<button class="blog-filter-btn" data-cat="marketing">Marketing</button>
+<button class="blog-filter-btn" data-cat="business">Business</button>
+</div>
+<div class="blog-grid" id="blogGrid"></div>
+</div>
+</section>
+
 <section class="faq-section">
 <div class="container">
 <div class="section-title">
@@ -1361,7 +1617,7 @@ Your Discount Code
 <p>Contact us today for a free consultation.</p>
 <div class="cta-buttons">
 <a href="#contact" class="btn"><i class="fas fa-comments"></i> Get Free Consultation</a>
-<button class="btn btn-outline" onclick="openModal('callbackModal')"><i class="fas fa-phone-volume"></i> Request Callback</button>
+<button class="btn btn-outline" onclick="openModal('appointmentModal')"><i class="fas fa-calendar-check"></i> Book Appointment</button>
 </div>
 </div>
 </div>
@@ -1381,6 +1637,7 @@ Your Discount Code
 <div class="contact-detail"><i class="fas fa-envelope"></i><div><a href="mailto:cyberexpertpatna@gmail.com">cyberexpertpatna@gmail.com</a></div></div>
 <div class="contact-detail"><i class="fab fa-whatsapp"></i><div><a href="https://wa.me/917004863268">WhatsApp Us</a></div></div>
 <div class="contact-detail"><i class="fas fa-clock"></i><div>Mon - Sat: 9AM - 6PM</div></div>
+<div class="contact-detail"><i class="fas fa-calendar-check"></i><div><a href="#" onclick="openModal('appointmentModal');return false;">Book Appointment Online</a></div></div>
 <div class="social-icons">
 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -1421,7 +1678,7 @@ Your Discount Code
 </form>
 </div>
 <div class="map reveal">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57922.74670594883!2d85.8422!3d25.1388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSheikhpura%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57922.74670594883!2d85.8422!3d25.1388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zU2hlaWtocHVyYSwgQmloYXI!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen loading="lazy"></iframe>
 </div>
 </div>
 </div>
@@ -1445,10 +1702,12 @@ Your Discount Code
 <h3>Quick Links</h3>
 <p><a href="#home">Home</a></p>
 <p><a href="#services">Services</a></p>
-<p><a href="#video-testimonials">Video Reviews</a></p>
+<p><a href="#blog">Blog</a></p>
 <p><a href="#calculator">Calculator</a></p>
 <p><a href="#portfolio">Portfolio</a></p>
-<p><a href="#contact">Contact</a></p>
+<p><a href="#" onclick="openModal('appointmentModal');return false;">Book Appointment</a></p>
+<p><a href="#" onclick="openModal('invoiceModal');return false;">Invoice Generator</a></p>
+<p><a href="#" onclick="openModal('portalModal');return false;">Client Portal</a></p>
 </div>
 <div class="footer-section">
 <h3>Popular Services</h3>
@@ -1459,10 +1718,14 @@ Your Discount Code
 <p><a href="#services">Data Analysis</a></p>
 </div>
 <div class="footer-section">
-<h3>Contact Info</h3>
-<p><i class="fas fa-map-marker-alt"></i> Sheikhpura, Bihar - 811105</p>
-<p><i class="fas fa-phone"></i> <a href="tel:+917004863268">+91 7004863268</a></p>
-<p><i class="fas fa-envelope"></i> <a href="mailto:cyberexpertpatna@gmail.com">cyberexpertpatna@gmail.com</a></p>
+<h3>Newsletter</h3>
+<p style="margin-bottom:12px">Get weekly IT tips + free website checklist PDF.</p>
+<form id="footerNewsletter">
+<input type="email" placeholder="Your email" required>
+<button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+</form>
+<p style="margin-top:14px;font-size:12px"><i class="fas fa-map-marker-alt"></i> Sheikhpura, Bihar - 811105</p>
+<p style="font-size:12px"><i class="fas fa-phone"></i> <a href="tel:+917004863268">+91 7004863268</a></p>
 </div>
 </div>
 <div class="footer-payment">
@@ -1478,6 +1741,7 @@ Your Discount Code
 <a href="#" onclick="openModal('privacyModal');return false;">Privacy Policy</a>
 <a href="#" onclick="openModal('termsModal');return false;">Terms of Service</a>
 <a href="#" onclick="openModal('refundModal');return false;">Refund Policy</a>
+<a href="#" onclick="openModal('invoiceModal');return false;">Invoice Generator</a>
 </div>
 <p>&copy; 2024 CYBER Expert IT Solutions. All Rights Reserved.</p>
 </div>
@@ -1488,13 +1752,12 @@ Your Discount Code
 <div class="mobile-cta-inner">
 <a href="tel:+917004863268" class="call"><i class="fas fa-phone"></i>Call</a>
 <a href="https://wa.me/917004863268?text=Hi!" class="wa"><i class="fab fa-whatsapp"></i>WhatsApp</a>
-<a href="#" onclick="openModal('callbackModal');return false;"><i class="fas fa-phone-volume"></i>Callback</a>
+<a href="#" onclick="openModal('appointmentModal');return false;"><i class="fas fa-calendar-check"></i>Book</a>
 </div>
 </div>
 
 <div class="admin-access"><div class="admin-key" id="adminKey"><i class="fas fa-user-shield"></i></div></div>
 
-<!-- Modals -->
 <div class="modal" id="privacyModal"><div class="modal-content wide"><button class="close-modal" onclick="closeModal('privacyModal')">&times;</button><h2 class="modal-title">Privacy Policy</h2><div class="policy-content"><h3>1. Information We Collect</h3><p>We collect personal information you voluntarily provide.</p><h3>2. Contact</h3><p>cyberexpertpatna@gmail.com</p></div></div></div>
 <div class="modal" id="termsModal"><div class="modal-content wide"><button class="close-modal" onclick="closeModal('termsModal')">&times;</button><h2 class="modal-title">Terms of Service</h2><div class="policy-content"><h3>Payment</h3><p>50% advance, 50% before delivery.</p></div></div></div>
 <div class="modal" id="refundModal"><div class="modal-content wide"><button class="close-modal" onclick="closeModal('refundModal')">&times;</button><h2 class="modal-title">Refund Policy</h2><div class="policy-content"><p>Before work: 100% • After 7 days: No refund</p></div></div></div>
@@ -1633,6 +1896,31 @@ const clientLogos=[
   {icon:'fa-aws',name:'Amazon'}
 ];
 
+/* ✅ NEW: BLOG DATA */
+const blogData = [
+  {id:1, cat:'web', img:'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80', title:'10 Web Design Trends Dominating 2024', date:'Jan 15, 2024', read:'5 min', excerpt:'From AI-driven layouts to glassmorphism — discover the design trends that are winning in 2024.', body:`<h3>1. AI-Driven Personalization</h3><p>Websites now adapt in real-time based on user behavior, location, and preferences. AI personalization increases conversion rates by up to 40%.</p><h3>2. Glassmorphism</h3><p>Frosted glass effects with blur backgrounds create depth and modern aesthetics. Perfect for cards and modal overlays.</p><h3>3. Micro-Interactions</h3><p>Small animations that respond to user actions boost engagement and make the experience feel premium.</p><h3>4. Dark Mode as Default</h3><p>More than 80% of users prefer dark mode. It reduces eye strain and saves battery on OLED screens.</p><h3>5. Voice Search Optimization</h3><p>With 50% of searches now voice-based, websites must optimize for natural language queries.</p><ul><li>Use conversational keywords</li><li>Focus on long-tail phrases</li><li>Add FAQ schema</li></ul><p>Need a modern website with these trends? Contact CYBER Expert today.</p>`},
+  {id:2, cat:'seo', img:'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=600&q=80', title:'Local SEO Guide for Bihar Businesses', date:'Jan 12, 2024', read:'7 min', excerpt:'How local businesses in Sheikhpura, Patna and Bihar can dominate Google search results.', body:`<h3>Why Local SEO Matters</h3><p>46% of Google searches have local intent. If your business isn't optimized for local search, you're losing customers to competitors.</p><h3>Step 1: Google Business Profile</h3><p>Claim and verify your Google Business Profile. Add photos, hours, services, and respond to reviews.</p><h3>Step 2: Local Citations</h3><p>List your business on JustDial, Sulekha, IndiaMART, and local directories with consistent NAP (Name, Address, Phone).</p><h3>Step 3: Location Pages</h3><p>Create dedicated pages for each area you serve — Sheikhpura, Patna, Nalanda, etc.</p><h3>Step 4: Reviews Strategy</h3><p>Ask happy customers for Google reviews. Businesses with 4.5+ stars get 2x more clicks.</p><p>We offer complete Local SEO packages starting at ₹3,000/month.</p>`},
+  {id:3, cat:'marketing', img:'https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=600&q=80', title:'WhatsApp Business API: Complete Setup Guide', date:'Jan 10, 2024', read:'6 min', excerpt:'Everything you need to know about setting up WhatsApp Business API for your company.', body:`<h3>What is WhatsApp Business API?</h3><p>Unlike the regular WhatsApp Business app, the API allows unlimited messages, automation, and integration with your CRM.</p><h3>Benefits</h3><ul><li>Send bulk notifications</li><li>Auto-reply 24/7</li><li>Chatbot integration</li><li>Verified business badge</li><li>Analytics dashboard</li></ul><h3>Setup Process</h3><p>1. Facebook Business Manager verification<br>2. Phone number verification<br>3. Template approval<br>4. API integration<br>5. Go live!</p><h3>Pricing</h3><p>Setup starts at ₹4,999. Monthly charges depend on message volume.</p><p>Get WhatsApp API for your business today — contact us!</p>`},
+  {id:4, cat:'business', img:'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80', title:'Why Every Bihar Business Needs a Website in 2024', date:'Jan 8, 2024', read:'4 min', excerpt:'Still thinking if your shop needs a website? Here is why 2024 is the year you must go online.', body:`<h3>1. Customers Search Online First</h3><p>87% of consumers research online before visiting a business. No website = invisible to them.</p><h3>2. Compete with Big Brands</h3><p>A professional website levels the playing field. You can look as credible as any national brand.</p><h3>3. 24/7 Sales</h3><p>Your website never sleeps. It sells while you rest.</p><h3>4. Low Cost, High ROI</h3><p>A ₹9,999 website can bring ₹1,00,000+ in sales over a year. That's 10x ROI.</p><h3>5. Trust & Credibility</h3><p>Customers trust businesses with professional websites 3x more.</p><p>Get your business online today with CYBER Expert.</p>`},
+  {id:5, cat:'web', img:'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80', title:'WordPress vs Custom Code: Which One to Choose?', date:'Jan 5, 2024', read:'8 min', excerpt:'A detailed comparison to help you decide the right platform for your website.', body:`<h3>WordPress Pros</h3><ul><li>Easy to manage</li><li>Thousands of plugins</li><li>Lower upfront cost</li><li>Fast deployment</li></ul><h3>Custom Code Pros</h3><ul><li>Fully tailored</li><li>Better performance</li><li>No plugin bloat</li><li>Unique design</li></ul><h3>Which Should You Choose?</h3><p><strong>Choose WordPress if:</strong> You need a content-heavy site, blog, or basic e-commerce and want to manage it yourself.</p><p><strong>Choose Custom Code if:</strong> You need a web app, complex functionality, or unique UX that no CMS can offer.</p><p>We build both! Starting at ₹9,999 for WordPress and ₹25,000+ for custom.</p>`},
+  {id:6, cat:'marketing', img:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80', title:'Facebook Ads vs Google Ads: Where to Invest?', date:'Jan 3, 2024', read:'6 min', excerpt:'Understanding the difference and when to use which platform for maximum ROI.', body:`<h3>Facebook Ads: Demand Generation</h3><p>Best for creating demand, brand awareness, and reaching new audiences. Powerful targeting options.</p><h3>Google Ads: Demand Capture</h3><p>Best for capturing existing demand. When someone searches for your product, Google Ads puts you in front of them.</p><h3>The Right Strategy</h3><ul><li>New business? Start with Facebook Ads</li><li>Established brand? Use both</li><li>High-intent keywords? Google Ads</li><li>Visual products? Facebook/Instagram</li></ul><h3>Budget Split</h3><p>We recommend 60% Google Ads + 40% Facebook Ads for most Bihar businesses.</p><p>Get expert ad management from ₹5,000/month.</p>`},
+  {id:7, cat:'seo', img:'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=600&q=80', title:'SEO Checklist: 25 Steps to Rank #1 on Google', date:'Dec 28, 2023', read:'10 min', excerpt:'A comprehensive checklist you can use today to improve your website ranking.', body:`<h3>Technical SEO</h3><ul><li>✓ Fast loading speed (under 3s)</li><li>✓ Mobile responsive</li><li>✓ HTTPS enabled</li><li>✓ Sitemap.xml submitted</li><li>✓ Robots.txt optimized</li></ul><h3>On-Page SEO</h3><ul><li>✓ Title tags with keywords</li><li>✓ Meta descriptions</li><li>✓ H1, H2, H3 structure</li><li>✓ Image alt texts</li><li>✓ Internal linking</li></ul><h3>Content SEO</h3><ul><li>✓ Keyword research</li><li>✓ Long-form content (1500+ words)</li><li>✓ Blog regularly</li><li>✓ Answer user questions</li></ul><h3>Off-Page SEO</h3><ul><li>✓ Quality backlinks</li><li>✓ Local citations</li><li>✓ Social signals</li><li>✓ Guest posting</li></ul><p>Want us to handle SEO for you? Starting at ₹3,000/month.</p>`},
+  {id:8, cat:'business', img:'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80', title:'How to Choose the Right IT Company in Bihar', date:'Dec 25, 2023', read:'5 min', excerpt:'Red flags to avoid and green flags to look for when hiring an IT partner.', body:`<h3>Green Flags ✅</h3><ul><li>Portfolio with real results</li><li>Written contracts and timelines</li><li>Transparent pricing</li><li>Post-launch support</li><li>Local presence</li><li>Client testimonials</li></ul><h3>Red Flags 🚩</h3><ul><li>Extremely cheap quotes</li><li>No portfolio</li><li>Cash-only payments</li><li>No written agreement</li><li>Vague timelines</li><li>Difficult to reach</li></ul><h3>Questions to Ask</h3><p>1. Can I see similar projects?<br>2. What's your support policy?<br>3. Who owns the code?<br>4. What's the payment schedule?<br>5. What if something breaks?</p><p>CYBER Expert has been trusted since 2010 with 500+ projects.</p>`}
+];
+
+/* ============ ✅ CONVERSION TRACKING ============ */
+function trackConversion(eventName, value){
+  // Facebook Pixel
+  if(typeof fbq === 'function'){
+    fbq('track', eventName, value ? {value: value, currency:'INR'} : {});
+  }
+  // Google Analytics
+  if(typeof gtag === 'function'){
+    gtag('event', eventName, {value: value || 0, currency:'INR'});
+  }
+  console.log('✅ Conversion tracked:', eventName, value || '');
+}
+
 /* ============ RENDER ============ */
 function renderWhy(){
   const g = document.getElementById('whyGrid');
@@ -1770,6 +2058,34 @@ function renderLogos(){
   const html = clientLogos.map(l=>`<div class="logo-item"><i class="fab ${l.icon}"></i> ${l.name}</div>`).join('');
   t.innerHTML = html + html;
 }
+/* ✅ NEW: RENDER BLOG */
+function renderBlog(){
+  const g = document.getElementById('blogGrid');
+  if(!g) return;
+  g.innerHTML = blogData.map(b=>`
+    <div class="blog-card reveal reveal-up" data-cat="${b.cat}" data-id="${b.id}" onclick="openBlog(${b.id})">
+      <div class="blog-img-wrap">
+        <img src="${b.img}" alt="${b.title}" loading="lazy">
+        <span class="blog-cat-tag">${b.cat}</span>
+      </div>
+      <div class="blog-content">
+        <div class="blog-meta"><span><i class="fas fa-calendar"></i>${b.date}</span><span><i class="fas fa-clock"></i>${b.read}</span></div>
+        <h3>${b.title}</h3>
+        <p>${b.excerpt}</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </div>`).join('');
+}
+function openBlog(id){
+  const b = blogData.find(x => x.id === id);
+  if(!b) return;
+  document.getElementById('blogModalImg').src = b.img;
+  document.getElementById('blogModalTitle').textContent = b.title;
+  document.getElementById('blogModalMeta').innerHTML = `<span><i class="fas fa-calendar"></i>${b.date}</span><span><i class="fas fa-clock"></i>${b.read}</span><span><i class="fas fa-tag"></i>${b.cat}</span>`;
+  document.getElementById('blogModalBody').innerHTML = b.body;
+  openModal('blogModal');
+  trackConversion('ViewContent', {content_name: b.title});
+}
 
 /* ============ TILT ============ */
 function initTilt(){
@@ -1809,6 +2125,7 @@ function submitCalcQuote(){
   if(!boxes.length){ showToast('Select at least one service'); return; }
   let total = 0, items = [];
   boxes.forEach(b => { total += parseInt(b.getAttribute('data-price')); items.push(b.value); });
+  trackConversion('InitiateCheckout', total);
   window.open('https://wa.me/917004863268?text=' + encodeURIComponent('Quote:\n' + items.join('\n') + '\n\nTotal: ₹' + total.toLocaleString()), '_blank');
 }
 
@@ -1826,7 +2143,7 @@ function initDarkMode(){
   }
 }
 
-/* ============ NEW: LIVE VISITOR COUNTER ============ */
+/* ============ LIVE VISITOR ============ */
 function initLiveVisitors(){
   const el = document.getElementById('liveVisitors');
   if(!el) return;
@@ -1838,8 +2155,6 @@ function initLiveVisitors(){
     el.textContent = base;
   }, 4000);
 }
-
-/* ============ NEW: COUNTDOWN TIMER ============ */
 function initCountdown(){
   const el = document.getElementById('countdownTimer');
   if(!el) return;
@@ -1857,7 +2172,7 @@ function initCountdown(){
   setInterval(tick, 1000);
 }
 
-/* ============ NEW: SPIN WHEEL ============ */
+/* ============ SPIN WHEEL ============ */
 let spinUsed = false;
 const spinSegments = [
   {label:'10% OFF',code:'CYBER10',color:'#1a2a6c'},
@@ -1889,7 +2204,6 @@ function drawWheel(){
     ctx.strokeStyle = '#fdbb2d';
     ctx.lineWidth = 2;
     ctx.stroke();
-    // text
     ctx.save();
     ctx.translate(radius, radius);
     ctx.rotate(start + angleStep/2);
@@ -1899,7 +2213,6 @@ function drawWheel(){
     ctx.fillText(seg.label, radius - 18, 4);
     ctx.restore();
   });
-  // center circle
   ctx.beginPath();
   ctx.arc(radius, radius, 24, 0, Math.PI*2);
   ctx.fillStyle = '#fdbb2d';
@@ -1923,21 +2236,18 @@ function spinWheel(){
   const randomAngle = Math.random() * 360;
   const totalRotation = extraSpins * 360 + randomAngle;
   canvas.style.transform = `rotate(${totalRotation}deg)`;
-  // determine winning segment
   const normalizedAngle = (360 - (randomAngle % 360)) % 360;
   const segAngle = 360 / spinSegments.length;
   const winIdx = Math.floor(normalizedAngle / segAngle) % spinSegments.length;
   setTimeout(() => {
     const win = spinSegments[winIdx];
-    const result = document.getElementById('spinResult');
-    result.innerHTML = `🎉 You won!<strong>${win.label}</strong>`;
+    document.getElementById('spinResult').innerHTML = `🎉 You won!<strong>${win.label}</strong>`;
     document.getElementById('spinCode').textContent = win.code;
     document.getElementById('spinCodeBox').classList.add('show');
     document.getElementById('spinBtn').style.display = 'none';
-    // Save to storage
     localStorage.setItem('spinWon', win.code);
-    // Confetti
     triggerConfetti();
+    trackConversion('Lead');
   }, 5200);
 }
 function openSpinPopup(){
@@ -1946,17 +2256,16 @@ function openSpinPopup(){
     document.getElementById('spinPopup').classList.add('show');
     drawWheel();
     localStorage.setItem('spinShown','1');
-  }, 18000); // show after 18 sec
+  }, 25000);
 }
 function closeSpinPopup(){ document.getElementById('spinPopup').classList.remove('show'); }
 
-/* ============ NEW: CONFETTI ============ */
+/* ============ CONFETTI ============ */
 function triggerConfetti(){
   const container = document.getElementById('confetti');
   if(!container) return;
   const colors = ['#fdbb2d','#b21f1f','#1a2a6c','#1dbf73','#ff6b6b','#4facfe','#fff'];
-  const pieces = 120;
-  for(let i=0; i<pieces; i++){
+  for(let i=0; i<120; i++){
     const piece = document.createElement('div');
     piece.classList.add('confetti-piece');
     piece.style.left = Math.random() * 100 + 'vw';
@@ -1986,6 +2295,431 @@ function initLiveActivity(){
   setInterval(show, 16000);
 }
 
+/* ============ ✅ PWA SERVICE WORKER + INSTALL ============ */
+function initPWA(){
+  // Manifest as blob
+  const manifest = {
+    name: 'CYBER Expert IT Solutions',
+    short_name: 'CYBER Expert',
+    description: 'Best IT company in Sheikhpura, Bihar',
+    start_url: '.',
+    display: 'standalone',
+    background_color: '#1a2a6c',
+    theme_color: '#1a2a6c',
+    orientation: 'portrait',
+    icons: [{
+      src: 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><rect width="192" height="192" rx="40" fill="#1a2a6c"/><text x="96" y="125" font-size="90" font-weight="900" fill="#fdbb2d" text-anchor="middle" font-family="Arial">CE</text></svg>`),
+      sizes: '192x192',
+      type: 'image/svg+xml',
+      purpose: 'any maskable'
+    }]
+  };
+  const blob = new Blob([JSON.stringify(manifest)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.getElementById('pwaManifest');
+  if(link) link.href = url;
+
+  // Service Worker via blob
+  if('serviceWorker' in navigator){
+    const swCode = `
+      const CACHE = 'cyber-expert-v1';
+      self.addEventListener('install', e => {
+        self.skipWaiting();
+      });
+      self.addEventListener('activate', e => {
+        e.waitUntil(clients.claim());
+      });
+      self.addEventListener('fetch', e => {
+        if(e.request.method !== 'GET') return;
+        e.respondWith(
+          caches.match(e.request).then(r => {
+            const fetchPromise = fetch(e.request).then(res => {
+              if(res && res.status === 200 && res.type === 'basic'){
+                const clone = res.clone();
+                caches.open(CACHE).then(c => c.put(e.request, clone));
+              }
+              return res;
+            }).catch(() => caches.match('/') || new Response('Offline', {status: 503}));
+            return r || fetchPromise;
+          })
+        );
+      });
+    `;
+    const swBlob = new Blob([swCode], {type:'text/javascript'});
+    navigator.serviceWorker.register(URL.createObjectURL(swBlob))
+      .then(() => console.log('✅ Service Worker registered'))
+      .catch(err => console.log('SW error:', err));
+  }
+
+  // Install prompt
+  let deferredPrompt;
+  const installBtn = document.getElementById('pwaInstallBtn');
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if(installBtn) installBtn.classList.add('show');
+  });
+  if(installBtn){
+    installBtn.addEventListener('click', async () => {
+      if(!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const {outcome} = await deferredPrompt.userChoice;
+      if(outcome === 'accepted') showToast('✓ App install ho gayi!');
+      deferredPrompt = null;
+      installBtn.classList.remove('show');
+    });
+  }
+}
+
+/* ============ ✅ APPOINTMENT BOOKING ============ */
+let apptState = { currentDate: new Date(), selectedDate: null, selectedSlot: null };
+const APPT_SLOTS = ['09:00 AM','10:00 AM','11:00 AM','12:00 PM','02:00 PM','03:00 PM','04:00 PM','05:00 PM','06:00 PM'];
+function renderApptCalendar(){
+  const monthYear = document.getElementById('calMonthYear');
+  const daysEl = document.getElementById('calDays');
+  if(!monthYear || !daysEl) return;
+  const year = apptState.currentDate.getFullYear();
+  const month = apptState.currentDate.getMonth();
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  monthYear.textContent = `${monthNames[month]} ${year}`;
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month+1, 0).getDate();
+  const today = new Date(); today.setHours(0,0,0,0);
+  let html = '';
+  for(let i=0; i<firstDay; i++) html += '<div class="cal-day empty"></div>';
+  for(let d=1; d<=daysInMonth; d++){
+    const date = new Date(year, month, d);
+    const isPast = date < today;
+    const isSelected = apptState.selectedDate && date.toDateString() === apptState.selectedDate.toDateString();
+    html += `<div class="cal-day ${isPast?'disabled':''} ${isSelected?'selected':''}" data-day="${d}">${d}</div>`;
+  }
+  daysEl.innerHTML = html;
+  daysEl.querySelectorAll('.cal-day:not(.disabled):not(.empty)').forEach(el => {
+    el.addEventListener('click', () => {
+      const day = parseInt(el.getAttribute('data-day'));
+      apptState.selectedDate = new Date(year, month, day);
+      apptState.selectedSlot = null;
+      renderApptCalendar();
+      renderApptSlots();
+    });
+  });
+}
+function renderApptSlots(){
+  const slotsEl = document.getElementById('slotsGrid');
+  const hint = document.getElementById('apptHint');
+  const formWrap = document.getElementById('apptFormWrap');
+  if(!slotsEl) return;
+  if(!apptState.selectedDate){
+    slotsEl.innerHTML = '';
+    formWrap.style.display = 'none';
+    hint.style.display = 'block';
+    return;
+  }
+  hint.style.display = 'none';
+  const booked = JSON.parse(localStorage.getItem('apptBooked') || '[]');
+  const dateKey = apptState.selectedDate.toDateString();
+  slotsEl.innerHTML = APPT_SLOTS.map(s => {
+    const key = dateKey + '|' + s;
+    const isBooked = booked.includes(key);
+    const isSel = apptState.selectedSlot === s;
+    return `<div class="slot ${isBooked?'booked':''} ${isSel?'selected':''}" data-slot="${s}">${s}</div>`;
+  }).join('');
+  slotsEl.querySelectorAll('.slot:not(.booked)').forEach(el => {
+    el.addEventListener('click', () => {
+      apptState.selectedSlot = el.getAttribute('data-slot');
+      renderApptSlots();
+      formWrap.style.display = 'block';
+    });
+  });
+  if(apptState.selectedSlot) formWrap.style.display = 'block';
+}
+function initAppointment(){
+  const prev = document.getElementById('prevMonth');
+  const next = document.getElementById('nextMonth');
+  if(prev) prev.addEventListener('click', () => {
+    apptState.currentDate.setMonth(apptState.currentDate.getMonth() - 1);
+    renderApptCalendar();
+  });
+  if(next) next.addEventListener('click', () => {
+    apptState.currentDate.setMonth(apptState.currentDate.getMonth() + 1);
+    renderApptCalendar();
+  });
+  renderApptCalendar();
+
+  const form = document.getElementById('apptForm');
+  if(form) form.addEventListener('submit', e => {
+    e.preventDefault();
+    if(!apptState.selectedDate || !apptState.selectedSlot){ showToast('Please select date and time'); return; }
+    const name = document.getElementById('apptName').value.trim();
+    const phone = document.getElementById('apptPhone').value.trim();
+    const service = document.getElementById('apptService').value;
+    if(!name || phone.length < 10 || !service){ showToast('Please fill all fields'); return; }
+    const dateStr = apptState.selectedDate.toDateString();
+    const msg = `📅 Appointment Request:\nName: ${name}\nPhone: ${phone}\nService: ${service}\nDate: ${dateStr}\nTime: ${apptState.selectedSlot}`;
+    window.open('https://wa.me/917004863268?text=' + encodeURIComponent(msg), '_blank');
+    // Save slot as booked
+    const booked = JSON.parse(localStorage.getItem('apptBooked') || '[]');
+    booked.push(dateStr + '|' + apptState.selectedSlot);
+    localStorage.setItem('apptBooked', JSON.stringify(booked));
+    showToast('✓ Appointment confirmed! We\'ll contact you.');
+    triggerConfetti();
+    trackConversion('Schedule');
+    closeModal('appointmentModal');
+    form.reset();
+    apptState.selectedSlot = null;
+    renderApptSlots();
+  });
+}
+
+/* ============ ✅ CLIENT PORTAL ============ */
+const DEMO_CLIENT = {
+  email: 'client@demo.com',
+  password: 'demo123',
+  name: 'Demo Client',
+  projects: [
+    {name:'E-commerce Website', status:'In Progress', progress:65, deadline:'Feb 15, 2024', desc:'React + Node.js online store'},
+    {name:'Mobile App (Android)', status:'Planning', progress:15, deadline:'Mar 30, 2024', desc:'Flutter-based shopping app'},
+    {name:'SEO Optimization', status:'In Progress', progress:45, deadline:'Ongoing', desc:'Monthly SEO campaign'}
+  ],
+  invoices: [
+    {num:'INV-2024-001', date:'Jan 05, 2024', amount:'₹24,999', status:'paid'},
+    {num:'INV-2024-002', date:'Jan 18, 2024', amount:'₹12,500', status:'pending'},
+    {num:'INV-2023-089', date:'Dec 22, 2023', amount:'₹9,999', status:'paid'}
+  ],
+  tickets: [
+    {title:'Product image not loading', status:'Resolved', date:'Jan 10, 2024', msg:'Images were fixed. Thank you!'},
+    {title:'Add payment gateway', status:'In Progress', date:'Jan 20, 2024', msg:'Razorpay integration in progress.'}
+  ]
+};
+function initPortal(){
+  const lf = document.getElementById('portalLoginForm');
+  if(lf) lf.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('portalEmail').value.trim();
+    const pwd = document.getElementById('portalPassword').value;
+    if(email === DEMO_CLIENT.email && pwd === DEMO_CLIENT.password){
+      showPortalDash();
+      trackConversion('CompleteRegistration');
+    } else {
+      showToast('❌ Invalid credentials. Try client@demo.com / demo123');
+    }
+  });
+  document.querySelectorAll('.portal-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.portal-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.portal-pane').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('pane-' + tab.getAttribute('data-pane')).classList.add('active');
+    });
+  });
+}
+function showPortalDash(){
+  document.getElementById('portalLoginView').style.display = 'none';
+  document.getElementById('portalDashView').style.display = 'block';
+  document.getElementById('portalWelcome').textContent = 'Hello, ' + DEMO_CLIENT.name + ' 👋';
+  // Projects
+  document.getElementById('pane-projects').innerHTML = DEMO_CLIENT.projects.map(p => `
+    <div class="portal-project">
+      <h4>${p.name}</h4>
+      <div class="proj-meta"><i class="fas fa-calendar"></i> Deadline: ${p.deadline} • <i class="fas fa-circle" style="color:${p.status==='In Progress'?'#fdbb2d':'#1dbf73'};font-size:8px"></i> ${p.status}</div>
+      <p style="font-size:12.5px;color:var(--text-light);margin-bottom:10px">${p.desc}</p>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${p.progress}%"></div></div>
+      <div style="font-size:11.5px;color:var(--text-light);text-align:right">${p.progress}% complete</div>
+    </div>`).join('');
+  // Invoices
+  document.getElementById('pane-invoices').innerHTML = DEMO_CLIENT.invoices.map(i => `
+    <div class="portal-invoice-row">
+      <div><strong>${i.num}</strong><div style="font-size:11.5px;color:var(--text-light)">${i.date}</div></div>
+      <div style="text-align:right">
+        <div style="font-weight:700;color:var(--primary)">${i.amount}</div>
+        <span class="portal-status status-${i.status}">${i.status}</span>
+      </div>
+    </div>`).join('');
+  // Tickets
+  document.getElementById('pane-tickets').innerHTML = DEMO_CLIENT.tickets.map(t => `
+    <div class="portal-ticket">
+      <h5>${t.title}</h5>
+      <p>${t.msg}</p>
+      <div style="font-size:11px;color:var(--text-light)"><i class="fas fa-clock"></i> ${t.date} • <span class="portal-status status-${t.status==='Resolved'?'paid':'pending'}">${t.status}</span></div>
+    </div>`).join('') + `
+    <button class="btn" onclick="showToast('✓ Support ticket created. Our team will reach out.')" style="width:100%;margin-top:10px"><i class="fas fa-plus"></i> Create New Ticket</button>`;
+}
+function portalLogout(){
+  document.getElementById('portalLoginView').style.display = 'block';
+  document.getElementById('portalDashView').style.display = 'none';
+  document.getElementById('portalEmail').value = '';
+  document.getElementById('portalPassword').value = '';
+}
+
+/* ============ ✅ INVOICE GENERATOR ============ */
+let invItemCount = 0;
+function addInvItem(desc='', qty=1, price=0){
+  const tbody = document.getElementById('invItemsBody');
+  const row = document.createElement('tr');
+  invItemCount++;
+  row.innerHTML = `
+    <td><input type="text" placeholder="Service description" value="${desc}"></td>
+    <td><input type="number" min="1" value="${qty}" style="width:70px"></td>
+    <td><input type="number" min="0" value="${price}" style="width:100px"></td>
+    <td class="inv-amt">₹0</td>
+    <td><button type="button" class="inv-remove"><i class="fas fa-times"></i></button></td>`;
+  tbody.appendChild(row);
+  row.querySelector('.inv-remove').addEventListener('click', () => { row.remove(); updateInvoiceTotals(); });
+  row.querySelectorAll('input').forEach(inp => inp.addEventListener('input', updateInvoiceTotals));
+  updateInvoiceTotals();
+}
+function updateInvoiceTotals(){
+  const rows = document.querySelectorAll('#invItemsBody tr');
+  let subtotal = 0;
+  rows.forEach(r => {
+    const inputs = r.querySelectorAll('input');
+    const qty = parseFloat(inputs[1].value) || 0;
+    const price = parseFloat(inputs[2].value) || 0;
+    const amt = qty * price;
+    r.querySelector('.inv-amt').textContent = '₹' + amt.toLocaleString('en-IN');
+    subtotal += amt;
+  });
+  const tax = Math.round(subtotal * 0.18);
+  document.getElementById('invSubtotal').textContent = '₹' + subtotal.toLocaleString('en-IN');
+  document.getElementById('invTax').textContent = '₹' + tax.toLocaleString('en-IN');
+  document.getElementById('invGrand').textContent = '₹' + (subtotal + tax).toLocaleString('en-IN');
+  return {subtotal, tax, grand: subtotal + tax};
+}
+function generateInvoice(){
+  const clientName = document.getElementById('invClientName').value.trim() || 'Client Name';
+  const clientPhone = document.getElementById('invClientPhone').value.trim() || '—';
+  const clientEmail = document.getElementById('invClientEmail').value.trim() || '—';
+  const invDate = document.getElementById('invDate').value || new Date().toISOString().split('T')[0];
+  const {subtotal, tax, grand} = updateInvoiceTotals();
+  const invNum = 'INV-' + new Date().getFullYear() + '-' + String(Math.floor(Math.random()*9000)+1000);
+  const rows = document.querySelectorAll('#invItemsBody tr');
+  let itemsHtml = '';
+  rows.forEach(r => {
+    const inputs = r.querySelectorAll('input');
+    const desc = inputs[0].value || 'Service';
+    const qty = inputs[1].value || 0;
+    const price = parseFloat(inputs[2].value) || 0;
+    const amt = qty * price;
+    itemsHtml += `<tr><td>${desc}</td><td>${qty}</td><td>₹${price.toLocaleString('en-IN')}</td><td>₹${amt.toLocaleString('en-IN')}</td></tr>`;
+  });
+  const html = `
+    <div class="invoice-preview-header">
+      <div>
+        <h2>CYBER Expert IT Solutions</h2>
+        <div class="inv-num">Sheikhpura, Bihar - 811105<br>+91 7004863268 • cyberexpertpatna@gmail.com</div>
+      </div>
+      <div style="text-align:right">
+        <h2 style="color:var(--accent);-webkit-text-fill-color:var(--accent)">INVOICE</h2>
+        <div class="inv-num">${invNum}<br>Date: ${invDate}</div>
+      </div>
+    </div>
+    <div class="invoice-preview-meta">
+      <div><h4>Bill To</h4><p><strong>${clientName}</strong><br>${clientPhone}<br>${clientEmail}</p></div>
+      <div><h4>Payment Details</h4><p>Bank: SBI<br>A/c: XXXX-XXXX-1234<br>UPI: cyberexpert@upi</p></div>
+    </div>
+    <table class="invoice-preview-table">
+      <thead><tr><th>Description</th><th>Qty</th><th>Price</th><th>Amount</th></tr></thead>
+      <tbody>${itemsHtml}</tbody>
+    </table>
+    <div class="invoice-preview-totals">
+      <div class="row"><span>Subtotal:</span><span>₹${subtotal.toLocaleString('en-IN')}</span></div>
+      <div class="row"><span>GST (18%):</span><span>₹${tax.toLocaleString('en-IN')}</span></div>
+      <div class="row grand"><span>Total:</span><span>₹${grand.toLocaleString('en-IN')}</span></div>
+    </div>
+    <p style="margin-top:20px;font-size:11px;color:#666;text-align:center">Thank you for your business! • This is a computer-generated invoice.</p>
+  `;
+  document.getElementById('invoicePreview').innerHTML = html;
+  document.getElementById('invoicePreviewWrap').style.display = 'block';
+  document.getElementById('invoicePreview').scrollIntoView({behavior:'smooth', block:'nearest'});
+  showToast('✓ Invoice generated!');
+  trackConversion('Purchase', grand);
+}
+function initInvoice(){
+  const today = new Date().toISOString().split('T')[0];
+  const d = document.getElementById('invDate');
+  if(d) d.value = today;
+  const addBtn = document.getElementById('invAddItem');
+  if(addBtn) addBtn.addEventListener('click', () => addInvItem());
+  const genBtn = document.getElementById('invGenerate');
+  if(genBtn) genBtn.addEventListener('click', generateInvoice);
+  const printBtn = document.getElementById('invPrint');
+  if(printBtn) printBtn.addEventListener('click', () => window.print());
+  // Prefill example
+  if(document.getElementById('invItemsBody') && !document.getElementById('invItemsBody').children.length){
+    addInvItem('Web Design - 5 pages', 1, 9999);
+  }
+}
+
+/* ============ ✅ NEWSLETTER ============ */
+function initNewsletter(){
+  // Popup after 30 sec or on 60% scroll (once)
+  if(!localStorage.getItem('nlShown')){
+    setTimeout(() => {
+      if(!localStorage.getItem('nlShown')){
+        document.getElementById('newsletterPopup').classList.add('show');
+        localStorage.setItem('nlShown','1');
+      }
+    }, 30000);
+    // Or on scroll
+    let scrolled = false;
+    window.addEventListener('scroll', () => {
+      if(scrolled) return;
+      const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      if(pct > 65 && !localStorage.getItem('nlShown')){
+        scrolled = true;
+        document.getElementById('newsletterPopup').classList.add('show');
+        localStorage.setItem('nlShown','1');
+      }
+    });
+  }
+  const nf = document.getElementById('newsletterForm');
+  if(nf) nf.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('nlName').value;
+    const email = document.getElementById('nlEmail').value;
+    console.log('📧 Newsletter signup:', {name, email});
+    trackConversion('Subscribe');
+    showToast('✓ Check your email for the free PDF!');
+    triggerConfetti();
+    closeNewsletter();
+  });
+  const fnf = document.getElementById('footerNewsletter');
+  if(fnf) fnf.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = fnf.querySelector('input').value;
+    console.log('📧 Footer newsletter:', email);
+    trackConversion('Subscribe');
+    showToast('✓ Subscribed!');
+    fnf.reset();
+  });
+}
+function closeNewsletter(){
+  document.getElementById('newsletterPopup').classList.remove('show');
+}
+
+/* ============ ✅ BLOG FILTER + SEARCH ============ */
+function initBlogFilter(){
+  document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.getAttribute('data-cat');
+      document.querySelectorAll('.blog-card').forEach(card => {
+        const cardCat = card.getAttribute('data-cat');
+        card.classList.toggle('hide', cat !== 'all' && cardCat !== cat);
+      });
+    });
+  });
+  const search = document.getElementById('blogSearch');
+  if(search) search.addEventListener('input', () => {
+    const q = search.value.toLowerCase().trim();
+    document.querySelectorAll('.blog-card').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.classList.toggle('hide', q && !text.includes(q));
+    });
+  });
+}
+
 /* ============ INIT ============ */
 document.addEventListener('DOMContentLoaded', function(){
   renderWhy();
@@ -1998,6 +2732,7 @@ document.addEventListener('DOMContentLoaded', function(){
   renderFAQ();
   renderCalc();
   renderLogos();
+  renderBlog();
   initParticles();
   initTypewriter();
   initDarkMode();
@@ -2028,8 +2763,13 @@ document.addEventListener('DOMContentLoaded', function(){
   initClientLogin();
   initScrollProgress();
   initExitIntent();
+  initPWA();
+  initAppointment();
+  initPortal();
+  initInvoice();
+  initNewsletter();
+  initBlogFilter();
   openSpinPopup();
-  // Spin button
   document.getElementById('spinBtn').addEventListener('click', spinWheel);
 });
 
@@ -2047,12 +2787,13 @@ function initCallbackForm(){
     window.open('https://wa.me/917004863268?text=' + encodeURIComponent(msg), '_blank');
     showToast('✓ Callback requested! We\'ll call you soon.');
     triggerConfetti();
+    trackConversion('Lead');
     closeModal('callbackModal');
     f.reset();
   });
 }
 
-/* ============ SCROLL PROGRESS ============ */
+/* ============ SCROLL / UI ============ */
 function initScrollProgress(){
   const bar = document.getElementById('scrollProgress');
   window.addEventListener('scroll', () => {
@@ -2256,6 +2997,7 @@ function initContactForm(){
     if(ok){
       showToast('✓ Thank you! We\'ll contact you soon.');
       triggerConfetti();
+      trackConversion('Lead');
       f.reset();
     }
   });
@@ -2297,6 +3039,8 @@ function initAdmin(){
     });
   });
 }
+/* ✅ ENHANCED CHATBOT WITH HUMAN HANDOFF */
+let humanMode = false;
 function initAIChatbot(){
   const b = document.getElementById('chatBtn');
   const w = document.getElementById('chatWindow');
@@ -2311,13 +3055,14 @@ function initAIChatbot(){
     pricing:'MS Office from ₹499, Web Design ₹9,999, Mobile Apps ₹25,000, SEO ₹3,000/mo.',
     contact:'+91 7004863268, cyberexpertpatna@gmail.com. Sheikhpura, Bihar.',
     support:'Yes! 24/7 support from ₹2,000/month.',
-    default:'Ask about services, pricing, or contact. Or click "Chat with Human".'
+    default:'Ask about services, pricing, or contact. Or click "Connect to Human Agent".'
   };
   b.addEventListener('click', () => { w.style.display='flex'; i.focus(); });
   c.addEventListener('click', () => w.style.display='none');
   q.addEventListener('click', e => {
     if(e.target.classList.contains('quick-reply')){
       const msg = e.target.getAttribute('data-message');
+      if(msg === 'Talk to human'){ connectHumanAgent(); return; }
       add(msg, 'user'); showTyping();
       setTimeout(() => { removeTyping(); resp(msg); }, 900);
     }
@@ -2334,7 +3079,8 @@ function initAIChatbot(){
   function add(txt, sender){
     const d = document.createElement('div');
     d.classList.add('message', sender);
-    d.innerHTML = `<div class="message-avatar"><i class="fas fa-${sender==='user'?'user':'robot'}"></i></div><div class="message-content"><p>${txt}</p></div>`;
+    const icon = sender === 'user' ? 'user' : (sender === 'agent' ? 'headset' : 'robot');
+    d.innerHTML = `<div class="message-avatar"><i class="fas fa-${icon}"></i></div><div class="message-content"><p>${txt}</p></div>`;
     m.appendChild(d); m.scrollTop = m.scrollHeight;
   }
   function showTyping(){
@@ -2348,6 +3094,11 @@ function initAIChatbot(){
     if(t) t.remove();
   }
   function resp(msg){
+    // If in human mode, route to "agent"
+    if(humanMode){
+      add('Thanks! A human agent will reply shortly. For faster response, WhatsApp us at +91 7004863268.', 'agent');
+      return;
+    }
     const mm = msg.toLowerCase();
     let r = R.default;
     if(mm.includes('hello') || mm.includes('hi')) r = R.hello;
@@ -2355,8 +3106,20 @@ function initAIChatbot(){
     else if(mm.includes('price') || mm.includes('cost')) r = R.pricing;
     else if(mm.includes('contact') || mm.includes('phone')) r = R.contact;
     else if(mm.includes('support')) r = R.support;
+    else if(mm.includes('human') || mm.includes('agent')){ connectHumanAgent(); return; }
     add(r, 'bot');
   }
+  window._chatAdd = add;
+  window._chatResp = resp;
+}
+function connectHumanAgent(){
+  humanMode = true;
+  if(window._chatAdd){
+    window._chatAdd('🔔 Connecting you to a human agent...', 'agent');
+    setTimeout(() => window._chatAdd('Hi! I\'m Aman from CYBER Expert. How can I help you today?', 'agent'), 1500);
+    setTimeout(() => window._chatAdd('For the fastest reply, please WhatsApp us at +91 7004863268. We usually respond within 2 minutes!', 'agent'), 3500);
+  }
+  trackConversion('Contact');
 }
 function initCookie(){
   const c = document.getElementById('cookieConsent');
@@ -2403,10 +3166,11 @@ function initModals(){
     window.open('https://wa.me/917004863268?text=' + encodeURIComponent('New Order:\nService: '+s+'\nName: '+n+'\nMobile: '+m+'\nDetails: '+d), '_blank');
     closeModal('bookingModal'); this.reset();
     showToast('✓ Order submitted!'); triggerConfetti();
+    trackConversion('Purchase');
   });
 }
 function initClientLogin(){
-  document.getElementById('clientLoginBtn').addEventListener('click', () => openModal('clientLoginModal'));
+  document.getElementById('clientLoginBtn').addEventListener('click', () => openModal('portalModal'));
   document.getElementById('clientLoginForm').addEventListener('submit', e => {
     e.preventDefault();
     alert('Demo only. Please contact us.');
